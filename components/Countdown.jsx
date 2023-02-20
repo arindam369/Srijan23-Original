@@ -5,7 +5,7 @@ import 'react-circular-progressbar/dist/styles.css';
 
 export default function Countdown(){
 
-    const countdownDate = new Date("2023-03-16").getTime();
+    const countdownDate = new Date("2023-03-16").getTime() - ((5 * 60) + 30) * 60 * 1000;
 
     const [countdownTime, setCountdownTime] = useState(countdownDate - new Date().getTime());
     const [days, setDays] = useState(0);
