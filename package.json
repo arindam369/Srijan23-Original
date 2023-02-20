@@ -1,0 +1,36 @@
+{
+  "name": "srijan23",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@next/font": "13.1.2",
+    "@react-three/drei": "^9.52.4",
+    "antd": "^5.2.0",
+    "chart.js": "^4.2.0",
+    "dat.gui": "^0.7.9",
+    "firebase": "^9.15.0",
+    "framer-motion": "^8.4.3",
+    "gsap": "^3.11.4",
+    "html-react-parser": "^3.0.8",
+    "next": "13.1.2",
+    "react": "18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-circular-progressbar": "^2.1.0",
+    "react-dom": "18.2.0",
+    "react-google-button": "^0.7.2",
+    "react-icons": "^4.7.1",
+    "react-loader-spinner": "^5.3.4",
+    "react-modal": "^3.16.1",
+    "react-three-fiber": "^6.0.13",
+    "react-toastify": "^9.1.1",
+    "react-uuid": "^2.0.0",
+    "sharp": "^0.31.3",
+    "swiper": "^8.4.5"
+  }
+}

@@ -1,0 +1,583 @@
+body{
+  margin: 0;
+  background-color: black;
+}
+
+/* React Modal Styles -------------------------------------------- */
+.ReactModal__Content {
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: all 500ms ease-in-out;
+}
+.ReactModal__Content--after-open {
+  opacity: 1;
+  transform: translateY(0px);
+}
+.ReactModal__Content--before-close {
+  opacity: 0;
+  transform: translateY(-100px);
+}
+/* -------------------------------------------------------------- */
+
+
+#registerBox input::placeholder{
+  color: rgb(235, 235, 235);
+}
+#merchandiseForm input::placeholder{
+  color: rgb(161, 158, 158);
+}
+#merchandiseForm select{
+  background: transparent;
+  border: 0px;
+  color: white;
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  left: 0px;
+  padding-left: 40px;
+  outline: none;
+  border-radius: 5px;
+  text-indent: 5px;
+  font-size: .85rem;
+  cursor: pointer;
+}
+#merchandiseForm select option{
+  background: rgb(228, 228, 228);
+  color: black;
+  padding: 20px 10px !important;
+  height: 100px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(173, 173, 173);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(134, 134, 134);
+}
+
+button:disabled, button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.settingsInput{
+  padding: 6px 15px 6px 35px;
+  position: relative;
+  border-bottom: 1px solid rgb(209, 209, 209);
+  display: flex;
+  align-items: center;
+  height: 18px;
+  margin: 35px 0px;
+}
+.settingsInput input{
+  background: transparent;
+  border: 0px;
+  outline: none;
+  color: white;
+  width: 250px;
+  font-size: .78rem;
+}
+.settingsInputIcon2{
+  position: absolute;
+  right: 10px;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  opacity: 0;
+}
+.settingsInputIcon2:hover{
+  opacity: 1;
+}
+.settingsInput input:hover ~ .settingsInputIcon2{
+  opacity: 1;
+  cursor: pointer;
+  z-index: 2;
+}
+/* .disabled{
+  cursor: not-allowed; 
+} */
+.abled{
+  border: 1px solid white;
+  border-radius: 4px;
+}
+input:disabled{
+  cursor: not-allowed;
+}
+
+.sponsorBullet{
+  color: white;
+  list-style: none;
+  font-size: .82rem;
+  margin: 0px 10px;
+  font-weight: 600;
+  border-radius: 6px;
+  background: rgb(1, 44, 18);
+  padding: 8px 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: 28px;
+  height: 35px;
+  overflow: hidden;
+  border-radius: 18px;
+  transition: width 0.6s ease;
+}
+.sponsorSelectedBullet{
+  width: 220px;
+  overflow: hidden;
+}
+.talksImage{
+  border-radius: 8px;
+  width: 430px;
+  height: 300px;
+  opacity: 0;
+  transition: opacity ease-in-out 0.5s;
+  margin-right: 20px;
+}
+.activeTalksImage{
+  opacity: 1;
+}
+.talkBody{
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  color: rgb(218, 211, 211);
+  font-family: 'Roboto', sans-serif;
+  font-size: .85rem;
+  padding: 6px 10px;
+  line-height: 18px;
+  transition: opacity ease-in-out 0.1s;
+}
+.activeTalkBody{
+  opacity: 1;
+}
+.workshopImage{
+  border-radius: 8px;
+  width: 330px;
+  height: 250px;
+  opacity: 0;
+  transition: opacity ease-in-out 0.5s;
+  margin-right: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 25px;
+  right: 0;
+  margin: auto;
+}
+.activeWorkshopImage{
+  opacity: 1;
+}
+
+/* Media Query -------------------- */
+@media (max-width: 1140px) {
+  .talksImage{
+    height: 240px;
+    margin: 0;
+  }
+  .talkBody{
+    font-size: .85rem;
+    padding: 6px 10px;
+    line-height: 16px;
+    width: 410px;
+    height: 310px;
+    margin-top: 10px;
+  }
+}
+
+/* Dashboard sidebar */
+.dashboardList{
+  color: white;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  margin: 22px 0px;
+  cursor: pointer;
+  font-size: .8rem;
+  font-weight: 600;
+  /* background: rgba(27, 185, 62, 0.452); */
+  background: linear-gradient(to top right, rgba(29, 90, 161, 0.6), rgba(20, 114, 79, 0.6));
+  /* padding: 15px 50px 15px 20px; */
+  padding: 15px 10px 15px 15px;
+  border-radius: 6px;
+  width: 30px;
+  position: relative;
+  transition: width 0.4s ease-in-out;
+  border-radius: 5px 20px 20px 5px;
+}
+.activeDashboardList{
+  color: rgb(179, 255, 0);
+  /* padding: 15px 50px 15px 20px; */
+  width: 120px;
+}
+.dashboardList div{
+  position: absolute;
+  left: 50px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.activeDashboardList div{
+  opacity: 1;
+}
+
+/* Mobile dashboard sidebars ------------------------------------------ */
+.mobileDashboardSidebar{
+  display: flex;
+  justify-content: center;
+  /* flex-direction: column; */
+  background: linear-gradient(to top right, rgba(29, 90, 161, 1.9), rgba(20, 114, 79, 1.9));
+  border-radius: 4px;
+  padding: 14px 0px 7px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  /* height: 100vh; */
+  width: 100vw;
+  z-index: 10;
+  display: none;
+}
+.mobileDashboardList{
+  color: white;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  width: 70px;
+  height: 50px;
+  padding: 0px;
+  margin: 0px 20px;
+  position: relative;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.activeMobileDashboardList{
+
+}
+.mobileDashboardIcon{
+  font-size: 1.4rem;
+  border: 0px;
+  transition: transform 0.4s ease-in-out, border 0.5s ease-in-out;
+}
+.mobileDashboardNavTitle{
+  font-size: .85rem;
+  margin-top: 5px;
+  transition: opacity 0.4s ease-in-out;
+}
+.activeMobileDashboardList .mobileDashboardNavTitle{
+  color: yellow;
+}
+.activeMobileDashboardList .mobileDashboardIcon{
+  color: yellow;
+}
+
+/* Event Details Register Button ------------------------------*/
+.interestedRegisteredButton{
+  font-size: .8rem;
+  margin: 0px 20px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  background: linear-gradient(to top right, rgba(29, 90, 161, 0.6), rgba(20, 114, 79, 0.6));
+  cursor: pointer;
+  color: rgb(179, 255, 0);
+  font-weight: 600;
+  border: 0px;
+  outline: 0;
+}
+.interestedRegisteredButton:hover{
+  filter: brightness(1.1);
+}
+.interestedButton{
+  font-size: .8rem;
+  margin: 0px 20px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  background: linear-gradient(to top right, rgba(30, 105, 190, 0.6), rgba(20, 114, 79, 0.6));
+  cursor: not-allowed;
+  color: rgb(148, 206, 11);
+  font-weight: 600;
+  border: 0px;
+  outline: 0;
+  filter: brightness(.8);
+}
+.addMemberButton{
+  float: right;
+  padding: 7px 20px;
+  font-size: .67rem;
+  font-weight: 600;
+  background: #692321;
+  color: white;
+  border: 0px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+}
+.addMemberButton div{
+  margin-left: 4px;
+}
+.disabledAddMemberButton{
+  cursor: not-allowed;
+  filter: brightness(.7);
+}
+/* Event Search ------------------ */
+.dashboardEventSearch{
+  border: 2px solid red;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+}
+.visibleSearchInput{
+  padding: 6px 35px 6px 12px;
+  font-size: .83rem;
+  outline: none;
+  background: transparent;
+  color: white;
+  border: 0px;
+  letter-spacing: 1px;
+  width: 0px;
+  transition: width 0.8s ease-in-out;
+}
+.visibleInput{
+  border-bottom: 1px solid white;
+  width: 500px;
+}
+/* Loader ----------------------------- */
+.loaderDiv{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.333);
+  z-index: 200;
+}
+
+/* landing page button --------------- */
+.warningOkayButton{
+  border: 1px solid white;
+  display: none;
+  /* display: inline-block; */
+  padding: 9px 20px;
+  border-radius: 5px;
+  color: white;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: .5s ease-out;
+  background-size: 200%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  background-color: #a91322;
+}
+.warningOkayButton:hover{
+  filter: brightness(0.8);
+}
+.activeWarningButton{
+  display: inline-block;
+}
+
+/* mobile bottombar ------------------- */
+@media (max-width: 800px){
+  .mobileDashboardSidebar{
+    display: flex;
+    justify-content: space-between;
+  }
+  .mobileDashboardList{
+    height: 42px;
+  }
+}
+@media (max-width: 665px){
+  .mobileDashboardList{
+    width: 60px;
+    height: 42px;
+    /* margin: 0px 14px; */
+    justify-content: space-between;
+    border-radius: 6px;
+  }
+}
+@media (max-width: 555px){
+  /* .mobileDashboardSidebar{
+    justify-content: center;
+  } */
+  .mobileDashboardList{
+    justify-content: space-between;
+    width: 40px;
+    height: 42px;
+    /* margin: 0px 7px; */
+    border-radius: 6px;
+  }
+}
+@media (max-width: 470px){
+  .mobileDashboardSidebar{
+    padding: 10px 0px 7px;
+    width: 100vw;
+    left: 0;
+    right: 0;
+    margin: auto;
+    justify-content: space-around;
+  }
+  .mobileDashboardList{
+    height: 42px;
+    width: 50px;
+    margin: 0;
+    /* margin: 0px 8px; */
+    border-radius: 6px;
+  }
+  .mobileDashboardIcon{
+    font-size: 1.3rem;
+  }
+  .mobileDashboardNavTitle{
+    font-size: .78rem;
+  }
+}
+@media (max-width: 420px){
+  .mobileDashboardList{
+    width: 45px;
+    height: 43px;
+    /* margin: 0px 0px; */
+    border-radius: 6px;
+    justify-content: space-between;
+  }
+  .mobileDashboardNavTitle{
+    font-size: .78rem;
+  }
+}
+@media (max-width: 460px){
+  .workshopImage{
+    border-radius: 8px;
+    width: 280px;
+    height: 250px;
+    /* opacity: 0; */
+    transition: opacity ease-in-out 0.5s;
+    margin-right: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 25px;
+    right: 0;
+    margin: auto;
+  }
+}
+
+@media (max-width: 570px){
+  .visibleInput{
+    border-bottom: 1px solid white;
+    width: 450px;
+  }
+}
+@media (max-width: 550px){
+  .visibleInput{
+    border-bottom: 1px solid white;
+    width: 310px;
+  }
+}
+
+@media (max-width: 660px){
+  .sponsorSelectedBullet{
+    width: 150px;
+    overflow: hidden;
+  }
+}
+@media (max-width: 560px){
+  .sponsorSelectedBullet{
+    width: 130px;
+    overflow: hidden;
+  }
+  #mobilewalla{
+    width: 300px;
+    height: 150px;
+  }
+  #interviewBuddy{
+    width: 330px;
+    height: 200px;
+  }
+  #wowMomo, #foodporium, #street4th, #pizzaHut{
+    width: 110px;
+    height: 110px;
+  }
+}
+@media (max-width: 510px){
+  .sponsorSelectedBullet{
+    width: 70px;
+    overflow: hidden;
+  }
+}
+@media (max-width: 450px){
+  .sponsorSelectedBullet{
+    width: 85px;
+    overflow: hidden;
+  }
+}
+@media (max-width: 425px){
+  .sponsorSelectedBullet{
+    width: 75px;
+    overflow: hidden;
+  }
+  #webel, #interviewBuddy{
+    width: 300px;
+  }
+}
+@media (max-width: 625px){
+  .talkBody{
+    font-size: .75rem;
+    padding: 6px 10px;
+    line-height: 14px;
+  }
+  .talksImage{
+    height: 190px;
+    width: 390px;
+  }
+}
+@media (max-width: 505px){
+  .talkBody{
+    width: 340px;
+  }
+}
+@media (max-width: 460px){
+  .talkBody{
+    width: 300px;
+    line-height: 12px;
+  }
+  .talksImage{
+    width: 370px;
+  }
+}
+@media (max-width: 415px){
+  .talkBody{
+    width: 300px;
+    line-height: 12px;
+  }
+  .talksImage{
+    width: 330px;
+  }
+}
+.planeBox{
+  z-index: 500;
+}
