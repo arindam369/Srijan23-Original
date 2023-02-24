@@ -25,7 +25,7 @@ export default function App({ Component, pageProps }) {
           <meta property="og:title" content="Srijan23" />
           <meta
             property="og:description"
-            content="Share your memories with others"
+            content="The annual techno management fest of Jadavpur University"
           />
           <meta property="og:url" content="https://srijanju.in" />
           <meta property="og:site_name" content="Srijan23" />
