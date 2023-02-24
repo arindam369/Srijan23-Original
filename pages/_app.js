@@ -27,9 +27,9 @@ export default function App({ Component, pageProps }) {
             property="og:description"
             content="Share your memories with others"
           />
-          <meta property="og:url" content="https://srijan23.vercel.app" />
+          <meta property="og:url" content="https://srijanju.in" />
           <meta property="og:site_name" content="Srijan23" />
-          <meta property="og:image" itemProp="image" content="https://srijan23.vercel.app/favicon.ico"/>
+          <meta property="og:image" itemProp="image" content="https://srijanju.in/favicon.ico"/>
           <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
           <link rel="icon" type="image/x-icon" href="favicon.ico" />
         </Head>
