@@ -65,8 +65,8 @@ export default function Countdown(){
                     <div style={{ width: 100, height: 100 }}>
                         <CircularProgressbar value={(seconds*100)/60} text={seconds>9?`${seconds} Seconds`:(seconds<=1?`0${seconds} Second`:`0${seconds} Seconds`)} styles={buildStyles({
                             textSize: '12px',
-                            textColor: '#EB5406',
-                            pathColor: '#EB5406',
+                            textColor: '#079FEB',
+                            pathColor: '#079FEB',
                         })}/>
                     </div>
                 </div>
