@@ -48,7 +48,7 @@ export default function Countdown(){
                         <CircularProgressbar value={(hours*100)/24} text={hours>9?`${hours} Hours`:(hours<=1?`0${hours} Hour`:`0${hours} Hours`)} styles={buildStyles({
                             textSize: '13px',
                             textColor: '#800080',
-                            pathColor: '#800080',
+                            pathColor: '#800080' ,
                         })}/>
                     </div>
                 </div>
