@@ -57,7 +57,7 @@ export default function Countdown(){
                         <CircularProgressbar value={(minutes*100)/60} text={minutes>9?`${minutes} Minutes`:(minutes<=1?`0${minutes} Minute`:`0${minutes} Minutes`)} styles={buildStyles({
                             textSize: '13px',
                             textColor: '#FFD700',
-                            pathColor: '#FFD700',
+                            pathColor: '#FFD700', 
                         })}/>
                     </div>
                 </div>
