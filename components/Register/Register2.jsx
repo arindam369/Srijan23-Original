@@ -118,7 +118,7 @@ export default function RegisterPage2(){
                         <Image src={"/assets/SRIJAN-white.png"} height={160} width={440} alt="srijan_logo" draggable="false" id="srijanLogo" className={styles.srijanLogo} ref={srijanLogoRef}/>
                     </div>
                     <div className={styles.datesHeading}>
-                        16th - 19th March
+                        13th - 16th April
                     </div>
 
                     <h4 className={styles.liveHeading}>will be live in</h4>
