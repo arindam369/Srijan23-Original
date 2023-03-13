@@ -138,9 +138,9 @@ export default function Dashboard(){
                         <h2 className={styles.chartHeading}>Srijan'23 Events</h2>
                         <PolarChart/>
                     </div>
-                    <div className={styles.dashboardWorkshopContainer}>
+                    {/* <div className={styles.dashboardWorkshopContainer}>
                         <Workshop/>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className={styles.dashboardRegistrationContainer}>

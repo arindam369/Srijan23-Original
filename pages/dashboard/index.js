@@ -149,14 +149,14 @@ function DashboardPage(){
                         <MdFavorite className={styles.dashboardIcon}/>
                         <div>Watchlist</div>
                     </li>
-                    <li className={visibleTalks? "dashboardList activeDashboardList" : "dashboardList"} onClick={showTalks}>
+                    {/* <li className={visibleTalks? "dashboardList activeDashboardList" : "dashboardList"} onClick={showTalks}>
                         <HiMicrophone className={styles.dashboardIcon}/>
                         <div>Talks</div>
-                    </li>
-                    <li className={visibleSponsors? "dashboardList activeDashboardList" : "dashboardList"} onClick={showSponsors}>
+                    </li> */}
+                    {/* <li className={visibleSponsors? "dashboardList activeDashboardList" : "dashboardList"} onClick={showSponsors}>
                         <FaDonate className={styles.dashboardIcon}/>
                         <div>Sponsors</div>
-                    </li>
+                    </li> */}
                     <li className={visibleProfile? "dashboardList activeDashboardList" : "dashboardList"} onClick={showProfile}>
                         <FiSettings className={styles.dashboardIcon}/>
                         <div>Profile</div>
@@ -177,14 +177,14 @@ function DashboardPage(){
                         <MdFavorite className={"mobileDashboardIcon"}/>
                         <div className="mobileDashboardNavTitle">Watchlist</div>
                     </li>
-                    <li className={visibleTalks? "mobileDashboardList activeMobileDashboardList" : "mobileDashboardList"} onClick={showTalks}>
+                    {/* <li className={visibleTalks? "mobileDashboardList activeMobileDashboardList" : "mobileDashboardList"} onClick={showTalks}>
                         <HiMicrophone className={"mobileDashboardIcon"}/>
                         <div className="mobileDashboardNavTitle">Talks</div>
-                    </li>
-                    <li className={visibleSponsors? "mobileDashboardList activeMobileDashboardList" : "mobileDashboardList"} onClick={showSponsors}>
+                    </li> */}
+                    {/* <li className={visibleSponsors? "mobileDashboardList activeMobileDashboardList" : "mobileDashboardList"} onClick={showSponsors}>
                         <FaDonate className={"mobileDashboardIcon"}/>
                         <div className="mobileDashboardNavTitle">Sponsors</div>
-                    </li>
+                    </li> */}
                     <li className={visibleProfile? "mobileDashboardList activeMobileDashboardList" : "mobileDashboardList"} onClick={showProfile}>
                         <FiSettings className={"mobileDashboardIcon"}/>
                         <div className="mobileDashboardNavTitle">Profile</div>

@@ -128,10 +128,10 @@ export default function RegisterPage2(){
 
                 
                 {/* Uncomment these portion before srijan ----------------------- */}
-                {!visibleRegister && !visibleLogin &&
+                {/* {!visibleRegister && !visibleLogin &&
                 <div>
                     <div className={styles.merchandiseButton} onClick={goToMerchandise}>Srijan'23 Merchandise</div>
-                </div>}
+                </div>} */}
                 {!authCtx.isAuthenticated && !visibleRegister && !visibleLogin &&
                 <div>
                     <div className={styles.loginRegisterButton} onClick={toggleRegister}>Register</div>
