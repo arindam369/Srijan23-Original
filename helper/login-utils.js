@@ -115,6 +115,13 @@ export async function bookMerchandise(fullname, email, phone, college, dept, tsh
 
 export async function registerEvent(eventId, teamName, teamLeaderEmail, teamLeaderPhone, member2, member3, member4, member5, eventName){
     try{
+        if(!teamLeaderEmail || teamLeaderEmail.trim().length === 0){
+            notification['error']({
+                message: `You are not logged in`,
+                duration: 2
+            })
+            return;
+        }
         let isOkay = true;
         onValue(ref_database(database, 'srijan/events/'+eventId+'/teams/'+teamName) , async (snapshot)=>{
             if(snapshot){

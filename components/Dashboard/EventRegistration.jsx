@@ -34,6 +34,14 @@ export default function EventRegistration({eventName, eventId, minMembers, maxMe
         e.preventDefault();
         authCtx.startLoading();
         // handle all validations
+        if(!userData || !userData.email){
+            notification['error']({
+                message: `You are not logged in`,
+                duration: 2
+            })
+            authCtx.stopLoading();
+            return;
+        }
         const data = {
             teamName: teamName.trim(),
             teamLeaderMobile: teamLeaderMobile.trim(),
