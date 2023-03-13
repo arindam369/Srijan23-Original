@@ -22,6 +22,7 @@ import { onValue, ref as ref_database } from "firebase/database";
 import { database } from "@/firebase";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function EventDetailsPage({ eventData }) {
   // console.log(eventData);
@@ -34,7 +35,6 @@ export default function EventDetailsPage({ eventData }) {
   const [isRegistered, setIsRegistered] = useState(false);
 
   const authCtx = useContext(AuthContext);
-  console.log(eventData);
 
   useEffect(()=>{
     authCtx.stopLoading();
@@ -80,7 +80,6 @@ export default function EventDetailsPage({ eventData }) {
   };
 
   useEffect(()=>{
-    console.log(authCtx.interestedEvents);
     authCtx.interestedEvents && authCtx.interestedEvents.find((event)=>{
       if(event && event.eventId === eventData.eventId){
         setUserInterested(true);
@@ -103,6 +102,10 @@ export default function EventDetailsPage({ eventData }) {
 
   const handleRegisterEvent = ()=>{
     setIsRegistered(true);
+  }
+  const router = useRouter();
+  const goToLoginPage = ()=>{
+    router.push("/register");
   }
 
   return (
@@ -222,7 +225,7 @@ export default function EventDetailsPage({ eventData }) {
                       eventData.eventDate.prelims.map(
                         (prelimsDate, prelimsId) => {
                           return (
-                            <div className={styles.eventDetailsDateTextIcons}>
+                            <div className={styles.eventDetailsDateTextIcons} key={prelimsId}>
                               <BsFillCalendarCheckFill />
                               <span className={styles.eventDetailsDateText}>
                                 <span className={styles.eventDetailsDateTitle}>
@@ -279,9 +282,9 @@ export default function EventDetailsPage({ eventData }) {
                       <div className={styles.eventDetailsDateTextIcons}>
                         {
                           <span className={styles.eventDetailsCallTitle}>
-                            {eventData.eventCoordinators && eventData.eventCoordinators.map((eventCoordinator)=>{
+                            {eventData.eventCoordinators && eventData.eventCoordinators.map((eventCoordinator, id)=>{
                               return (
-                                <span className={styles.eventCoordinators}>
+                                <span className={styles.eventCoordinators} key={id}>
                                   <IoCall className={styles.eventCoordinatorCall}/>{eventCoordinator}</span>
                               )
                             })}
@@ -319,6 +322,12 @@ export default function EventDetailsPage({ eventData }) {
                     {isRegistered? "Registered": "Register"}
                   </button>
                 </div>}
+                {!authCtx.isAuthenticated && <div className={styles.eventEndRightButtonBox}>
+                <button
+                    className={ "interestedRegisteredButton" }
+                    onClick={goToLoginPage}
+                  >Sign in to Register</button>
+                  </div>}
               </div>
             </div>
           </div>
