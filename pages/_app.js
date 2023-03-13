@@ -10,26 +10,26 @@ export default function App({ Component, pageProps }) {
         <Head>
           <meta
             name="description"
-            content="The annual techno management fest of Jadavpur University"
+            content="The wait is over for the 15th edition of SRIJAN, Jadavpur University, Kolkata's largest and most awaited Techno-Management Fest."
           />
           <meta
             name="keywords"
-            content="Srijan, cultural, ju, fest, srijanju, technology, events, games, coding"
+            content="srijan, cultural, ju, fest, srijanju, technology, events, games, coding, srijan23, techfest"
           />
           <meta name="author" content="FETSU" />
           <link rel="manifest" href="manifest.json" />
-          <title>Srijan 23</title>
+          <title>SRIJAN'23 | Jadavpur University</title>
 
           <meta property="og:locale" content="en_US" />
           <meta property="og:type" content="article" />
-          <meta property="og:title" content="Srijan23" />
+          <meta property="og:title" content="SRIJAN'23 | Jadavpur University" />
           <meta
             property="og:description"
-            content="Share your memories with others"
+            content="The wait is over for the 15th edition of SRIJAN, Jadavpur University, Kolkata's largest and most awaited Techno-Management Fest."
           />
-          <meta property="og:url" content="https://srijan23.vercel.app" />
-          <meta property="og:site_name" content="Srijan23" />
-          <meta property="og:image" itemProp="image" content="https://srijan23.vercel.app/favicon.ico"/>
+          <meta property="og:url" content="https://srijanju.in" />
+          <meta property="og:site_name" content="SRIJAN'23 | Jadavpur University" />
+          <meta property="og:image" itemProp="image" content="https://srijanju.in/favicon.ico"/>
           <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
           <link rel="icon" type="image/x-icon" href="favicon.ico" />
         </Head>
