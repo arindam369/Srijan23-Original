@@ -23,6 +23,7 @@ import { database } from "@/firebase";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 export default function EventDetailsPage({ eventData }) {
   // console.log(eventData);
@@ -110,6 +111,32 @@ export default function EventDetailsPage({ eventData }) {
 
   return (
     <>
+      <Head>
+          <meta
+            name="description"
+            content="The wait is over for the 15th edition of SRIJAN, Jadavpur University, Kolkata's largest and most awaited Techno-Management Fest."
+          />
+          <meta
+            name="keywords"
+            content="srijan, cultural, ju, fest, srijanju, technology, events, games, coding, srijan23, techfest"
+          />
+          <meta name="author" content="FETSU" />
+          <link rel="manifest" href="manifest.json" />
+          <title>SRIJAN'23 | Jadavpur University</title>
+
+          <meta property="og:locale" content="en_US" />
+          <meta property="og:type" content="article" />
+          <meta property="og:title" content="SRIJAN'23 | Jadavpur University" />
+          <meta
+            property="og:description"
+            content="The wait is over for the 15th edition of SRIJAN, Jadavpur University, Kolkata's largest and most awaited Techno-Management Fest."
+          />
+          <meta property="og:url" content="https://srijanju.in" />
+          <meta property="og:site_name" content="SRIJAN'23 | Jadavpur University" />
+          <meta property="og:image" itemProp="image" content="https://srijanju.in/favicon.ico"/>
+          <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+          <link rel="icon" type="image/x-icon" href="favicon.ico" />
+      </Head>
       <Modal
         isOpen={visibleRegistrationModal}
         onRequestClose={() => {

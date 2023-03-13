@@ -34,14 +34,6 @@ export default function EventRegistration({eventName, eventId, minMembers, maxMe
         e.preventDefault();
         authCtx.startLoading();
         // handle all validations
-        if(!userData || !userData.email){
-            notification['error']({
-                message: `You are not logged in`,
-                duration: 2
-            })
-            authCtx.stopLoading();
-            return;
-        }
         const data = {
             teamName: teamName.trim(),
             teamLeaderMobile: teamLeaderMobile.trim(),
@@ -99,6 +91,15 @@ export default function EventRegistration({eventName, eventId, minMembers, maxMe
             return;
         }
         // setError(null);
+
+        if(!authCtx.userData.name ||!authCtx.userData.email || !authCtx.userData.phone || !authCtx.userData.college || !authCtx.userData.dept || !authCtx.userData.year){
+            notification['error']({
+                message: `Complete your profile first to register in an event`,
+                duration: 2
+            })
+            authCtx.stopLoading();
+            return;
+        }
 
         // handle event registration
         setTeamName("");

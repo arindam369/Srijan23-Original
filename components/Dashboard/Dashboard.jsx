@@ -165,7 +165,7 @@ export default function Dashboard(){
                         <div className={styles.dashboardEventRequests}>
                             {pendingEvents && pendingEvents.length > 0 && pendingEvents.map((event)=>{
                                 return (
-                                    <RegisteredEventBox eventId={event.eventId} teamName={event.teamName} eventName={event.eventName} teamLeader={event.teamLeader} onDeleteEvent={handleDeletePendingEvent} key={event.eventId} pending={true}/>
+                                    <RegisteredEventBox eventId={event.eventId} teamName={event.teamName} eventName={event.eventName} teamLeader={event.teamLeader} onDeleteEvent={()=>{handleDeletePendingEvent(event.eventId, event.eventName, event.teamName, event.teamLeader)}} key={event.eventId} pending={true}/>
                                 );
                             })}
                             {pendingEvents && pendingEvents.length === 0 && <div className={styles.noInvitations}>
