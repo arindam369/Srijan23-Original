@@ -60,7 +60,7 @@ export default function Dashboard(){
             duration: 2
         })
         update(ref_database(database, 'srijan/profiles/' + teamLeader + '/notifications/' + uuid()), {
-            message: `You deleted the registration for Event-${eventId}`,
+            message: `You deleted the registration for Event: ${eventName}`,
             timestamp: Date.now()
         });
 
