@@ -341,11 +341,11 @@
 .loginRegisterButton{
   border: 1px solid white;
   display: inline-block;
-  padding: 10px 23px;
+  padding: 10px 16px;
   border-radius: 5px;
   color: white;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin-bottom: 12px;
+  margin-top: 12px;
   cursor: pointer;
   transition: .5s ease-out;
   background: linear-gradient(to left, transparent 50%, white 50%) right;
@@ -354,7 +354,7 @@
   font-weight: 600;
   margin-left: 25px;
   margin-right: 25px;
-  font-size: .85rem;
+  font-size: .8rem;
 }
 .loginRegisterButton:hover{
   color: rgb(53, 51, 51);
@@ -363,19 +363,20 @@
 .merchandiseButton{
   border: 1px solid white;
   display: inline-block;
-  padding: 18px 34px;
+  padding: 14px 30px;
   border-radius: 5px;
   color: white;
-  margin-bottom: 10px;
-  margin-top: 40px;
+  margin-bottom: 5px;
+  margin-top: 10px;
   cursor: pointer;
   transition: .5s ease-out;
   background: linear-gradient(to left, transparent 50%, white 50%) right;
   background-size: 200%;
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
-  margin-left: 25px;
-  margin-right: 25px;
+  /* margin-left: 25px; */
+  /* margin-right: 25px; */
+  font-size: .85rem;
 }
 .merchandiseButton:hover{
   color: rgb(53, 51, 51);
@@ -470,11 +471,11 @@
 .dashboardButton{
   border: 1px solid white;
   display: inline-block;
-  padding: 10px 20px;
+  padding: 8px 15px;
   border-radius: 5px;
   color: white;
-  margin-bottom: 5px;
-  margin-top: 15px;
+  margin-bottom: 7px;
+  margin-top: 7px;
   cursor: pointer;
   transition: .5s ease-out;
   background: linear-gradient(to left, transparent 50%, white 50%) right;
@@ -632,6 +633,33 @@
   }
 }
 
+
+/* merchandise product zoom */
+.productsZoomSection{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 22px 12px 12px;
+  border: 3px solid rgba(28, 172, 119, 0.495);
+  box-shadow: 1px 1px 20px 3px rgba(20, 114, 79, 0.6);
+  border-radius: 8px;
+}
+.productsPicture{
+  width: 320px;
+  height: 340px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.productImageScreen{
+  width: 300px;
+  height: 350px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+
+
 @media (max-width: 1020px){
   .merchandiseBody{
     flex-direction: column;
@@ -657,6 +685,9 @@
   }
   .errorBox2{
     width: 440px;
+  }
+  .productZoomContainer{
+    margin-bottom: 15px;
   }
 }
 @media (max-width: 795px){
@@ -691,6 +722,14 @@
   .errorBox2{
     width: 273px;
   }
+  .productsPicture{
+    width: 293px;
+    height: 340px;
+  }
+  .productImageScreen{
+    width: 293px;
+    height: 350px;
+  }
 }
 @media (max-width: 450px){
   .merchandiseForm{
@@ -705,12 +744,20 @@
   .errorBox2{
     width: 220px;
   }
+  .productsPicture{
+    width: 240px;
+    height: 300px;
+  }
+  .productImageScreen{
+    width: 240px;
+    height: 300px;
+  }
 }
 .googleButton{
   border: 1px solid rgb(245, 245, 245);
   border-radius: 4px;
-  width: 233px;
-  height: 40px;
+  width: 204px;
+  height: 37px;
   background-color: rgba(0, 0, 0, 0.495);
   color: white;
   cursor: pointer;
@@ -721,6 +768,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 }
 .googleButton:hover{
   background-position: left;

@@ -9,6 +9,7 @@ import {MdFavorite} from "react-icons/md";
 import {HiMicrophone} from "react-icons/hi";
 import {FaDonate, FaEdit} from "react-icons/fa";
 import {FiSettings, FiSave, FiLogOut} from "react-icons/fi";
+import {IoNotifications} from "react-icons/io5";
 import Profile from "@/components/Dashboard/Profile";
 import Sponsors from "@/components/Dashboard/Sponsors";
 import Talks from "@/components/Dashboard/Talks";
@@ -17,6 +18,7 @@ import { useEffect } from "react";
 import Events from "@/components/Dashboard/Events";
 import Watchlist from "@/components/Dashboard/Watchlist";
 import ProtectedRoute from "@/hoc/ProtectedRoute";
+import Notification from "@/components/Dashboard/Notification";
 
 
 function DashboardPage(){
@@ -32,7 +34,19 @@ function DashboardPage(){
     const [visibleTalks, setVisibleTalks] = useState(false);
     const [visibleSponsors, setVisibleSponsors] = useState(false);
     const [visibleProfile, setVisibleProfile] = useState(false);
+    const [visibleNotification, setVisibleNotification] = useState(false);
 
+    const [showNavbar, setShowNavbar] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
+    const controlNavbar = (e)=>{
+        if(e.currentTarget.scrollTop > lastScrollY){
+            setShowNavbar(false);
+        }
+        else{
+            setShowNavbar(true);
+        }
+        setLastScrollY(e.currentTarget.scrollTop);
+    }
 
     const showDashboard = ()=>{
         setVisibleDashboard(true);
@@ -41,6 +55,7 @@ function DashboardPage(){
         setVisibleTalks(false);
         setVisibleSponsors(false);
         setVisibleProfile(false);
+        setVisibleNotification(false);
     }
     const showEvents = ()=>{
         setVisibleDashboard(false);
@@ -49,6 +64,7 @@ function DashboardPage(){
         setVisibleTalks(false);
         setVisibleSponsors(false);
         setVisibleProfile(false);
+        setVisibleNotification(false);
     }
     const showWatchlist = ()=>{
         setVisibleDashboard(false);
@@ -57,6 +73,7 @@ function DashboardPage(){
         setVisibleTalks(false);
         setVisibleSponsors(false);
         setVisibleProfile(false);
+        setVisibleNotification(false);
     }
     const showTalks = ()=>{
         setVisibleDashboard(false);
@@ -65,6 +82,7 @@ function DashboardPage(){
         setVisibleTalks(true);
         setVisibleSponsors(false);
         setVisibleProfile(false);
+        setVisibleNotification(false);
     }
     const showSponsors = ()=>{
         setVisibleDashboard(false);
@@ -73,6 +91,7 @@ function DashboardPage(){
         setVisibleTalks(false);
         setVisibleSponsors(true);
         setVisibleProfile(false);
+        setVisibleNotification(false);
     }
     const showProfile = ()=>{
         setVisibleDashboard(false);
@@ -81,6 +100,16 @@ function DashboardPage(){
         setVisibleTalks(false);
         setVisibleSponsors(false);
         setVisibleProfile(true);
+        setVisibleNotification(false);
+    }
+    const showNotification = ()=>{
+        setVisibleDashboard(false);
+        setVisibleEvents(false);
+        setVisibleWatchlist(false);
+        setVisibleTalks(false);
+        setVisibleSponsors(false);
+        setVisibleProfile(false);
+        setVisibleNotification(true);
     }
     
     useEffect(()=>{
@@ -106,7 +135,7 @@ function DashboardPage(){
                 </Canvas>
             </div>
 
-            <div className={styles.dashboardContainer}>
+            <div className={styles.dashboardContainer} id="dashboardContainer" onScroll={controlNavbar}>
                 <div className={styles.dashboardSidebar}>
                     <li className={visibleDashboard? "dashboardList activeDashboardList" : "dashboardList"} onClick={showDashboard}>
                         <ImProfile className={styles.dashboardIcon}/>
@@ -135,7 +164,7 @@ function DashboardPage(){
                 </div>
 
                 {/* I have to do it for mobile responsive ----------------------- */}
-                <div className={"mobileDashboardSidebar"}>
+                <div className={showNavbar?"mobileDashboardSidebar":"mobileDashboardSidebar hiddenDashboardSidebar"}>
                     <li className={visibleDashboard? "mobileDashboardList activeMobileDashboardList" : "mobileDashboardList"} onClick={showDashboard}>
                         <ImProfile className={"mobileDashboardIcon"}/>
                         <div className="mobileDashboardNavTitle">Dashboard</div>
@@ -165,6 +194,9 @@ function DashboardPage(){
 
 
                 <div className={styles.dashboardBody}>
+                    <div className={visibleNotification? "notificationBox activeNotificationBox":"notificationBox"} onClick={()=>{showNotification()}}>
+                        <IoNotifications/>
+                    </div>
                     <div className={styles.logoutBox} onClick={()=>{authCtx.logout()}}>
                         <FiLogOut/>
                         <span>{authCtx && authCtx.userId}</span>
@@ -183,6 +215,7 @@ function DashboardPage(){
                     {visibleTalks && <Talks/>}
                     {visibleSponsors && <Sponsors/>}
                     {visibleProfile && <Profile/>}
+                    {visibleNotification && <Notification/>}
                     
                 </div>
 

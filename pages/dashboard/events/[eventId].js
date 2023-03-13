@@ -18,6 +18,10 @@ import { useContext } from "react";
 import AuthContext from "@/store/AuthContext";
 import { useEffect } from "react";
 import { notification } from "antd";
+import { onValue, ref as ref_database } from "firebase/database";
+import { database } from "@/firebase";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function EventDetailsPage({ eventData }) {
   // console.log(eventData);
@@ -25,11 +29,12 @@ export default function EventDetailsPage({ eventData }) {
   if(!eventData){
     return <h2>No Event Found</h2>;
   }
-
   const [userInterested, setUserInterested] = useState(false);
   const [visibleRegistrationModal, setVisibleRegistrationModal] = useState(false);
+  const [isRegistered, setIsRegistered] = useState(false);
 
   const authCtx = useContext(AuthContext);
+  console.log(eventData);
 
   useEffect(()=>{
     authCtx.stopLoading();
@@ -75,12 +80,30 @@ export default function EventDetailsPage({ eventData }) {
   };
 
   useEffect(()=>{
+    console.log(authCtx.interestedEvents);
     authCtx.interestedEvents && authCtx.interestedEvents.find((event)=>{
-      if(event.eventId === eventData.eventId){
+      if(event && event.eventId === eventData.eventId){
         setUserInterested(true);
       }
     })
   }, [authCtx.interestedEvents])
+
+  useEffect(()=>{  
+    onValue(ref_database(database, 'srijan/profiles/' + authCtx.userId + '/events/'+eventData.eventId) , (snapshot)=>{
+      // console.log(snapshot && snapshot.val());
+      if(snapshot){
+        if(snapshot.val() !== null){
+          setIsRegistered(true);
+        }
+      }
+    }, {
+        onlyOnce: true
+    });
+  }, [])
+
+  const handleRegisterEvent = ()=>{
+    setIsRegistered(true);
+  }
 
   return (
     <>
@@ -94,7 +117,7 @@ export default function EventDetailsPage({ eventData }) {
         style={customEventModalStyles}
         closeTimeoutMS={700}
       >
-        <EventRegistration eventName={eventData.eventName} eventId={eventData.eventId} minMembers={1} maxMembers={5}/>
+        <EventRegistration eventName={eventData.eventName} eventId={eventData.eventId} minMembers={eventData.minMembers} maxMembers={eventData.maxMembers} toggleVisibleRegistrationForm={toggleVisibleRegistrationForm} onRegister={handleRegisterEvent}/>
       </Modal>
 
 
@@ -130,62 +153,23 @@ export default function EventDetailsPage({ eventData }) {
                 </div>
 
                 <div className={styles.eventDetailsSectionText}>
-                  &emsp; What if Doge turned up in your campus next week?
-                  Trollface laughed at your midsem marks, or Fancy Winnie the
-                  Pooh lent you his tuxedo? Better still, what if you and the
-                  bois could make history, this Srijan '20?
-                  <br />
-                  <br />
-                  As entertainment goes through another paradigm shift, this
-                  decade, mark yourself safe from online oblivion, with
-                  'Mementos'- our very own meme generating event. Tickle the
-                  world's humerus and become an overnight sensation! #Srijan_20
-                  #tech_enthusiasts_assemble
+                  {
+                    eventData.eventDescription && eventData.eventDescription.map((eventDescLine, idx)=>{
+                      return (<p key={idx}>&emsp;{eventDescLine}</p>)
+                    })
+                  }
                 </div>
               </div>
 
               <div className={styles.eventDetailsMidbox}>
                 <div className={styles.eventDetailsLeft}>
-                  <div className={styles.eventPosterCollection}>
+                  {/* <div className={styles.eventPosterCollection}>
                     <EventPosters />
-                  </div>
+                  </div> */}
+                    <Image src={eventData.eventPoster} height={350} width={500} alt="eventPosterImage" className={ styles.eventPosterImage} draggable={false}/>
                 </div>
 
                 <div className={styles.eventDetailsRight}>
-                  <div className={styles.eventDetailsHalfSection}>
-                    <div className={styles.eventDetailsSectionHeading}>
-                      <HiUserGroup className={styles.eventDetailsIcon} />
-                      <div>Participation</div>
-                    </div>
-
-                    <div className={styles.eventDetailsSectionText}>
-                      <li>
-                        <FaRegDotCircle
-                          className={styles.eventDetailsBulletIcon}
-                        />
-                        <div>Participation is free for all.</div>
-                      </li>
-                      <li>
-                        <FaRegDotCircle
-                          className={styles.eventDetailsBulletIcon}
-                        />
-                        <div>
-                          Send in your memes on the submission page. LINK will
-                          be live from 16-FEB-2020 midnight on the Facebook
-                          Pages
-                        </div>
-                      </li>
-
-                      <li>
-                        <FaRegDotCircle
-                          className={styles.eventDetailsBulletIcon}
-                        />
-                        <div>
-                          The submissions will be accepted as per the rules.
-                        </div>
-                      </li>
-                    </div>
-                  </div>
                   <div className={styles.eventDetailsHalfSection}>
                     <div className={styles.eventDetailsSectionHeading}>
                       <FaBookOpen className={styles.eventDetailsIcon} />
@@ -193,58 +177,24 @@ export default function EventDetailsPage({ eventData }) {
                     </div>
 
                     <div className={styles.eventDetailsSectionText}>
-                      <li>
-                        <FaRegDotCircle
-                          className={styles.eventDetailsBulletIcon}
-                        />
-                        <div>
-                          The participant must be registered on the SRIJAN
-                          portal.
-                        </div>
-                      </li>
-                      <li>
-                        <FaRegDotCircle
-                          className={styles.eventDetailsBulletIcon}
-                        />
-                        <div>
-                          The memes must not target a religious or political
-                          party or promote any related propaganda.
-                        </div>
-                      </li>
-                      <li>
-                        <FaRegDotCircle
-                          className={styles.eventDetailsBulletIcon}
-                        />
-                        <div>
-                          The memers can use any template available or create a
-                          new template from themselves.
-                        </div>
-                      </li>
-                      <li>
-                        <FaRegDotCircle
-                          className={styles.eventDetailsBulletIcon}
-                        />
-                        <div>
-                          In case a template is custom made with personal
-                          contacts i.e. using your friends’ pictures or contains
-                          you yourselves, a consent from all the persons in the
-                          meme would be required to post the meme. (option will
-                          be available on the link)
-                        </div>
-                      </li>
-                      <li>
-                        <FaRegDotCircle
-                          className={styles.eventDetailsBulletIcon}
-                        />
-                        <div>
-                          A participant can send in multiple entries upto 3
-                          memes. Multiple entries must be made within a time
-                          span of 24 hours from the first submission.
-                        </div>
-                      </li>
+                      {eventData.eventRules && eventData.eventRules.map((eventRule, idx)=>{
+                        return (
+                          <li key={idx}>
+                            <FaRegDotCircle
+                              className={styles.eventDetailsBulletIcon}
+                            />
+                            <div>
+                              {eventRule}
+                            </div>
+                          </li>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
+              </div>
+              <div className={styles.eventFullDescription}>
+                Wanna know more about this event? <Link href={"https://docs.google.com/document/d/1EgT55EllzRdAJP2n9i-pLoD9b0GL0uxLlunEMA2gLvg/edit"} className={styles.eventDescLink}>Click Here</Link>
               </div>
 
               <div className={styles.eventEndBox}>
@@ -262,8 +212,8 @@ export default function EventDetailsPage({ eventData }) {
                           </span>{" "}
                           <span className={styles.eventDetailsDateTextAns}>
                             {" "}
-                            {eventData.eventDate.prelims[0]} [{" "}
-                            {eventData.eventTime.prelims[0]} ]
+                            {eventData.eventDate.prelims[0]}
+                            {eventData.eventTime && " [ "+eventData.eventTime.prelims[0]+" ]"}
                           </span>
                         </span>
                       </div>
@@ -281,8 +231,8 @@ export default function EventDetailsPage({ eventData }) {
                                 <span
                                   className={styles.eventDetailsDateTextAns}
                                 >
-                                  {prelimsDate} [{" "}
-                                  {eventData.eventTime.prelims[prelimsId]} ]{" "}
+                                  {prelimsDate}
+                                  {eventData.eventTime && " [ "+eventData.eventTime.prelims[prelimsId]+" ]"}
                                 </span>
                               </span>
                             </div>
@@ -299,8 +249,8 @@ export default function EventDetailsPage({ eventData }) {
                           </span>{" "}
                           <span className={styles.eventDetailsDateTextAns}>
                             {" "}
-                            {eventData.eventDate.fullday} [{" "}
-                            {eventData.eventTime.fullday} ]
+                            {eventData.eventDate.fullday}
+                            {eventData.eventTime && " [ "+eventData.eventTime.fullday+" ]"}
                           </span>
                         </span>
                       </div>
@@ -317,8 +267,8 @@ export default function EventDetailsPage({ eventData }) {
                           </span>{" "}
                           <span className={styles.eventDetailsDateTextAns}>
                             {" "}
-                            {eventData.eventDate.finals} [{" "}
-                            {eventData.eventTime.finals} ]
+                            {eventData.eventDate.finals}
+                            {eventData.eventTime && " [ "+eventData.eventTime.finals+" ]"}
                           </span>
                         </span>
                       </div>
@@ -327,17 +277,21 @@ export default function EventDetailsPage({ eventData }) {
                   <div className={styles.eventDetailsPrelimsFinals}>
                     {eventData.eventCoordinators && (
                       <div className={styles.eventDetailsDateTextIcons}>
-                        <IoCall />
                         {
                           <span className={styles.eventDetailsCallTitle}>
-                            {eventData.eventCoordinators.join(", ")}
+                            {eventData.eventCoordinators && eventData.eventCoordinators.map((eventCoordinator)=>{
+                              return (
+                                <span className={styles.eventCoordinators}>
+                                  <IoCall className={styles.eventCoordinatorCall}/>{eventCoordinator}</span>
+                              )
+                            })}
                           </span>
                         }
                       </div>
                     )}
                   </div>
                   <div className={styles.eventDetailsPrelimsFinals}>
-                    {eventData.eventCoordinators && (
+                    {eventData.eventVenue && (
                       <div className={styles.eventDetailsDateTextIcons}>
                         <MdPlace />
                         {
@@ -359,10 +313,10 @@ export default function EventDetailsPage({ eventData }) {
                     // }
                     onClick={makeUserInterested}
                   >
-                    {userInterested ? "Added in watchlist" : "Add to Watchlist"}
+                    {userInterested ? "Remove from watchlist" : "Add to Watchlist"}
                   </button>
-                  <button className={"interestedRegisteredButton"} onClick={toggleVisibleRegistrationForm}>
-                    Register
+                  <button className={!isRegistered? "interestedRegisteredButton": "interestedButton"} onClick={toggleVisibleRegistrationForm} disabled={isRegistered}>
+                    {isRegistered? "Registered": "Register"}
                   </button>
                 </div>
               </div>

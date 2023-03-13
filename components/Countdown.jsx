@@ -48,7 +48,7 @@ export default function Countdown(){
                         <CircularProgressbar value={(hours*100)/24} text={hours>9?`${hours} Hours`:(hours<=1?`0${hours} Hour`:`0${hours} Hours`)} styles={buildStyles({
                             textSize: '13px',
                             textColor: '#67A82D',
-                            pathColor: '#67A82D' ,
+                            pathColor: '#67A82D',
                         })}/>
                     </div>
                 </div>
@@ -57,7 +57,7 @@ export default function Countdown(){
                         <CircularProgressbar value={(minutes*100)/60} text={minutes>9?`${minutes} Minutes`:(minutes<=1?`0${minutes} Minute`:`0${minutes} Minutes`)} styles={buildStyles({
                             textSize: '13px',
                             textColor: '#FFD700',
-                            pathColor: '#FFD700', 
+                            pathColor: '#FFD700',
                         })}/>
                     </div>
                 </div>
@@ -66,7 +66,7 @@ export default function Countdown(){
                         <CircularProgressbar value={(seconds*100)/60} text={seconds>9?`${seconds} Seconds`:(seconds<=1?`0${seconds} Second`:`0${seconds} Seconds`)} styles={buildStyles({
                             textSize: '12px',
                             textColor: '#079FEB',
-                            pathColor: '#079FEB', 
+                            pathColor: '#079FEB',
                         })}/>
                     </div>
                 </div>

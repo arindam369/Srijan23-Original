@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import styles from "../../styles/Dashboard.module.css";
-import { ImProfile } from "react-icons/im";
+import { ImProfile, ImMobile } from "react-icons/im";
 import { FaDonate, FaEdit } from "react-icons/fa";
 import { FiSettings, FiSave } from "react-icons/fi";
 import { FaUserAlt, FaSchool } from "react-icons/fa";
@@ -22,6 +22,7 @@ export default function Profile() {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [college, setCollege] = useState("");
   const [dept, setDept] = useState("");
   const [year, setYear] = useState("");
@@ -30,6 +31,7 @@ export default function Profile() {
     if(authCtx && authCtx.userData){
       setName(authCtx.userData.name);
       setEmail(authCtx.userData.email);
+      setPhone(authCtx.userData.phone);
       setCollege(authCtx.userData.college);
       setDept(authCtx.userData.dept);
       setYear(authCtx.userData.year);
@@ -39,6 +41,7 @@ export default function Profile() {
 
   const [nameSave, setNameSave] = useState(false);
   const [emailSave, setEmailSave] = useState(false);
+  const [phoneSave, setPhoneSave] = useState(false);
   const [collegeSave, setCollegeSave] = useState(false);
   const [deptSave, setDeptSave] = useState(false);
   const [yearSave, setYearSave] = useState(false);
@@ -52,6 +55,11 @@ export default function Profile() {
   function handleNameChange(e) {
     if (nameSave) {
       setName(e.target.value);
+    }
+  }
+  function handlePhoneChange(e) {
+    if (phoneSave) {
+      setPhone(e.target.value);
     }
   }
   function handleCollegeChange(e) {
@@ -115,7 +123,7 @@ export default function Profile() {
         }
       },
       (error) => {
-        console.log(error);
+        // console.log(error);
       },
       () => {
         getDownloadURL(uploadedFile.snapshot.ref).then(async (downloadUrl) => {
@@ -130,6 +138,12 @@ export default function Profile() {
     await updateProfile(userId, "name", name);
     setNameSave(false);
     authCtx.updateUserProfile("name", name);
+  }
+  const updatePhone = async ()=>{
+    const userId = email.split("@")[0].replace(/[.+-]/g, "_");
+    await updateProfile(userId, "phone", phone);
+    setPhoneSave(false);
+    authCtx.updateUserProfile("phone", phone);
   }
   const updateCollege = async ()=>{
     const userId = email.split("@")[0].replace(/[.+-]/g, "_");
@@ -252,6 +266,43 @@ export default function Profile() {
               disabled={!emailSave}
             />
             <MdOutlineEmail className={styles.settingsInputIcon} />
+          </div>
+        </div>
+        <div className={styles.settingsInputBox}>
+          <div
+            className={
+              phoneSave ? "settingsInput abled" : "settingsInput disabled"
+            }
+          >
+            <label className={styles.settingsInputLabel}>Phone</label>
+            <input
+              type="number"
+              placeholder="Phone"
+              value={phone}
+              onChange={handlePhoneChange}
+              disabled={!phoneSave}
+            />
+            <ImMobile className={styles.settingsInputIcon} />
+            {!phoneSave && (
+              <FaEdit
+                className="settingsInputIcon2"
+                onClick={() => {
+                  setPhoneSave(true);
+                }}
+              />
+            )}
+            {phoneSave && <FiSave className={styles.settingsInputIcon3} onClick={updatePhone}/>}
+            {phoneSave && (
+              <MdCancel
+                className={styles.settingsInputIcon4}
+                onClick={() => {
+                  setPhoneSave(false);
+                  if(authCtx && authCtx.userData){
+                    setPhone(authCtx.userData.phone);
+                  }
+                }}
+              />
+            )}
           </div>
         </div>
         <div className={styles.settingsInputBox}>

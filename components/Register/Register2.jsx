@@ -128,7 +128,7 @@ export default function RegisterPage2(){
 
                 
                 {/* Uncomment these portion before srijan ----------------------- */}
-                {/* {!visibleRegister && !visibleLogin &&
+                {!visibleRegister && !visibleLogin &&
                 <div>
                     <div className={styles.merchandiseButton} onClick={goToMerchandise}>Srijan'23 Merchandise</div>
                 </div>}
@@ -149,7 +149,7 @@ export default function RegisterPage2(){
                         <FcGoogle className={styles.googleIcon}/>
                         <span>Sign in with Google</span>
                     </button>
-                </div>} */}
+                </div>}
             </div>
         </>
     );

@@ -10,7 +10,7 @@ import AuthContext from "@/store/AuthContext";
 import { registerEvent } from "@/helper/login-utils";
 import { notification } from "antd";
 
-export default function EventRegistration({eventName, eventId, minMembers, maxMembers}){
+export default function EventRegistration({eventName, eventId, minMembers, maxMembers, toggleVisibleRegistrationForm, onRegister}){
 
     const [teamName, setTeamName] = useState("");
     const [teamLeaderMobile, setTeamLeaderMobile] = useState("");
@@ -32,6 +32,7 @@ export default function EventRegistration({eventName, eventId, minMembers, maxMe
     }
     const handleSubmitRegistration = (e)=>{
         e.preventDefault();
+        authCtx.startLoading();
         // handle all validations
         const data = {
             teamName: teamName.trim(),
@@ -48,6 +49,7 @@ export default function EventRegistration({eventName, eventId, minMembers, maxMe
                 message: `You must provide a Team name`,
                 duration: 2
             })
+            authCtx.stopLoading();
             return;
         }
         if(data.teamName.indexOf(' ')>=0){
@@ -56,6 +58,7 @@ export default function EventRegistration({eventName, eventId, minMembers, maxMe
                 message: `Team name must not contain any whitespace`,
                 duration: 2
             })
+            authCtx.stopLoading();
             return;
         }
         if(data.teamLeaderEmail.length === 0){
@@ -64,6 +67,7 @@ export default function EventRegistration({eventName, eventId, minMembers, maxMe
                 message: `You must provide your email`,
                 duration: 2
             })
+            authCtx.stopLoading();
             return;
         }
         if(data.teamLeaderMobile.length === 0){
@@ -72,6 +76,7 @@ export default function EventRegistration({eventName, eventId, minMembers, maxMe
                 message: `You must provide your mobile no.`,
                 duration: 2
             })
+            authCtx.stopLoading();
             return;
         }
         
@@ -82,15 +87,27 @@ export default function EventRegistration({eventName, eventId, minMembers, maxMe
                 message: `Invalid email input`,
                 duration: 2
             })
+            authCtx.stopLoading();
             return;
         }
         // setError(null);
 
         // handle event registration
+        setTeamName("");
+        setTeamLeaderMobile("");
+        setTeamMemberEmail2("");
+        setTeamMemberEmail3("");
+        setTeamMemberEmail4("");
+        setTeamMemberEmail5("");
+        toggleVisibleRegistrationForm();
         try{
-            registerEvent(eventId, data.teamName, data.teamLeaderEmail, data.teamLeaderMobile, data.teamMemberEmail2, data.teamMemberEmail3, data.teamMemberEmail4, data.teamMemberEmail5, eventName);
+            registerEvent(eventId, data.teamName, data.teamLeaderEmail, data.teamLeaderMobile, data.teamMemberEmail2, data.teamMemberEmail3, data.teamMemberEmail4, data.teamMemberEmail5, eventName)
+            setTimeout(()=>{
+                authCtx.stopLoading();
+                onRegister();
+            }, 10000)
         }catch(err){
-            console.log(err);
+            authCtx.stopLoading();
         }
         
     }
@@ -123,20 +140,20 @@ export default function EventRegistration({eventName, eventId, minMembers, maxMe
                     {
                         memberIndex > 1 && <div className={styles.eventRegistrationInput}>
                         <MdOutlineEmail className={styles.eventRegistrationInputIcon}/>
-                        <input type="text" placeholder="Team Member 2 Email" value={teamMemberEmail2} onChange={(e)=>{setTeamMemberEmail2(e.target.value)}}/>
+                        <input type="text" placeholder="Team Member 2 Email" value={teamMemberEmail2} onChange={(e)=>{setTeamMemberEmail2(e.target.value)}} required/>
                         </div>
                     }
                     { memberIndex > 2 && <div className={styles.eventRegistrationInput}>
                         <MdOutlineEmail className={styles.eventRegistrationInputIcon}/>
-                        <input type="text" placeholder="Team Member 3 Email" value={teamMemberEmail3} onChange={(e)=>{setTeamMemberEmail3(e.target.value)}}/>
+                        <input type="text" placeholder="Team Member 3 Email" value={teamMemberEmail3} onChange={(e)=>{setTeamMemberEmail3(e.target.value)}} required/>
                     </div>}
                     { memberIndex > 3 && <div className={styles.eventRegistrationInput}>
                         <MdOutlineEmail className={styles.eventRegistrationInputIcon}/>
-                        <input type="text" placeholder="Team Member 4 Email" value={teamMemberEmail4} onChange={(e)=>{setTeamMemberEmail4(e.target.value)}}/>
+                        <input type="text" placeholder="Team Member 4 Email" value={teamMemberEmail4} onChange={(e)=>{setTeamMemberEmail4(e.target.value)}} required/>
                     </div>}
                     { memberIndex > 4 && <div className={styles.eventRegistrationInput}>
                         <MdOutlineEmail className={styles.eventRegistrationInputIcon}/>
-                        <input type="text" placeholder="Team Member 5 Email" value={teamMemberEmail5} onChange={(e)=>{setTeamMemberEmail5(e.target.value)}}/>
+                        <input type="text" placeholder="Team Member 5 Email" value={teamMemberEmail5} onChange={(e)=>{setTeamMemberEmail5(e.target.value)}} required/>
                     </div>}
                     
                     <button type="button" className={memberIndex>maxMembers-1? "addMemberButton disabledAddMemberButton" : "addMemberButton"} onClick={addMember}>

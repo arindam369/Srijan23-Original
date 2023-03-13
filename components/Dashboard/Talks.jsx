@@ -71,40 +71,42 @@ export default function Talks(){
     }
     return (
         <>
-            <div className={styles.talksContainer}>
-                <div className={styles.dashboardSectionHeading}>Talks</div>
-                
-                <div className={styles.talksCollection}>
-                    <div className={styles.talksBox}>
-                        {
-                            talks.map((talk)=>{
-                                return (
-                                <div className={styles.talkSection} key={talk.id}>
-                                    <Image src={`/assets/talks/${talk.name}`} height={350} width={500} alt="talkImage" className={ talk.id === talkIndex? "activeTalksImage talksImage" : "talksImage"} draggable={false}/>
+            <div className={styles.talksPage}>
+                <div className={styles.talksContainer}>
+                    <div className={styles.dashboardSectionHeading}>Talks</div>
+                    
+                    <div className={styles.talksCollection}>
+                        <div className={styles.talksBox}>
+                            {
+                                talks.map((talk)=>{
+                                    return (
+                                    <div className={styles.talkSection} key={talk.id}>
+                                        <Image src={`/assets/talks/${talk.name}`} height={350} width={500} alt="talkImage" className={ talk.id === talkIndex? "activeTalksImage talksImage" : "talksImage"} draggable={false}/>
 
-                                    <div className={talkIndex === talk.id? "activeTalkBody talkBody" : "talkBody"}>
-                                        <div className={styles.talkDate}>
-                                            <AiFillCalendar/> 14th April
+                                        <div className={talkIndex === talk.id? "activeTalkBody talkBody" : "talkBody"}>
+                                            <div className={styles.talkDate}>
+                                                <AiFillCalendar/> 14th April
+                                            </div>
+                                            <div className={styles.talkCall}>
+                                                <IoCall/> Suvankar Mondal (7001082597) | Navonil Sarkar (8918845868)
+                                            </div>
+                                            <div>{parse(talk.message)}</div>
+                                            {/* <div className={styles.talkMessage} dangerouslySetInnerHTML={{__html: talk.message}}/> */}
                                         </div>
-                                        <div className={styles.talkCall}>
-                                            <IoCall/> Suvankar Mondal (7001082597) | Navonil Sarkar (8918845868)
-                                        </div>
-                                        <div>{parse(talk.message)}</div>
-                                        {/* <div className={styles.talkMessage} dangerouslySetInnerHTML={{__html: talk.message}}/> */}
                                     </div>
-                                </div>
-                                )
-                                    
-                            })
-                        }
+                                    )
+                                        
+                                })
+                            }
+                        </div>
+                        <IoIosArrowDropleft className={styles.talksArrowIconLeft} onClick={goLeft}/>
+                        <IoIosArrowDropright className={styles.talksArrowIconRight} onClick={goRight}/>
                     </div>
-                    <IoIosArrowDropleft className={styles.talksArrowIconLeft} onClick={goLeft}/>
-                    <IoIosArrowDropright className={styles.talksArrowIconRight} onClick={goRight}/>
-                </div>
-                <div className={styles.talksRadioBox}>
-                    <input type="radio" name="talkIndex" checked={talkIndex===0} onChange={()=>setTalkIndex(0)}/>
-                    <input type="radio" name="talkIndex" checked={talkIndex===1} onChange={()=>setTalkIndex(1)}/>
-                    <input type="radio" name="talkIndex" checked={talkIndex===2} onChange={()=>setTalkIndex(2)}/>
+                    <div className={styles.talksRadioBox}>
+                        <input type="radio" name="talkIndex" checked={talkIndex===0} onChange={()=>setTalkIndex(0)}/>
+                        <input type="radio" name="talkIndex" checked={talkIndex===1} onChange={()=>setTalkIndex(1)}/>
+                        <input type="radio" name="talkIndex" checked={talkIndex===2} onChange={()=>setTalkIndex(2)}/>
+                    </div>
                 </div>
             </div>
         </>

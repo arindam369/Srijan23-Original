@@ -75,6 +75,17 @@ export default function MerchandisePage() {
     authCtx.stopLoading();
   }
 
+  const merchandiseImages = [
+    "/assets/tshirts/black_front.png",
+    "/assets/tshirts/black_back.png",
+    "/assets/tshirts/white_front.png",
+    "/assets/tshirts/white_back.png",
+  ]
+  const [currImage, setCurrImage] = useState(merchandiseImages[0]);
+  const loadImageOnHover = (index)=>{
+    setCurrImage(merchandiseImages[index]);
+  }
+
   return (
     <>
       <div className={styles.canvasContainer}>
@@ -100,7 +111,7 @@ export default function MerchandisePage() {
         </div>
 
         <div className={styles.merchandiseBody}>
-          <div className={styles.merchandisePhotos}>
+          {/* <div className={styles.merchandisePhotos}>
             <div className={styles.merchandisePhotoBox}>
               <Image
                 src={"/assets/black-web.jpg"}
@@ -121,7 +132,51 @@ export default function MerchandisePage() {
                 draggable="false"
               />
             </div>
+          </div> */}
+
+          <div className={styles.productZoomContainer}>
+            <div className={styles.productsZoomSection}>
+              <div className={styles.productLeftSidebar}>
+                {merchandiseImages.map((merchandiseImage, i)=>{
+                  return (
+                    <div className={styles.productImageWrap} key={i} onMouseOver={()=>{loadImageOnHover(i)}}>
+                      <Image height={40} width={40} src={merchandiseImage} alt="productImageIcon" draggable={false} className={currImage===merchandiseImage?"productImageActiveIcons":"productImageIcons"}/>
+                    </div>
+                  )
+                })}
+              </div>
+              <div className={styles.productsPicture}>
+                <Image height={100} width={200} src={currImage} alt="productImage" className={styles.productImageScreen} draggable={false}/>
+                {/* <div className={styles.productImageScreen}>
+                  <ReactImageMagnify {...{
+                          smallImage: {
+                              alt: 'productScreenImage',
+                              isFluidWidth: true,
+                              src: currImage,
+                              width: 100,
+                              height: 200
+                              // sizes: "(min-width: 1000px) 33.5vw, (min-width: 415px) 50vw, 100vw"
+                          },
+                          largeImage: {
+                              src: currImage,
+                              width: 1200,
+                              height: 1800
+                          },
+                          enlargedImageContainerDimensions: {
+                            width: '150%',
+                            height: '150%'
+                        }
+                  }}/>
+                </div> */}
+              </div>
+            </div>
+            <br />
+            <div className={styles.offlinePaymentDetails}>
+            Srijan'23 Official Merchandise
+        </div>
           </div>
+
+
 
           <div className={styles.merchandiseForm} id="merchandiseForm">
             <form onSubmit={handleMerchandiseBook}>
@@ -223,7 +278,7 @@ export default function MerchandisePage() {
             For offline payment, please contact: <br/>
             Trishit Pal: 9831660378 <br/>
             Suvankar: 7001082597
-          </div>
+        </div>
       </div>
     </>
   );

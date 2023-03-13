@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "../../styles/Dashboard.module.css";
 import EventBox from "./EventBox";
 import {IoIosArrowDropleft, IoIosArrowDropright} from "react-icons/io";
+import {IoMdSearch, IoMdClose} from "react-icons/io";
 import { events } from "@/helper/events";
 import { useEffect } from "react";
 
@@ -26,6 +27,13 @@ export default function Events(){
     const [sortedType, setSortedType] = useState("all-events");
     const [sortedEventType, setSortedEventType] = useState("All Events");
     const [sortedEvents, setSortedEvents] = useState(null);
+    const [searchInput, setSearchInput] = useState("");
+    const [visibleSearchBar, setVisibleSearchBar] = useState(false);
+
+    const toggleSearchBar = ()=>{
+        setSearchInput("");
+        setVisibleSearchBar(!visibleSearchBar);
+    }
 
     useEffect(()=>{
         if(sortedType === "all-events"){
@@ -65,17 +73,38 @@ export default function Events(){
         setVisibleSortBox(false);
     }
 
+    useEffect(()=>{
+        if(events){
+            setSortedEvents(events.filter( event => {
+                if(searchInput.trim() === ""){
+                    return event;
+                }
+                else if(event.eventName.toLowerCase().includes(searchInput.trim().toLowerCase())){
+                    return event;
+                }
+            }));
+        }
+    }, [searchInput])
+
     return (
         <>
             <div className={styles.eventsContainer}>
                 <div className={styles.eventsContainerBox}>
                     <div className={styles.dashboardSectionHeading}>Events</div>
 
+                    <div className={styles.dashboardSearchBox}>
+                        <div className={styles.dashboardEventSearch}>
+                            {<input type="text" placeholder="Search Event" className={visibleSearchBar? "visibleSearchInput visibleInput" : "visibleSearchInput"} value={searchInput} onChange={(e)=>{setSearchInput(e.target.value)}}/>}
+                            {!visibleSearchBar && <IoMdSearch className={styles.eventSearchIcon} onClick={toggleSearchBar}/>}
+                            {visibleSearchBar && <IoMdClose className={styles.eventSearchIcon} onClick={toggleSearchBar}/>}
+                        </div>
+                    </div>
+
                     <div className={styles.eventCollection}>
                         {
                             sortedEvents && sortedEvents.map((eventData)=>{
                                 return (
-                                    <EventBox key={eventData.eventId} eventId={eventData.eventId} eventName={eventData.eventName} eventDate={eventData.eventDate} eventInterested={eventData.eventInterested} eventRegistered={eventData.eventRegistered} eventPoster={eventData.eventPoster} eventHashtags={eventData.eventHashtags}/>
+                                    <EventBox key={eventData.eventId} eventId={eventData.eventId} eventName={eventData.eventName} eventDate={eventData.eventDate} eventInterested={eventData.eventInterested} eventRegistered={eventData.eventRegistered} eventPoster={eventData.eventPoster} eventHashtags={eventData.eventHashtags} eventShortDescription={eventData.eventShortDescription}/>
                                 )
                             })
                         }

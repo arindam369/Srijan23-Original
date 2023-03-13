@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import { useContext } from "react";
 import AuthContext from "@/store/AuthContext";
 
-export default function EventBox({eventId, eventName, eventDate, eventInterested, eventRegistered, eventPoster, eventHashtags}){
+export default function EventBox({eventId, eventName, eventDate, eventInterested, eventRegistered, eventPoster, eventHashtags, eventShortDescription}){
 
     const router = useRouter();
     const authCtx = useContext(AuthContext);
@@ -48,6 +48,9 @@ export default function EventBox({eventId, eventName, eventDate, eventInterested
                             <div>{eventRegistered} Registered</div>
                         </div>
                     </div> */}
+                    {eventShortDescription && <div className={styles.eventShortDescription}>
+                        &emsp;{eventShortDescription}
+                    </div>}
                     <div className={styles.eventBodyTypes}>
                         {eventHashtags && eventHashtags.map((hashtag, id)=>{
                             return (

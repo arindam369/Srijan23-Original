@@ -30,6 +30,7 @@ export default function Login({onRegister, onCancel}){
 
     async function handleLogin(){
         // handle all validations
+        authCtx.startLoading();
         if(email.trim().length === 0 || pass.trim().length === 0){
             // setError("All fields are mandatory");
             // notification.error("All fields are mandatory");
@@ -37,6 +38,7 @@ export default function Login({onRegister, onCancel}){
                 message: `All fields are mandatory`,
                 duration: 2
             })
+            authCtx.stopLoading();
             return;
         }
 
@@ -48,6 +50,7 @@ export default function Login({onRegister, onCancel}){
                 message: `Invalid email input`,
                 duration: 2
             })
+            authCtx.stopLoading();
             return;
         }
 
@@ -61,11 +64,13 @@ export default function Login({onRegister, onCancel}){
                     message: `Email not verified yet`,
                     duration: 2
                 })
+                authCtx.stopLoading();
+                return;
             }
             else{
                 const userId = email.split("@")[0].replace(/[.+-]/g, "_");
-                await updateProfile(userId, "isVerified", true);
-                // console.log("User signed in successfully");
+                await updateProfile(userId, "isVerified", true, authCtx.stopLoading);
+                // authCtx.stopLoading();
                 router.push("/dashboard");
             }
         
@@ -74,7 +79,7 @@ export default function Login({onRegister, onCancel}){
                 message: `Wrong email or password`,
                 duration: 2
             })
-            // setError("Wrong email or password");
+            authCtx.stopLoading();
         })
     }
 

@@ -138,7 +138,7 @@ export default function Register({onLogin, onCancel}){
                     </div>
                     <div className={styles.registerInputBox}>
                         <div className={styles.registerInput}>
-                            <input type="text" placeholder="Year" value={year} onChange={(e)=>{setYear(e.target.value)}}/>
+                            <input type="text" placeholder="Expected Graduation Year" value={year} onChange={(e)=>{setYear(e.target.value)}}/>
                             <GoBook className={styles.registerIcon}/>
                         </div>
                     </div>

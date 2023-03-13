@@ -15,8 +15,9 @@ import { useContext } from "react";
 import AuthContext from "@/store/AuthContext";
 import { useEffect } from "react";
 import { useState } from "react";
+import AdminProtectedRoute from "@/hoc/AdminProtectedRoute";
 
-export default function AddEventPage() {
+function AddEventPage() {
   const authCtx = useContext(AuthContext);
 
   useEffect(()=>{
@@ -185,3 +186,5 @@ export default function AddEventPage() {
     </>
   );
 }
+
+export default AdminProtectedRoute(AddEventPage);

@@ -38,7 +38,6 @@ export default function Reset({onRegister, onCancel}){
 
         // reset password
         sendPasswordResetEmail(auth, email).then(()=>{
-            // console.log("Password sent to register email account");
             setVisibleResult(true);
         }).catch((err)=>{
             // console.log(err);

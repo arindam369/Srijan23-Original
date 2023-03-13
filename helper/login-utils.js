@@ -1,6 +1,7 @@
-import { db, database } from "@/firebase";
+import { database } from "@/firebase";
 import { notification } from "antd";
-import { set, ref as ref_database, get, child, onValue, update, remove} from "firebase/database";
+import { set, ref as ref_database, onValue, update, remove} from "firebase/database";
+import uuid from "react-uuid";
 
 
 export async function registerAccount(userId, name, email, phone, college, dept, year){
@@ -10,7 +11,8 @@ export async function registerAccount(userId, name, email, phone, college, dept,
         phone: phone,
         college: college,
         dept: dept,
-        year: year
+        year: year,
+        avatar: `https://firebasestorage.googleapis.com/v0/b/srijan23-dev.appspot.com/o/alphabets%2F${name.trim()[0].toUpperCase()}.jpg?alt=media&token=3bf1c020-30d4-4df5-a26d-8645f3f5b09b`
     }).then((res) => {
         // console.log("User registrated successfully!");
     })
@@ -25,18 +27,27 @@ export async function registerUsingGoogleAccount(userId, name, email){
         email: email,
         isVerified: true
     }).then((res) => {
-        // console.log("User registrated successfully!");
+        onValue(ref_database(database, 'srijan/profiles/' + userId + '/profiledata/avatar') , (snapshot)=>{
+            if(snapshot.val() === null){
+                update(ref_database(database, 'srijan/profiles/' + userId + '/profiledata'), {
+                    avatar: `https://firebasestorage.googleapis.com/v0/b/srijan23-dev.appspot.com/o/alphabets%2F${name.trim()[0].toUpperCase()}.jpg?alt=media&token=3bf1c020-30d4-4df5-a26d-8645f3f5b09b`
+                });
+            }
+        }, {
+            onlyOnce: true
+        });
     })
     .catch((err) => {
         // console.log(err);
         // console.log("User Registration failed...");
     });
 }
-export async function updateProfile(userId, dataType, newData){
+export async function updateProfile(userId, dataType, newData, stopLoading){
     update(ref_database(database, 'srijan/profiles/' + userId + '/profiledata'), {
         [dataType]: newData
     }).then((res)=>{
         // console.log("Profile updated successfully");
+        stopLoading();
     }).catch((err)=>{
         // console.log("Profile updation failed...");
     })
@@ -136,11 +147,6 @@ export async function registerEvent(eventId, teamName, teamLeaderEmail, teamLead
                     isOkay=false;
                     return;
                 }
-                // teamLeader has accepted the invitation
-                set(ref_database(database, 'srijan/profiles/' + teamLeaderEmail.split("@")[0] + '/events' + `/${eventId}`), {
-                    eventName: eventName,
-                    status: true
-                })
 
                 const teamDetails = {
                     teamName: teamName,
@@ -148,12 +154,14 @@ export async function registerEvent(eventId, teamName, teamLeaderEmail, teamLead
                     leadContact: teamLeaderPhone,
                     members: {
                         0: {
-                            email: teamLeaderEmail
+                            email: teamLeaderEmail,
+                            status: true
                         }
                     },
                 }
+
                 if(member2.trim().length > 0){
-                    const memberId2 = member2.split("@")[0];
+                    const memberId2 = member2.split("@")[0].replace(/[.+-]/g, "_");
                     onValue(ref_database(database, 'srijan/profiles/' + memberId2), (snapshot) => {
                         const userFound = (snapshot.val() && snapshot.val().profiledata) || null;
                         if(userFound === null){
@@ -166,7 +174,7 @@ export async function registerEvent(eventId, teamName, teamLeaderEmail, teamLead
                         }
                         
                         onValue(ref_database(database, 'srijan/profiles/' + memberId2+"/events/"+eventId), (snapshot) => {
-                            const eventFound = (snapshot.val() && snapshot.val().profiledata) || null;
+                            const eventFound = snapshot.val() || null;
                             if(eventFound !== null){
                                 notification['error']({
                                     message: `${member2} has already registered in this event`,
@@ -179,18 +187,15 @@ export async function registerEvent(eventId, teamName, teamLeaderEmail, teamLead
                             onlyOnce: true
                         });
                         teamDetails.members[1] = {
-                            email: member2
-                        }
-                        set(ref_database(database, 'srijan/profiles/' + member2.split("@")[0] + '/events' + `/${eventId}`), {
-                            eventName: eventName,
+                            email: member2,
                             status: false
-                        })
+                        }
                     }, {
                         onlyOnce: true
                     });
                 }
                 if(member3.trim().length > 0){
-                    const memberId3 = member3.split("@")[0];
+                    const memberId3 = member3.split("@")[0].replace(/[.+-]/g, "_");
                     onValue(ref_database(database, 'srijan/profiles/' + memberId3), (snapshot) => {
                         const userFound = (snapshot.val() && snapshot.val().profiledata) || null;
                         if(userFound === null){
@@ -203,7 +208,7 @@ export async function registerEvent(eventId, teamName, teamLeaderEmail, teamLead
                         }
                         
                         onValue(ref_database(database, 'srijan/profiles/' + memberId3+"/events/"+eventId), (snapshot) => {
-                            const eventFound = (snapshot.val() && snapshot.val().profiledata) || null;
+                            const eventFound = snapshot.val() || null;
                             if(eventFound !== null){
                                 notification['error']({
                                     message: `${member3} has already registered in this event`,
@@ -216,18 +221,15 @@ export async function registerEvent(eventId, teamName, teamLeaderEmail, teamLead
                             onlyOnce: true
                         });
                         teamDetails.members[2] = {
-                            email: member3
-                        }
-                        set(ref_database(database, 'srijan/profiles/' + member3.split("@")[0] + '/events' + `/${eventId}`), {
-                            eventName: eventName,
+                            email: member3,
                             status: false
-                        })
+                        }
                     }, {
                         onlyOnce: true
                     });
                 }
                 if(member4.trim().length > 0){
-                    const memberId4 = member4.split("@")[0];
+                    const memberId4 = member4.split("@")[0].replace(/[.+-]/g, "_");
                     onValue(ref_database(database, 'srijan/profiles/' + memberId4), (snapshot) => {
                         const userFound = (snapshot.val() && snapshot.val().profiledata) || null;
                         if(userFound === null){
@@ -240,7 +242,7 @@ export async function registerEvent(eventId, teamName, teamLeaderEmail, teamLead
                         }
                         
                         onValue(ref_database(database, 'srijan/profiles/' + memberId4+"/events/"+eventId), (snapshot) => {
-                            const eventFound = (snapshot.val() && snapshot.val().profiledata) || null;
+                            const eventFound = snapshot.val() || null;
                             if(eventFound !== null){
                                 notification['error']({
                                     message: `${member4} has already registered in this event`,
@@ -253,18 +255,15 @@ export async function registerEvent(eventId, teamName, teamLeaderEmail, teamLead
                             onlyOnce: true
                         });
                         teamDetails.members[3] = {
-                            email: member4
-                        }
-                        set(ref_database(database, 'srijan/profiles/' + member4.split("@")[0] + '/events' + `/${eventId}`), {
-                            eventName: eventName,
+                            email: member4,
                             status: false
-                        })
+                        }
                     }, {
                         onlyOnce: true
                     });
                 }
                 if(member5.trim().length > 0){
-                    const memberId5 = member5.split("@")[0];
+                    const memberId5 = member5.split("@")[0].replace(/[.+-]/g, "_");
                     onValue(ref_database(database, 'srijan/profiles/' + memberId5), (snapshot) => {
                         const userFound = (snapshot.val() && snapshot.val().profiledata) || null;
                         if(userFound === null){
@@ -277,7 +276,7 @@ export async function registerEvent(eventId, teamName, teamLeaderEmail, teamLead
                         }
                         
                         onValue(ref_database(database, 'srijan/profiles/' + memberId5+"/events/"+eventId), (snapshot) => {
-                            const eventFound = (snapshot.val() && snapshot.val().profiledata) || null;
+                            const eventFound = snapshot.val() || null;
                             if(eventFound !== null){
                                 notification['error']({
                                     message: `${member5} has already registered in this event`,
@@ -290,24 +289,90 @@ export async function registerEvent(eventId, teamName, teamLeaderEmail, teamLead
                             onlyOnce: true
                         });
                         teamDetails.members[4] = {
-                            email: member5
+                            email: member5,
+                            status: false
                         }
-                        set(ref_database(database, 'srijan/profiles/' + member5.split("@")[0] + '/events' + `/${eventId}`), {
-                            eventName: eventName,
-                            status: false,
-                        })
                     }, {
                         onlyOnce: true
                     });
                 }
                 setTimeout(async ()=>{
                     if(isOkay){
-                        await set(ref_database(database, 'srijan/events/'+eventId+"/teams/"+teamName), {
-                            eventName: eventName,
-                            isRegistered: false,
-                            teamDetails: teamDetails
-                        }).then(()=>{
-                            console.log("ha");
+                        // everything is fine
+                        // save data in team, member1, member2, member3, member4, member5
+                        if(member2.trim().length === 0 && member3.trim().length === 0 && member4.trim().length === 0 && member5.trim().length === 0){
+                            await set(ref_database(database, 'srijan/events/'+eventId+"/teams/"+teamName), {
+                                eventName: eventName,
+                                isRegistered: true,
+                                teamDetails: teamDetails
+                            });
+    
+                            await set(ref_database(database, 'srijan/profiles/' + teamLeaderEmail.split("@")[0].replace(/[.+-]/g, "_") + '/events' + `/${eventId}`), {
+                                teamName: teamName,
+                                eventName: eventName,
+                                status: true,
+                                isRegistered: true,
+                                teamLeader: teamLeaderEmail.split("@")[0].replace(/[.+-]/g, "_")
+                            })
+                            update(ref_database(database, 'srijan/profiles/' + teamLeaderEmail.split("@")[0].replace(/[.+-]/g, "_") + '/notifications/' + uuid()), {
+                                message: `Registration Successful: You have successfully registered in the event: '${eventName}'`,
+                                timestamp: Date.now()
+                            });
+                        }
+                        else{
+                            await set(ref_database(database, 'srijan/events/'+eventId+"/teams/"+teamName), {
+                                eventName: eventName,
+                                isRegistered: false,
+                                teamDetails: teamDetails
+                            });
+
+                            await set(ref_database(database, 'srijan/profiles/' + teamLeaderEmail.split("@")[0].replace(/[.+-]/g, "_") + '/events' + `/${eventId}`), {
+                                teamName: teamName,
+                                eventName: eventName,
+                                status: true,
+                                isRegistered: false,
+                                teamLeader: teamLeaderEmail.split("@")[0].replace(/[.+-]/g, "_")
+                            })
+                            if(member2.trim().length > 0){
+                                await set(ref_database(database, 'srijan/profiles/' + member2.split("@")[0].replace(/[.+-]/g, "_") + '/events' + `/${eventId}`), {
+                                    teamName: teamName,
+                                    eventName: eventName,
+                                    status: false,
+                                    isRegistered: false,
+                                    teamLeader: teamLeaderEmail.split("@")[0].replace(/[.+-]/g, "_")
+                                })
+                            }
+                            if(member3.trim().length > 0){
+                                await set(ref_database(database, 'srijan/profiles/' + member3.split("@")[0].replace(/[.+-]/g, "_") + '/events' + `/${eventId}`), {
+                                    teamName: teamName,
+                                    eventName: eventName,
+                                    status: false,
+                                    isRegistered: false,
+                                    teamLeader: teamLeaderEmail.split("@")[0].replace(/[.+-]/g, "_")
+                                })
+                            }
+                            if(member4.trim().length > 0){
+                                await set(ref_database(database, 'srijan/profiles/' + member4.split("@")[0].replace(/[.+-]/g, "_") + '/events' + `/${eventId}`), {
+                                    teamName: teamName,
+                                    eventName: eventName,
+                                    status: false,
+                                    isRegistered: false,
+                                    teamLeader: teamLeaderEmail.split("@")[0].replace(/[.+-]/g, "_")
+                                })
+                            }
+                            if(member5.trim().length > 0){
+                                await set(ref_database(database, 'srijan/profiles/' + member5.split("@")[0].replace(/[.+-]/g, "_") + '/events' + `/${eventId}`), {
+                                    teamName: teamName,
+                                    eventName: eventName,
+                                    status: false,
+                                    isRegistered: false,
+                                    teamLeader: teamLeaderEmail.split("@")[0].replace(/[.+-]/g, "_")
+                                })
+                            }
+                        }
+                        notification['success']({
+                            message: `Event registered successfully`,
+                            duration: 2
                         })
                     }
                 }, 10000);
@@ -317,6 +382,50 @@ export async function registerEvent(eventId, teamName, teamLeaderEmail, teamLead
         });
     }
     catch(err){
-        console.log(err);
+        // console.log(err);
+    }
+}
+export function getTimeDifference(timeStamp){
+    const nowTime = Date.now();
+    const timeDifference = Math.floor((nowTime-timeStamp)/1000);
+    if(timeDifference<=0){
+        return "0sec ago"
+    }
+
+    if(timeDifference < 60){    // 1-59secs
+        return `${timeDifference}secs ago`;
+    }
+    else{
+        const timeDiff_in_minutes = Math.floor(timeDifference/60);
+        if(timeDiff_in_minutes<60){     // 1-59mins
+            const unit = timeDiff_in_minutes === 1 ?"min":"mins";
+            return `${timeDiff_in_minutes}${unit} ago`;
+        }
+        else{
+            const timeDiff_in_hours = Math.floor(timeDiff_in_minutes/60);   // 1-23hrs
+            if(timeDiff_in_hours < 24){
+                const unit = timeDiff_in_hours === 1 ?"hour":"hours";
+                return `${timeDiff_in_hours}${unit} ago`;
+            }
+            else{
+                const timeDiff_in_days = Math.floor(timeDiff_in_hours/24);  // 1-29days
+                if(timeDiff_in_days < 30){
+                    const unit = timeDiff_in_days === 1 ?"day":"days";
+                    return `${timeDiff_in_days}${unit} ago`;
+                }
+                else{
+                    const timeDiff_in_months = Math.floor(timeDiff_in_days/30); // 1-11months
+                    if(timeDiff_in_months < 12){
+                        const unit = timeDiff_in_months === 1 ?"month":"months";
+                        return `${timeDiff_in_months}${unit} ago`;
+                    }
+                    else{
+                        const timeDiff_in_years = Math.floor(timeDiff_in_months/12); // 1-...years
+                        const unit = timeDiff_in_years === 1 ?"year":"years";
+                        return `${timeDiff_in_years}${unit} ago`;
+                    }
+                }
+            }
+        }
     }
 }

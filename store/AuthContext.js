@@ -5,6 +5,7 @@ import { database } from "@/firebase";
 import { onValue, ref as ref_database } from "firebase/database";
 import { getEventById } from "@/helper/event-utils";
 import { registerUsingGoogleAccount } from "@/helper/login-utils";
+import { notification } from "antd";
 
 
 const AuthContext = React.createContext({
@@ -51,6 +52,7 @@ export const AuthContextProvider = (props)=>{
     }
 
     const googleSignIn = ()=>{
+        startLoading();
         const googleProvider = new GoogleAuthProvider();
         signInWithRedirect(auth, googleProvider);
     }
@@ -59,6 +61,7 @@ export const AuthContextProvider = (props)=>{
     useEffect(()=>{
         onAuthStateChanged(auth, async (user)=>{
             if(user){
+                startLoading();
                 const userId = user.email && user.email.split("@")[0].replace(/[.+-]/g, "_");
                 setUserId(userId);
                 const provider = user.providerData[0].providerId;
@@ -67,6 +70,10 @@ export const AuthContextProvider = (props)=>{
                     const email = user.email;
                     await registerUsingGoogleAccount(userId, name, email);
                 }
+                notification['success']({
+                    message: `Logged in as ${userId}`,
+                    duration: 2
+                })
             }
             else{
                 setUserId(null);
@@ -83,6 +90,7 @@ export const AuthContextProvider = (props)=>{
                 if(userDetails && userDetails.isVerified === true){
                     setUserData(userDetails);
                     setIsAuthenticated(true);
+                    stopLoading();
                 }
             }, {
                 onlyOnce: true
@@ -101,6 +109,7 @@ export const AuthContextProvider = (props)=>{
                         interestedEventsArray.push(eventDetails);
                     }
                     setInterestedEvents(interestedEventsArray);
+                    stopLoading();
                 }
             }, {
                 onlyOnce: true
@@ -119,6 +128,7 @@ export const AuthContextProvider = (props)=>{
                         interestedEventsArray.push(eventDetails);
                     }
                     setInterestedEvents(interestedEventsArray);
+                    stopLoading();
                 }
             }, {
                 onlyOnce: true
