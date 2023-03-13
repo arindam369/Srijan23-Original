@@ -12,7 +12,7 @@ export async function registerAccount(userId, name, email, phone, college, dept,
         college: college,
         dept: dept,
         year: year,
-        avatar: `https://firebasestorage.googleapis.com/v0/b/srijan23-dev.appspot.com/o/alphabets%2F${name.trim()[0].toUpperCase()}.jpg?alt=media&token=3bf1c020-30d4-4df5-a26d-8645f3f5b09b`
+        avatar: `https://firebasestorage.googleapis.com/v0/b/srijan23-original.appspot.com/o/alphabets%2F${name.trim()[0].toUpperCase()}.jpg?alt=media&token=597912f6-4edb-4756-842f-5a41b31223ba`
     }).then((res) => {
         // console.log("User registrated successfully!");
     })
@@ -30,7 +30,7 @@ export async function registerUsingGoogleAccount(userId, name, email){
         onValue(ref_database(database, 'srijan/profiles/' + userId + '/profiledata/avatar') , (snapshot)=>{
             if(snapshot.val() === null){
                 update(ref_database(database, 'srijan/profiles/' + userId + '/profiledata'), {
-                    avatar: `https://firebasestorage.googleapis.com/v0/b/srijan23-dev.appspot.com/o/alphabets%2F${name.trim()[0].toUpperCase()}.jpg?alt=media&token=3bf1c020-30d4-4df5-a26d-8645f3f5b09b`
+                    avatar: `https://firebasestorage.googleapis.com/v0/b/srijan23-original.appspot.com/o/alphabets%2F${name.trim()[0].toUpperCase()}.jpg?alt=media&token=597912f6-4edb-4756-842f-5a41b31223ba`
                 });
             }
         }, {
