@@ -304,7 +304,7 @@ export default function EventDetailsPage({ eventData }) {
                   </div>
                 </div>
 
-                <div className={styles.eventEndRightButtonBox}>
+                {authCtx.isAuthenticated && <div className={styles.eventEndRightButtonBox}>
                   <button
                     className={ "interestedRegisteredButton" }
                       // userInterested
@@ -318,7 +318,7 @@ export default function EventDetailsPage({ eventData }) {
                   <button className={!isRegistered? "interestedRegisteredButton": "interestedButton"} onClick={toggleVisibleRegistrationForm} disabled={isRegistered}>
                     {isRegistered? "Registered": "Register"}
                   </button>
-                </div>
+                </div>}
               </div>
             </div>
           </div>
