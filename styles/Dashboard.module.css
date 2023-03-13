@@ -327,6 +327,7 @@ align-items: center;
 width: 970px;
 display: flex;
 justify-content: space-between;
+justify-content: center;    /* delete this */
 align-items: center;
 margin-bottom: 10px;
 }
@@ -1126,6 +1127,7 @@ cursor: pointer;
   justify-content: center;
   width: 500px;
   height: 800px;
+  height: 400px;  /* delete this */
   margin-bottom: 0px;
 }
 .dashboardDoughnutChart{
@@ -1232,6 +1234,7 @@ cursor: pointer;
 }
 .dashboardProfileContainer{
   height: 720px;
+  height: 300px;  /* delete this */
   padding: 0px 0px 60px;
   width: 400px;
 }
@@ -1245,6 +1248,7 @@ cursor: pointer;
 }
 .dashboardProfileContainer{
   height: 650px;
+  height: 250px;  /* delete this */
   padding: 0px 0px 60px;
 }
 }
