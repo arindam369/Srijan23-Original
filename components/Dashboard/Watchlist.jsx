@@ -10,8 +10,8 @@ export default function Watchlist(){
     const userId = userData && userData.email && userData.email.split("@")[0].replace(/[.+-]/g, "_");
     const [sortedInterestedEvents, setSortedInterestedEvents] = useState(null);
     const [searchInput, setSearchInput] = useState("");
-
     const [visibleSearchBar, setVisibleSearchBar] = useState(false);
+    
     const toggleSearchBar = ()=>{
         setSearchInput("");
         setVisibleSearchBar(!visibleSearchBar);
