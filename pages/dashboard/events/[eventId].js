@@ -223,9 +223,9 @@ export default function EventDetailsPage({ eventData }) {
                   </div>
                 </div>
               </div>
-              <div className={styles.eventFullDescription}>
-                Wanna know more about this event? <Link href={"https://docs.google.com/document/d/1EgT55EllzRdAJP2n9i-pLoD9b0GL0uxLlunEMA2gLvg/edit"} className={styles.eventDescLink}>Click Here</Link>
-              </div>
+              {eventData.eventRuleLink && <div className={styles.eventFullDescription}>
+                Wanna know more about this event? <Link href={eventData.eventRuleLink} className={styles.eventDescLink}>Click Here</Link>
+              </div>}
 
               <div className={styles.eventEndBox}>
                 <div className={styles.eventDetailsDateDiv}>

@@ -50,6 +50,7 @@ export default function Events(){
     const showEvents = (eventType)=>{
         setSortedType(eventType);
         if(eventType === "all-events"){
+            setSortedType("all-events");
             setSortedEventType("All Events");
         }
         else if(eventType === "coding"){
@@ -75,6 +76,7 @@ export default function Events(){
 
     useEffect(()=>{
         if(events){
+            setSortedEventType("All Events");
             setSortedEvents(events.filter( event => {
                 if(searchInput.trim() === ""){
                     return event;
