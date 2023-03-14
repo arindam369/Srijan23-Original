@@ -996,6 +996,11 @@ align-items: center;
     margin-right: 20px;
     margin-left: 20px;
   }
+  .eventDetailsDateDiv{
+    padding: 14px 13px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+  }
 }
 @media (max-width:620px){
   .eventDetailsContainerBox{
