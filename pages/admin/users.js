@@ -25,7 +25,7 @@ function UserProfiles(){
                 if(searchInput.trim() === ""){
                     return user;
                 }
-                else if(user.profiledata.name.toLowerCase().includes(searchInput.trim().toLowerCase())){
+                else if(user.profiledata && user.profiledata.name && user.profiledata.name.toLowerCase().includes(searchInput.trim().toLowerCase())){
                     return user;
                 }
             }));

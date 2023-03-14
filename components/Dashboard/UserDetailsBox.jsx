@@ -32,7 +32,14 @@ export default function UserDetailsBox({name, email, userId, dept, college, year
             update(ref_database(database, 'srijan/profiles/' + userId + '/notifications/' + uuid()), {
                 message: `Admin: ${notificationText}`,
                 timestamp: Date.now()
+            }).then(()=>{
+                notification['success']({
+                    message: `Notification sent successfully`,
+                    duration: 2
+                })
             });
+            setNotificationText("");
+            toggleVisibleNotificationForm();
         }
     }
 
