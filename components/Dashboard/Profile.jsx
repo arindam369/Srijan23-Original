@@ -15,6 +15,7 @@ import AuthContext from "@/store/AuthContext";
 import Progress from "../Progress";
 import { ref as ref_storage, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { storage } from "@/firebase";
+import { notification } from "antd";
 // import uuid from "react-uuid";
 
 export default function Profile() {
@@ -134,30 +135,65 @@ export default function Profile() {
   }
 
   const updateName = async ()=>{
+    if(name.trim().length === 0){
+      notification['error']({
+        message: `Please provide a new name`,
+        duration: 2
+      })
+      return;
+    }
     const userId = email.split("@")[0].replace(/[.+-]/g, "_");
     await updateProfile(userId, "name", name);
     setNameSave(false);
     authCtx.updateUserProfile("name", name);
   }
   const updatePhone = async ()=>{
+    if(phone.trim().length === 0){
+      notification['error']({
+        message: `Please provide a new mobile no.`,
+        duration: 2
+      })
+      return;
+    }
     const userId = email.split("@")[0].replace(/[.+-]/g, "_");
     await updateProfile(userId, "phone", phone);
     setPhoneSave(false);
     authCtx.updateUserProfile("phone", phone);
   }
   const updateCollege = async ()=>{
+    if(college.trim().length === 0){
+      notification['error']({
+        message: `Please provide a new college name`,
+        duration: 2
+      })
+      return;
+    }
     const userId = email.split("@")[0].replace(/[.+-]/g, "_");
     await updateProfile(userId, "college", college);
     setCollegeSave(false);
     authCtx.updateUserProfile("college", college);
   }
   const updateDept = async ()=>{
+    if(dept.trim().length === 0){
+      notification['error']({
+        message: `Please provide a new dept name`,
+        duration: 2
+      })
+      return;
+    }
     const userId = email.split("@")[0].replace(/[.+-]/g, "_");
     await updateProfile(userId, "dept", dept);
     setDeptSave(false);
     authCtx.updateUserProfile("dept", dept);
   }
   const updateYear = async ()=>{
+    if(year.trim().length === 0){
+      notification['error']({
+        message: `Please provide a new graduation year`,
+        duration: 2
+      })
+      return;
+    }
     const userId = email.split("@")[0].replace(/[.+-]/g, "_");
     await updateProfile(userId, "year", year);
     setYearSave(false);

@@ -22,13 +22,22 @@ function UserProfiles(){
 
     useEffect(()=>{
         if(users){
-            setSortedUsers(users.filter( user => {
+            setSortedUsers((users.filter( user => {
                 if(searchInput.trim() === ""){
                     return user;
                 }
                 else if(user.profiledata && user.profiledata.name && user.profiledata.name.toLowerCase().includes(searchInput.trim().toLowerCase())){
                     return user;
                 }
+            })).sort((a, b)=>{
+                let fa = a.profiledata.name.toLowerCase(), fb = b.profiledata.name.toLowerCase();
+                if (fa < fb) {
+                    return -1;
+                }
+                if (fa > fb) {
+                    return 1;
+                }
+                return 0;
             }));
         }
     }, [searchInput, users])
@@ -42,6 +51,16 @@ function UserProfiles(){
                 for(let user in userDetailsArray){
                     usersArray.push({...userDetailsArray[user], userId: user});
                 }
+                usersArray.sort((a, b)=>{
+                    let fa = a.profiledata.name.toLowerCase(), fb = b.profiledata.name.toLowerCase();
+                    if (fa < fb) {
+                        return -1;
+                    }
+                    if (fa > fb) {
+                        return 1;
+                    }
+                    return 0;
+                });
                 setUsers(usersArray);
             }
         }, {
