@@ -385,7 +385,7 @@ export default function Profile() {
               yearSave ? "settingsInput abled" : "settingsInput disabled"
             }
           >
-            <label className={styles.settingsInputLabel}>Year</label>
+            <label className={styles.settingsInputLabel}>Expected Graduation Year</label>
             <input
               type="text"
               placeholder="Year"
