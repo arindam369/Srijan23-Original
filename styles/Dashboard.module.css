@@ -464,7 +464,7 @@ padding: 10px;
 }
 .eventImage{
 border-radius: 6px;
-width: 280px;
+width: 210px;
 height: 200px;
 }
 .eventBodyBox{
@@ -718,7 +718,7 @@ margin-left: 10px;
 .eventPosterImage{
   border-radius: 8px;
   width: 330px;
-  height: 250px;
+  height: 330px;
   margin-right: 20px;
 }
 
@@ -966,7 +966,7 @@ align-items: center;
   }
   .eventPosterImage{
     width: 300px;
-    height: 250px;
+    height: 310px;
     margin-right: 20px;
     margin-left: 20px;
   }
@@ -1013,8 +1013,8 @@ align-items: center;
   }
   
   .eventPosterImage{
-    width: 300px;
-    height: 240px;
+    width: 310px;
+    height: 310px;
     margin-right: 20px;
     margin-left: 20px;
     margin-bottom: 10px;
@@ -1058,7 +1058,7 @@ align-items: center;
   
   .eventPosterImage{
     width: 300px;
-    height: 240px;
+    height: 300px;
     margin-right: 20px;
     margin-left: 20px;
     margin-bottom: 10px;
@@ -1086,7 +1086,7 @@ align-items: center;
   
   .eventPosterImage{
     width: 300px;
-    height: 240px;
+    height: 300px;
     margin-right: 20px;
     margin-left: 20px;
     margin-bottom: 10px;
@@ -1329,10 +1329,14 @@ cursor: pointer;
   padding: 4px 4px 4px 4px;
   margin-bottom: 15px;
 }
+.eventImage{
+  width: 250px;
+  height: 240px;
+}
 .eventBodyBox{
   padding: 25px 0px;
   width: 100%;
-  height: 130px;
+  height: 80px;
 }
 .eventBodyTitle{
   margin-top: -10px;
