@@ -6,7 +6,7 @@ export const events = [
         // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
         eventPoster: "/assets/events/electroniche.png",
         eventType: "circuit-robotics",
-        eventHashtags: ["Creative", "Open for All"],
+        eventHashtags: ["Creative", "Circuits"],
         eventCoordinators: ["Arunim Ray [ 9431915874 ]", "Praveen [ 8529772605 ]"],
         // eventVenue: "SMCC - 4th Floor - Lab",
         minMembers: 2,
@@ -32,6 +32,23 @@ export const events = [
         eventDescription: ["Unleash the cryptographer in you and join us for an event filled with mystery, challenges, and excitement - Cypher 3331.", " The event will consist of a quick crash course on cryptography, followed by preliminary rounds of five consequent steps of cryptographic problems to uncover the clues and hints of the underlying treasure hunt . The first five teams to complete the prelims within the given time will qualify for the finals, where the challenges will get even more complex and gruelling. The top three teams to complete the final rounds within two hours will be crowned the winners of the event.", "Don't miss out on this exhilarating opportunity to test your cryptography skills and win big!"],
         eventRules: ["Prelims: A team must consist of 1 to 3 members to participate in the event.", "All participants will be given a quick crash course on cryptography.", "The prelims will consist of 5 consecutive steps of cryptographic problems, each providing clues and hints to solve a digital treasure hunt. The problems will be based on the concepts taught in the crash course.", "The time allocation for the prelims is 1.5 hours for the crash course and 1 hour for the competition rounds.The first 5 teams to complete the preliminary rounds within the timeslot of the event (1 hour) will qualify for the finals.", "Finals: The final stage will consist of more complex and challenging cryptographic problems, again based on the concepts of the quick course during prelims.", "Fundamental Structure of the finals will remain consistent with that of the prelims, with the exception of a few additional tools being provided to the qualifying five teams to aid in solving the problems.", "The first top 3 teams to complete the final rounds within 2 hours will be declared the winners of the event."],
         eventRuleLink: "https://docs.google.com/document/d/1NYOjy76l8ra13i6isTOSf_AKbpG8RWeXQGALbtFULkE/edit"
+    },
+    {
+        eventId: "003",
+        eventName: "Ace the Case",
+        eventDate: {prelims: ["April 14, 2023"], finals: "April 15, 2023"},
+        // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
+        eventPoster: "/assets/events/Ace-the-Case.png",
+        eventType: "business-management",
+        eventHashtags: ["Casestudy", "Management"],
+        eventCoordinators: ["Abhisikta Joarder [ 8017172282 ]", "Dwaipayan Haldar [ 9674273275 ]", "Sukalyan Bisui [ 8697488984 ]"],
+        // eventVenue: "SMCC - 4th Floor - Lab",
+        minMembers: 2,
+        maxMembers: 3,
+        // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
+        eventDescription: ["Do you have a knack for solving problems? Or have an itch in the brain when you stumble upon a thought provoking question? Are you open to new ideas?", "Get ready to flex your problem-solving muscles at Ace the Case! Put your critical thinking and analytical skills to the test as you work together in a team to solve real-world problems. Think outside the box,compete against other brilliant minds, learn from each other, but most importantly have fun while doing it.", "Join us for a day of learning and fun to tackle real-world challenges and see who can come up with the most innovative solutions!"],
+        eventRules: ["Register in teams of 2-3 members, Prompt will be given 2 days prior", "Strictly adhere to slide limit", "In ROUND 1 : It is the Selection round which will be held in Online mode. Abstract submission within 24hrs of prompt release - 1 slide", "In ROUND 2 : This is the Finale that will be held in Offline mode. Slide limit : 4 + 1 slide(for team name) + 1 slide(concluding slide)", "Pitch time: 4-5 mins", "2 mins rebuttal from judges", "Brownie points for sticking to time limits"],
+        eventRuleLink: "https://docs.google.com/document/d/1IKbX3buznPO9Xhdk3C5mVbjrA-BEzCHTQti8zC2WZWA/edit"
     },
     // {
     //     eventId: "015",
