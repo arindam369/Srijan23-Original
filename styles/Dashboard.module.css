@@ -2086,3 +2086,21 @@ cursor: pointer;
   outline: 0;
   margin-top: 10px;
 }
+
+
+.eventDetailsContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0px;
+}
+.eventBoxTitle{
+  color: white;
+  background: linear-gradient(to top right, rgba(29, 90, 161, 0.6), rgba(20, 114, 79, 0.6));
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-family: 'Roboto', sans-serif;
+  margin: 10px 0px;
+  text-decoration: none;
+}

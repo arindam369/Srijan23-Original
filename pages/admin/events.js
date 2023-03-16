@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
-import styles from "../../styles/Home.module.css";
+import styles from "../../styles/Dashboard.module.css";
 import Image from "next/image";
 import { FaBookOpen, FaUserSecret, FaGamepad, FaRobot } from "react-icons/fa";
 import { MdOutlineEmail, MdQuiz } from "react-icons/md";
@@ -17,9 +17,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 import AdminProtectedRoute from "@/hoc/AdminProtectedRoute";
 import { events } from "@/helper/events";
-import { onValue, ref as ref_database } from "firebase/database";
-import { database } from "@/firebase";
 import EventDetailsBox from "@/components/Dashboard/EventDetailsBox";
+import Link from "next/link";
 
 function ViewEventsPage() {
   const authCtx = useContext(AuthContext);
@@ -29,21 +28,6 @@ function ViewEventsPage() {
   }, [])
 
   const [eventsArray, setEventsArray] = useState(null);
-
-    useEffect(()=>{
-        onValue(ref_database(database, 'srijan/events') , (snapshot)=>{
-            if(snapshot){
-                let eventsArray = [];
-                const eventDetailsArray = snapshot.val();
-                for(let event in eventDetailsArray){
-                    eventsArray.push({...eventDetailsArray[event], eventId: event});
-                }
-                setEventsArray(eventsArray);
-            }
-        }, {
-            onlyOnce: true
-        });
-    }, [])
 
   return (
     <>
@@ -64,20 +48,22 @@ function ViewEventsPage() {
         </Canvas>
       </div>
       
-      <div className={styles.merchandiseContainer}>
-        <div className={styles.merchandiseHeading}>
+      <div className={styles.dashboardPageContainer}>
+        <div className={styles.dashboardSectionHeading2}>
           Events Database
         </div>
 
-        <div className={styles.userDetailsContainer}>
-            {eventsArray && eventsArray.length>0 && eventsArray.map((event)=>{
-                console.log(event);
+        <div className={styles.eventDetailsContainer}>
+            {events && events.length>0 && events.map((event)=>{
+              console.log(event);
                 return (
-                    <EventDetailsBox eventName={event.name} eventId={event.eventId} key={event.eventId}/>
+                    <Link className={styles.eventBoxTitle} key={event.eventId} href={`/${event.eventId}`}>
+                      {event.eventName}
+                    </Link>
                 )
             })}
             {eventsArray && eventsArray.length === 0 && 
-                    <div className={styles.noEventsFound}>No Event Found</div>
+                <div className={styles.noEventsFound}>No Event Found</div>
             }
         </div>
       </div>

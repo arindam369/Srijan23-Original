@@ -21,22 +21,6 @@ export default function EventDetailsBox({eventName, eventId}){
 
     return (
         <>
-            <Modal
-                isOpen={visibleNotificationForm}
-                onRequestClose={() => {
-                    toggleVisibleNotificationForm();
-                }}
-                className={styles.sendNotificationModal}
-                ariaHideApp={false}
-                style={customEventModalStyles}
-                closeTimeoutMS={700}
-            >
-                {/* <div>
-                    <h2 className={styles.notificationUserId}>Sending Notification to {userId}</h2>
-                    <textarea cols="30" rows="5" placeholder="Write a notification" className={styles.notificationTextarea} onChange={(e)=>{setNotificationText(e.target.value)}}/>
-                    <div className={styles.sendNotificationButton2} onClick={handleSendNotification}>Send</div>
-                </div> */}
-            </Modal>
             <div className={styles.userDetailsBox}>
                 {/* <div className={styles.userDetailsTop}>
                     <Image src={avatar? avatar: "/assets/anonymous.jpg"} height={50} width={50} alt="user_avatar" className={styles.userDetailsAvatar}/>

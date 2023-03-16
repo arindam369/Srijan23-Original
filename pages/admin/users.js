@@ -129,7 +129,7 @@ function UserProfiles(){
                 <div className={styles.userDetailsContainer}>
                     {sortedUsers && sortedUsers.length>0 && sortedUsers.map((user)=>{
                         return (
-                            <UserDetailsBox name={user.profiledata.name} email={user.profiledata.email} userId={user.userId} dept={user.profiledata.dept} college={user.profiledata.college} year={user.profiledata.year} avatar={user.profiledata.avatar} key={user.userId}/>
+                            <UserDetailsBox name={user.profiledata.name} email={user.profiledata.email} phone={user.profiledata.phone} userId={user.userId} dept={user.profiledata.dept} college={user.profiledata.college} year={user.profiledata.year} avatar={user.profiledata.avatar} key={user.userId}/>
                         )
                     })}
                     {sortedUsers && sortedUsers.length === 0 && 
