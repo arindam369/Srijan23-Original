@@ -52,20 +52,20 @@ export const events = [
     },
        {
         eventId: "004",
-        eventName: "Ace the Case",
-        eventDate: {prelims: ["April 14, 2023"], finals: "April 15, 2023"},
+        eventName: "The Biznez Plan",
+        eventDate: {prelims: ["April 15, 2023"], finals: "April 16, 2023"},
         // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
-        eventPoster: "/assets/events/Ace-the-Case.png",
+        eventPoster: "/assets/events/The-Biznez-Plan.png",
         eventType: "business-management",
         eventHashtags: ["Casestudy", "Management"],
-        eventCoordinators: ["Abhisikta Joarder [ 8017172282 ]", "Dwaipayan Haldar [ 9674273275 ]", "Sukalyan Bisui [ 8697488984 ]"],
+        eventCoordinators: ["Asmit Acharya [ 9433082213 ]", "Supriti Sarkar [ 6289880272 ]", "Aneesh Gupta [ 7980704792 ]"],
         // eventVenue: "SMCC - 4th Floor - Lab",
-        minMembers: 2,
+        minMembers: 1,
         maxMembers: 3,
         // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
-        eventDescription: ["Do you have a knack for solving problems? Or have an itch in the brain when you stumble upon a thought provoking question? Are you open to new ideas?", "Get ready to flex your problem-solving muscles at Ace the Case! Put your critical thinking and analytical skills to the test as you work together in a team to solve real-world problems. Think outside the box,compete against other brilliant minds, learn from each other, but most importantly have fun while doing it.", "Join us for a day of learning and fun to tackle real-world challenges and see who can come up with the most innovative solutions!"],
-        eventRules: ["Register in teams of 2-3 members, Prompt will be given 2 days prior", "Strictly adhere to slide limit", "In ROUND 1 : It is the Selection round which will be held in Online mode. Abstract submission within 24hrs of prompt release - 1 slide", "In ROUND 2 : This is the Finale that will be held in Offline mode. Slide limit : 4 + 1 slide(for team name) + 1 slide(concluding slide)", "Pitch time: 4-5 mins", "2 mins rebuttal from judges", "Brownie points for sticking to time limits"],
-        eventRuleLink: "https://docs.google.com/document/d/1IKbX3buznPO9Xhdk3C5mVbjrA-BEzCHTQti8zC2WZWA/edit"
+        eventDescription: ["Want to live the Shark Tank life? But the semesters and assignments wouldn't let you? Well, we got you covered.", "Biznez Plan, the flagship B-plan event of Srijan is here for you to make an impact on the society.Be ready to pitch your business ideas in groups constituting 1-3 members ,taking in consideration all the nitty gritties of the corporate and business world and make the most sustainable and profitable business possible.","Disentangle real life problems and scenarios and startle us with your unblemished solutions.Be the entrepreneur you have always aspired to be."],
+        eventRules: ["1.Cross-college teams are allowed.", "2.Original ideas are encouraged.", "3.Each team must register in advance to participate in the competition.", "4.The teams must submit their solutions in a PPT format with maximum 10 slides", "5.The use of any unfair means or plagiarism will lead to disqualification.", "Team members- 1 to 3", "Round 1- Prelims","Pitching time- 4+2 mins","Round 2- Finals","Pitching Time- 6+3mins","Suggestions- Participants may include the following points in their presentation","1.Target market analysis","2.Finances","3.Competitor analysis"],
+        eventRuleLink: "https://docs.google.com/document/d/1Eknphe0YYFoI_JnlQkcUmTpNyCFpQTYsfA3ddXKYPP0/edit?usp=sharing"
     },
     
     // {
