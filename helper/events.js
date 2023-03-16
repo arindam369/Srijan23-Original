@@ -36,7 +36,7 @@ export const events = [
     {
         eventId: "003",
         eventName: "Ace the Case",
-        eventDate: {prelims: ["April 14, 2023"], finals: "April 15, 2023"},
+        eventDate: {prelims: ["April 12, 2023"], finals: "April 14, 2023"},
         // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
         eventPoster: "/assets/events/Ace-the-Case.png",
         eventType: "business-management",
@@ -53,7 +53,7 @@ export const events = [
        {
         eventId: "004",
         eventName: "The Biznez Plan",
-        eventDate: {prelims: ["April 15, 2023"], finals: "April 16, 2023"},
+        eventDate: {prelims: ["April 16, 2023"], finals: "April 16, 2023"},
         // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
         eventPoster: "/assets/events/The-Biznez-Plan.png",
         eventType: "business-management",
