@@ -57,14 +57,14 @@ export const events = [
         // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
         eventPoster: "/assets/events/The-Biznez-Plan.png",
         eventType: "business-management",
-        eventHashtags: ["Casestudy", "Management"],
+        eventHashtags: ["Business", "Planning"],
         eventCoordinators: ["Asmit Acharya [ 9433082213 ]", "Supriti Sarkar [ 6289880272 ]", "Aneesh Gupta [ 7980704792 ]"],
         // eventVenue: "SMCC - 4th Floor - Lab",
         minMembers: 1,
         maxMembers: 3,
         // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
         eventDescription: ["Want to live the Shark Tank life? But the semesters and assignments wouldn't let you? Well, we got you covered.", "Biznez Plan, the flagship B-plan event of Srijan is here for you to make an impact on the society.Be ready to pitch your business ideas in groups constituting 1-3 members ,taking in consideration all the nitty gritties of the corporate and business world and make the most sustainable and profitable business possible.","Disentangle real life problems and scenarios and startle us with your unblemished solutions.Be the entrepreneur you have always aspired to be."],
-        eventRules: ["1.Cross-college teams are allowed.", "2.Original ideas are encouraged.", "3.Each team must register in advance to participate in the competition.", "4.The teams must submit their solutions in a PPT format with maximum 10 slides", "5.The use of any unfair means or plagiarism will lead to disqualification.", "Team members- 1 to 3", "Round 1- Prelims","Pitching time- 4+2 mins","Round 2- Finals","Pitching Time- 6+3mins","Suggestions- Participants may include the following points in their presentation","1.Target market analysis","2.Finances","3.Competitor analysis"],
+        eventRules: ["Cross-college teams are allowed. Original ideas are encouraged.", "Each team must register in advance to participate in the competition.", "The teams must submit their solutions in a PPT format with maximum 10 slides", "The use of any unfair means or plagiarism will lead to disqualification.", "Team members: 1 to 3", "Round 1: Prelims","Pitching time: 4+2 mins","Round 2: Finals","Pitching Time: 6+3mins","Suggestions: Participants may include the following points in their presentation - Target market analysis, Finances, Competitor analysis"],
         eventRuleLink: "https://docs.google.com/document/d/1Eknphe0YYFoI_JnlQkcUmTpNyCFpQTYsfA3ddXKYPP0/edit?usp=sharing"
     },
     
