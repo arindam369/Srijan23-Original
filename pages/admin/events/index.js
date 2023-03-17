@@ -17,7 +17,6 @@ import { useEffect } from "react";
 import { useState } from "react";
 import AdminProtectedRoute from "@/hoc/AdminProtectedRoute";
 import { events } from "@/helper/events";
-import EventDetailsBox from "@/components/Dashboard/EventDetailsBox";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
