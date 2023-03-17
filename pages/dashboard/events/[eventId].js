@@ -33,7 +33,13 @@ export default function EventDetailsPage({ eventData }) {
   // console.log(eventData);
 
   if (!eventData) {
-    return <h2>No Event Found</h2>;
+    return (
+      <div className={styles.dashboardContainer}>
+        <div className={styles.eventDetailsContainer}>
+          <h2 className={styles.noEventsFound}>No Event Found</h2>;
+        </div>
+      </div>
+    )
   }
   const [userInterested, setUserInterested] = useState(false);
   const [visibleRegistrationModal, setVisibleRegistrationModal] =

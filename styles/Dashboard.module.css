@@ -2104,3 +2104,8 @@ cursor: pointer;
   margin: 10px 0px;
   text-decoration: none;
 }
+
+.adminTeamDetailsBox{
+  color: white;
+  border: 1px solid red;
+}

@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
-import styles from "../../styles/Dashboard.module.css";
+import styles from "../../../styles/Dashboard.module.css";
 import Image from "next/image";
 import { FaBookOpen, FaUserSecret, FaGamepad, FaRobot } from "react-icons/fa";
 import { MdOutlineEmail, MdQuiz } from "react-icons/md";
@@ -57,7 +57,7 @@ function ViewEventsPage() {
             {events && events.length>0 && events.map((event)=>{
               console.log(event);
                 return (
-                    <Link className={styles.eventBoxTitle} key={event.eventId} href={`/${event.eventId}`}>
+                    <Link className={styles.eventBoxTitle} key={event.eventId} href={`/admin/events/${event.eventId}`}>
                       {event.eventName}
                     </Link>
                 )
