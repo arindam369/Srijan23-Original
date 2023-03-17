@@ -1,6 +1,5 @@
 import { database, storage } from "@/firebase";
 import { onValue, ref as ref_database } from "firebase/database";
-import {getDownloadURL, getMetadata, ref as ref_storage} from "firebase/storage";
 import { useContext, useEffect, useState } from "react";
 import styles from "../../styles/Dashboard.module.css";
 import Image from "next/image";

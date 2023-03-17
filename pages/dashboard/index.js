@@ -6,8 +6,6 @@ import styles from "../../styles/Dashboard.module.css";
 import {ImProfile} from "react-icons/im";
 import {BsCalendar3} from "react-icons/bs";
 import {MdFavorite} from "react-icons/md";
-import {HiMicrophone} from "react-icons/hi";
-import {FaDonate, FaEdit} from "react-icons/fa";
 import {FiSettings, FiSave, FiLogOut} from "react-icons/fi";
 import {IoNotifications} from "react-icons/io5";
 import Profile from "@/components/Dashboard/Profile";

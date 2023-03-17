@@ -19,15 +19,20 @@ import AdminProtectedRoute from "@/hoc/AdminProtectedRoute";
 import { events } from "@/helper/events";
 import EventDetailsBox from "@/components/Dashboard/EventDetailsBox";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 function ViewEventsPage() {
   const authCtx = useContext(AuthContext);
 
-  useEffect(()=>{
+  useEffect(() => {
     authCtx.stopLoading();
-  }, [])
+  }, []);
 
-  const [eventsArray, setEventsArray] = useState(null);
+  const router = useRouter();
+  const goToAdminEventDetailsPage = (eventId)=>{
+    router.push(`/admin/events/${eventId}`);
+    authCtx.startLoading();
+  }
 
   return (
     <>
@@ -47,24 +52,27 @@ function ViewEventsPage() {
           <spotLight position={[10, 15, 10]} angle={0.3} />
         </Canvas>
       </div>
-      
-      <div className={styles.dashboardPageContainer}>
-        <div className={styles.dashboardSectionHeading2}>
-          Events Database
-        </div>
 
-        <div className={styles.eventDetailsContainer}>
-            {events && events.length>0 && events.map((event)=>{
-              console.log(event);
-                return (
-                    <Link className={styles.eventBoxTitle} key={event.eventId} href={`/admin/events/${event.eventId}`}>
-                      {event.eventName}
-                    </Link>
-                )
+      <div className={styles.dashboardPageContainer}>
+        <div className={styles.dashboardSectionHeading2}>Events Database</div>
+
+        <div className={styles.eventDetailsContainer2}>
+          {events &&
+            events.length > 0 &&
+            events.map((event) => {
+              return (
+                <div
+                  className={styles.eventBoxTitle}
+                  key={event.eventId}
+                  onClick={()=>{goToAdminEventDetailsPage(event.eventId)}}
+                >
+                  {event.eventName}
+                </div>
+              );
             })}
-            {eventsArray && eventsArray.length === 0 && 
-                <div className={styles.noEventsFound}>No Event Found</div>
-            }
+          {events && events.length === 0 && (
+            <div className={styles.noEventsFound}>No Event Found</div>
+          )}
         </div>
       </div>
     </>

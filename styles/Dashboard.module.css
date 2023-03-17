@@ -1984,6 +1984,11 @@ cursor: pointer;
   display: flex;
   align-items: center;
 }
+.eventDetailsTop{
+  display: flex;
+  align-items: center;
+  color: orange;
+}
 .userDetailsMid{
   display: flex;
   justify-content: center;
@@ -2095,17 +2100,41 @@ cursor: pointer;
   flex-direction: column;
   padding: 20px 0px;
 }
+.eventDetailsContainer2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  padding: 20px;
+}
 .eventBoxTitle{
-  color: white;
+  color: rgb(179, 255, 0);
   background: linear-gradient(to top right, rgba(29, 90, 161, 0.6), rgba(20, 114, 79, 0.6));
   padding: 10px 20px;
   border-radius: 6px;
   font-family: 'Roboto', sans-serif;
-  margin: 10px 0px;
   text-decoration: none;
+  margin: 10px;
+  cursor: pointer;
 }
 
-.adminTeamDetailsBox{
+.adminEventDetailsBox{
+  width: 300px;
+  background: linear-gradient(to top right, rgba(29, 90, 161, 0.6), rgba(20, 114, 79, 0.6));
+  display: flex;
   color: white;
-  border: 1px solid red;
+  /* justify-content: center; */
+  flex-direction: column;
+  margin: 6px;
+  border-radius: 6px;
+  font-family: 'Roboto', sans-serif;
+  padding: 10px 20px;
+  height: 200px;
+}
+.teamMemberData{
+  margin: 0;
+}
+.teamMemberData p{
+  margin: 2px 0px;
 }

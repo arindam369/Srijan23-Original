@@ -701,3 +701,13 @@ input:disabled{
   font-size: .7rem;
   margin-left: 4px;
 }
+.registeredUser{
+  color: rgb(148, 206, 11);
+  display: inline-block;
+}
+.pendingUser{
+  color: #DC4C64;
+  display: inline-block;
+  font-weight: 600;
+  font-size: .76rem !important;
+}
