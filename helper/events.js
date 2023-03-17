@@ -74,7 +74,7 @@ export const events = [
         // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
         eventPoster: "/assets/events/Boardroom-War.png",
         eventType: "business-management",
-        eventHashtags: ["Business", "Planning"],
+        eventHashtags: ["Business", "Meeting"],
         eventCoordinators: ["Debamita Banerjee [ 9163918118 ]", "Sparsh Gupta [ 8100555567 ]", "Harsham Mishra [ 7980623712 ]"],
         // eventVenue: "SMCC - 4th Floor - Lab",
         minMembers: 1,
