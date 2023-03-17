@@ -50,7 +50,7 @@ export const events = [
         eventRules: ["Register in teams of 2-3 members, Prompt will be given 2 days prior", "Strictly adhere to slide limit", "In ROUND 1 : It is the Selection round which will be held in Online mode. Abstract submission within 24hrs of prompt release - 1 slide", "In ROUND 2 : This is the Finale that will be held in Offline mode. Slide limit : 4 + 1 slide(for team name) + 1 slide(concluding slide)", "Pitch time: 4-5 mins", "2 mins rebuttal from judges", "Brownie points for sticking to time limits"],
         eventRuleLink: "https://docs.google.com/document/d/1IKbX3buznPO9Xhdk3C5mVbjrA-BEzCHTQti8zC2WZWA/edit"
     },
-       {
+    {
         eventId: "004",
         eventName: "The Biznez Plan",
         eventDate: {prelims: ["April 16, 2023"], finals: "April 16, 2023"},
@@ -66,6 +66,23 @@ export const events = [
         eventDescription: ["Want to live the Shark Tank life? But the semesters and assignments wouldn't let you? Well, we got you covered.", "Biznez Plan, the flagship B-plan event of Srijan is here for you to make an impact on the society.Be ready to pitch your business ideas in groups constituting 1-3 members ,taking in consideration all the nitty gritties of the corporate and business world and make the most sustainable and profitable business possible.","Disentangle real life problems and scenarios and startle us with your unblemished solutions.Be the entrepreneur you have always aspired to be."],
         eventRules: ["Cross-college teams are allowed. Original ideas are encouraged.", "Each team must register in advance to participate in the competition.", "The use of any unfair means or plagiarism will lead to disqualification.", "The judges' decision will be final and binding.", "Team members: 1 to 3", "Round 1: Prelims","2min of elevator pitch based on a 2slider presentation.","Round 2: Finals", "Top 10 teams qualify for the final round.", "Pitching Time: 5+3mins","Maximum 10 slides permitted(excluding the introduction and conclusion)."],
         eventRuleLink: "https://docs.google.com/document/d/1Eknphe0YYFoI_JnlQkcUmTpNyCFpQTYsfA3ddXKYPP0/edit?usp=sharing"
+    },
+    {
+        eventId: "005",
+        eventName: "Boardroom War",
+        eventDate: {prelims: ["April 13, 2023 - April 14, 2023"], finals: "April 15, 2023"},
+        // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
+        eventPoster: "/assets/events/Boardroom-War.png",
+        eventType: "business-management",
+        eventHashtags: ["Business", "Planning"],
+        eventCoordinators: ["Debamita Banerjee [ 9163918118 ]", "Sparsh Gupta [ 8100555567 ]", "Harsham Mishra [ 7980623712 ]"],
+        // eventVenue: "SMCC - 4th Floor - Lab",
+        minMembers: 1,
+        maxMembers: 1,
+        // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
+        eventDescription: ["Being the CEO or a lead investor in a company is a dream many seek - but the job comes with more than just a big paycheck. So before you dive headfirst into the corporate world, get a taste of being at the top with Boardroom War.", "Boardroom War simulates real-life boardroom meetings where you play a key role in a company's top management and battle it out against your peers over concepts such as Mergers & Acquisitions, Expansions, PR debacles and much more. Business acumen isn't all that's going to pull you through either because sometimes - you don't just play the game, you play the man. So have you got what it takes to rise to the ocassion?"],
+        eventRules: ["Team Members - Individual Participation", "Round-1: Prelims (Mini Case Study) - Conducted in Online mode. Case would be provided 24 hours before submission.", "Round-2: Finals (Boardroom Meeting) - Prep time after Meeting Agenda Announcement - 1 hour, Meeting Duration - 30 minutes", "Registering in advance is compulsory to participate in the event.", "The Case Study PPT for prelims should not be more than 3 slides.", "The core idea of the event is conflict resolution. Any personal attacks or use of abusive language would be grounds for disqualification.", "The judges' decision will be final and binding."],
+        eventRuleLink: "https://docs.google.com/document/d/1fqgwPfcoFKiYUnU9YGhqM3sR-9ubtFqkywXr3LH5I1g/edit"
     },
     
     // {
