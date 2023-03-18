@@ -43,7 +43,7 @@ export const events = [
         eventHashtags: ["Casestudy", "Management"],
         eventCoordinators: ["Abhisikta Joarder [ 8017172282 ]", "Dwaipayan Haldar [ 9674273275 ]", "Sukalyan Bisui [ 8697488984 ]"],
         // eventVenue: "SMCC - 4th Floor - Lab",
-        minMembers: 2,
+        minMembers: 1,
         maxMembers: 3,
         // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
         eventDescription: ["Do you have a knack for solving problems? Or have an itch in the brain when you stumble upon a thought provoking question? Are you open to new ideas?", "Get ready to flex your problem-solving muscles at Ace the Case! Put your critical thinking and analytical skills to the test as you work together in a team to solve real-world problems. Think outside the box,compete against other brilliant minds, learn from each other, but most importantly have fun while doing it.", "Join us for a day of learning and fun to tackle real-world challenges and see who can come up with the most innovative solutions!"],
@@ -83,6 +83,23 @@ export const events = [
         eventDescription: ["Being the CEO or a lead investor in a company is a dream many seek - but the job comes with more than just a big paycheck. So before you dive headfirst into the corporate world, get a taste of being at the top with Boardroom War.", "Boardroom War simulates real-life boardroom meetings where you play a key role in a company's top management and battle it out against your peers over concepts such as Mergers & Acquisitions, Expansions, PR debacles and much more. Business acumen isn't all that's going to pull you through either because sometimes - you don't just play the game, you play the man. So have you got what it takes to rise to the ocassion?"],
         eventRules: ["Team Members - Individual Participation", "Round-1: Prelims (Mini Case Study) - Conducted in Online mode. Case would be provided 24 hours before submission.", "Round-2: Finals (Boardroom Meeting) - Prep time after Meeting Agenda Announcement - 1 hour, Meeting Duration - 30 minutes", "Registering in advance is compulsory to participate in the event.", "The Case Study PPT for prelims should not be more than 3 slides.", "The core idea of the event is conflict resolution. Any personal attacks or use of abusive language would be grounds for disqualification.", "The judges' decision will be final and binding."],
         eventRuleLink: "https://docs.google.com/document/d/1fqgwPfcoFKiYUnU9YGhqM3sR-9ubtFqkywXr3LH5I1g/edit"
+    },
+    {
+        eventId: "006",
+        eventName: "UPSG",
+        eventDate: {prelims: ["April 14, 2023"], finals: "April 15, 2023 or April 16, 2023"},
+        // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
+        eventPoster: "/assets/events/UPSG.png",
+        eventType: "misc",
+        eventHashtags: ["Brainstorming", "Circuit"],
+        eventCoordinators: ["Ekbal Hossain [ 8207225547 ]", "Dipendu Gupta [ 9007455163 ]", "Sandip Santra [ 6295449062 ]"],
+        // eventVenue: "SMCC - 4th Floor - Lab",
+        minMembers: 3,
+        maxMembers: 5,
+        // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
+        eventDescription: [`How would you like to be Player 456? Gear yourself for the running second season of UlTIMATE POWER SQUID GAME in Srijan, inspired from the famous Netflix series 'Squid Game' (2021). Swerve through a series of 6 levels moulded with engineering, sciences and logic, with "Power" as an engineering concept serving as one of the primary focal points, being punctilious and precise all along the way, and take away the competition and the prizes! Don't worry, we won't kill off the others!!`],
+        eventRules: ["3-5 players per team and 6 different levels", "A total of 12 teams will go past through the first round from the total unlimited teams based on their design skills", "The value of points are limited to the specific level and are not carried over", "Teams will not be allowed compensation for time wasting", "A volunteer can disqualify a participant or team for breaking the decorum if deemed viable", "There are total 6 stages in this game.", "Please click upon the 'Click Here' button below to access the UPSG RULE BOOK"],
+        eventRuleLink: "https://docs.google.com/presentation/d/1seV_fGmrzPuO3QcC6HuJaTFc96ZTTEd2/edit#slide=id.p1"
     },
     
     // {
