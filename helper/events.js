@@ -106,7 +106,7 @@ export const events = [
         eventName: "Climbon'23",
         eventDate: {prelims: ["April 15, 2023"], finals: "April 16, 2023"},
         // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
-        eventPoster: "/assets/events/ClimbOn.jpg",
+        eventPoster: "/assets/events/ClimbOn.jpg" ,
         eventType: "misc",
         eventHashtags: ["Mountaineering", "Rocket-Climbing"],
         eventCoordinators: ["Krishna Mittal  [ 8540062753 ]", "Urwah Jawaid [ 9103158993 ]", "Ashish Kumar Mandal [ 72949 25744 ]"],
