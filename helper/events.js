@@ -101,7 +101,7 @@ export const events = [
         eventRules: ["3-5 players per team and 6 different levels", "A total of 12 teams will go past through the first round from the total unlimited teams based on their design skills", "The value of points are limited to the specific level and are not carried over", "Teams will not be allowed compensation for time wasting", "A volunteer can disqualify a participant or team for breaking the decorum if deemed viable", "There are total 6 stages in this game.", "Please click upon the 'Click Here' button below to access the UPSG RULE BOOK"],
         eventRuleLink: "https://docs.google.com/presentation/d/1seV_fGmrzPuO3QcC6HuJaTFc96ZTTEd2/edit#slide=id.p1"
     },
-     {
+    {
         eventId: "007",
         eventName: "Climbon'23",
         eventDate: {prelims: ["April 15, 2023"], finals: "April 16, 2023"},
@@ -117,6 +117,23 @@ export const events = [
         eventDescription: ["CLIMBON is an artificial rock climbing competition organized by Jadavpur University Mountaineering And Hiking Club every year. It is open to all and there is no age or gender bar. No prior experience is required. Any passionate person from any college can participate. The competition would take place under the supervision of esteemed instructors and all the safety gears would also be provided. It is the best place for any adventurer to begin."],
         eventRules: ["Climbing routes: The competition may have different climbing routes with varying levels of difficulty, which are marked with colored holds. Climbers must follow the designated route and only use the marked holds. Touching any other part of the wall or using any other holds is not allowed and may result in disqualification.", "Timing: Each climber has a set amount of time to complete the route. The time limit may vary depending on the difficulty level of the route. If the climber does not complete the route within the specified time, their score will be based on the furthest point they reached.", "Scoring: The score is determined by the number of holds the climber reaches and touches during the climb. Climbers are awarded points for each hold they touch. The climber with the highest score in their category wins.","Categories: Climbers may be grouped into different categories based on their gender. Each category may have different routes and scoring criteria.","Safety: Safety is of utmost importance in artificial rock climbing contests. Climbers must follow all safety guidelines and instructions provided by event organizers. Judges may stop a climber's ascent if they feel that the climber is in danger or not following safety rules.","Sportsmanship: Climbers are expected to display good sportsmanship and respect for fellow competitors. Any unsportsmanlike behavior or actions that endanger others may result in disqualification.","Equipment: We will provide all the necessary equipment for the competition, but climbers are encouraged to wear well-fitting shoes with a thin sole and good grip, such as PT shoes."],
         eventRuleLink: "https://drive.google.com/file/d/1LUraTyqbn8HVO2_sKE_Dh7nvUfi_hJas/view"
+    },
+    {
+        eventId: "008",
+        eventName: "Bridge the Gap",
+        eventDate: {prelims: ["April 14, 2023"], finals: "Not Decided Yet"},
+        // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
+        eventPoster: "/assets/events/BTG.png" ,
+        eventType: "misc",
+        eventHashtags: ["Construction", "Civil"],
+        eventCoordinators: ["Sk Samiul Haque  [ 8436384925 ]", "Aritra Show [ 9748945722 ]"],
+        // eventVenue: "SMCC - 4th Floor - Lab",
+        minMembers: 2,
+        maxMembers: 4,
+        // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
+        eventDescription: ["The Bridge the Gap is a day-long event where teams of a minimum of 2 and a maximum of 4 members would construct a bridge model (cable-stayed) from materials like planks, nails, wires, glue, etc., within the specified time. The final models will be examined by renowned academicians, government officials, and industry experts. They will be tested for deformations using standardized loads and marked on aesthetics, stability, and economic sustainability factors."],
+        eventRules: ["Introduction: A cable-stayed bridge is one that is supported by a number of straight cables that go directly to one or more vertical towers. The live load is transferred to the vertical towers by the tensile forces in the cables. The cable forces are transferred to the foundations by the towers through vertical compression, while the deformations of the deck under live loads are decreased to give better stiffness.", "Task: Create a cable-stayed bridge out of wooden planks, popsicle sticks, nails, and steel wires that can withstand a design load while adhering to the design constraints provided by the organizers. The problem statement will include a detailed description of the design load and design constraints.", "Problem Statement: The problem statement will be revealed on the day of the event. At the end of the document, there is an attachment with a pre-event reference drawing. These drawings are only for reference purposes. It is possible that the detailed drawing may differ.", "Team Specifications: A team can have a minimum of 2 and a maximum of 4 members. Students from various educational institutions and departments of any year of study at the Undergraduate level can work together to form a team.", "Judging Criteria: Out of 100 marks the judges (renowned academician, government officials, and industrial experts) will judge the designs based on: Aesthetics: 25, Design: 30, Creativity: 20, Deflection: 20, Economical Design: 5", "Requirements: he participants will be provided with everything from the organizers' end. The teams need to carry only essential stationery items (like Pen, Pencil, and Eraser).", "Please click upon the 'Click Here' button below to access the BRIDGE THE GAP RULE BOOK"],
+        eventRuleLink: "https://docs.google.com/document/d/1EWoGi4EknK5TG109Fl6zGstp1Dy73NE6Ns6nRe0Io98/edit"
     },
     
     // {
