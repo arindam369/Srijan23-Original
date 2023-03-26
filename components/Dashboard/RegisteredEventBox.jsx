@@ -48,7 +48,7 @@ export default function RegisteredEventBox({eventId, teamName, eventName, teamLe
             >
                 <RiDeleteBack2Fill className={styles.deleteEventIcon}/>
             </Popconfirm>}
-            <Image height={50} width={100} src={`https://firebasestorage.googleapis.com/v0/b/srijan23-original.appspot.com/o/events%2F${eventId}.png?alt=media&token=405ee6be-7da3-49e3-803c-1e8a5895f288`} draggable={false} className={styles.eventRegisteredImage} alt="eventImage"/>
+            <Image height={200} width={400} src={`/assets/EventsByID/${eventId}.png`} draggable={false} className={styles.eventRegisteredImage} alt="eventImage"/>
             <div className={styles.eventMemberButtonBox}>
                 <div className={styles.eventTeamMembers}>
                     {eventTeamMembers && eventTeamMembers.map((eventMember)=>{
