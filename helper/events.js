@@ -152,6 +152,23 @@ export const events = [
         eventRules: ["No. of team members: 01 (min.) to 02 (max.) Students from various educational institutions and departments of any year of study at the Undergraduate level can work together to form a team. ", "You are given the real field co-ordinates of vehicles in a mixed traffic condition for a merging section (two separate traffic streams join to form a single one) along with some other details (length and width of each vehicle, vehicle id and class, and the timeframe corresponding to that field co-ordinates). Additionally, the gore coordinates shall also be given.", "The data analysis should be measured with respect to the original dataset and can be done in any software of choice, but must be finally presented in an EXCEL file.", "The graphs/dashboarding/plots must be clearly distinguishable and aesthetically appealing", "The approach in calculating the parameters must be logical and if there are any assumptions in doing so, that must be clearly mentioned beforehand", "The inferences drawn from the data analysis must be thought of in terms of improving the traffic flow parameters.", "Please click upon the 'Click Here' button below to access the SMART TRAFFIC FORUM RULE BOOK"],
         eventRuleLink: "https://docs.google.com/document/d/1ArV9vkg6H-UfqNhG29ih4PNj2-FenqLwzZf1JKHy5R4/edit"
     },
+    {
+        eventId: "010",
+        eventName: "Valorant",
+        eventDate: {prelims: ["April 14, 2023", "April 15, 2023", "April 16, 2023"], finals: "April 16, 2023"},
+        // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
+        eventPoster: "/assets/events/valorant.png" ,
+        eventType: "gaming",
+        eventHashtags: ["PC", "Gaming"],
+        eventCoordinators: ["Arka Sikder [ 7980805318 ]", "Swapnil Saha [ 9123785487 ]"],
+        // eventVenue: "SMCC - 4th Floor - Lab",
+        minMembers: 5,
+        maxMembers: 5,
+        // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
+        eventDescription: ["A LAN based tournament among 32 Teams to be played. The last Day to Register will be 9th April 11:59 PM."],
+        eventRules: ["Teams can’t register and expect to play from outside the gaming premises of JUSL. Physical presence of all the team members in mandatory.", "It is a LAN event and henceforth, the teams are requested to treat it accordingly.", "5 members from each team", "Matches will be played among the 9 maps depending on the ‘Ban and pick’ Method. (Ascent, Bind, Split, Breeze, Fracture, Lotus, Icebox, Haven, Pearl)", "Overtime will be played if a 12-12 score occurs. First Team to win two consecutive round wins.", "In case of an odd number of teams in the semi-final round, the team with the highest score difference (in the semi final round) will get qualified for the finals.", "Headphones, Keyboards, mouse will be provided. But you can bring your own accessories if you want.", "In case of any discrepancy the decision of the coordinators will be considered to be final.", "Please click upon the 'Click Here' button below to access the VALORANT RULE BOOK"],
+        eventRuleLink: "https://docs.google.com/document/d/1MuGdQyPaRWjBWwioKPDon0mvbExAc_Favx_CBAX5IxA/edit"
+    },
     
     // {
     //     eventId: "015",

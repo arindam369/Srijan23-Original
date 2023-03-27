@@ -116,7 +116,7 @@ export default function Dashboard(){
                     remove(memberEventRef);
                     if(memberId !== teamLeader){
                         update(ref_database(database, 'srijan/profiles/' + memberId + '/notifications/' + uuid()), {
-                            message: `Invitation Deleted: ${teamLeader} deleted invitation for Event-${eventId}`,
+                            message: `Invitation Deleted: ${teamLeader} deleted invitation for Event: ${eventName}`,
                             timestamp: Date.now()
                         });
                     }

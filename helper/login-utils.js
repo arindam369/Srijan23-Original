@@ -325,6 +325,10 @@ export async function registerEvent(eventId, teamName, teamLeaderEmail, teamLead
                                 message: `Registration Successful: You have successfully registered in the event: '${eventName}'`,
                                 timestamp: Date.now()
                             });
+                            notification['success']({
+                                message: `Event registered successfully`,
+                                duration: 2
+                            })
                         }
                         else{
                             await set(ref_database(database, 'srijan/events/'+eventId+"/teams/"+teamName), {
@@ -376,11 +380,11 @@ export async function registerEvent(eventId, teamName, teamLeaderEmail, teamLead
                                     teamLeader: teamLeaderEmail.split("@")[0].replace(/[.+-]/g, "_")
                                 })
                             }
+                            notification['success']({
+                                message: `Event registration pending...`,
+                                duration: 2
+                            })
                         }
-                        notification['success']({
-                            message: `Event registered successfully`,
-                            duration: 2
-                        })
                     }
                 }, 10000);
             }
