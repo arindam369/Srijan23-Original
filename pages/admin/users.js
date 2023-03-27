@@ -30,6 +30,10 @@ function UserProfiles(){
                     return user;
                 }
             })).sort((a, b)=>{
+                // if(a.profiledata.name === undefined){
+                //     console.log(a.profiledata);
+                //     console.log(a);
+                // }
                 let fa = a.profiledata.name.toLowerCase(), fb = b.profiledata.name.toLowerCase();
                 if (fa < fb) {
                     return -1;
