@@ -16,6 +16,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { bookMerchandise } from "@/helper/login-utils";
 import { notification } from "antd";
+import Head from "next/head";
 
 export default function MerchandisePage() {
   const authCtx = useContext(AuthContext);
@@ -88,6 +89,9 @@ export default function MerchandisePage() {
 
   return (
     <>
+      <Head>
+        <link rel="manifest" href="manifest.json" />
+      </Head>
       <div className={styles.canvasContainer}>
         <Canvas>
           <Stars />

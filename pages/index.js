@@ -5,6 +5,7 @@ import Image from "next/image";
 import Script from "next/script";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import Head from "next/head";
 
 export default function HomePage(){
 
@@ -67,6 +68,9 @@ export default function HomePage(){
   // }, [])
 
   return <>
+    <Head>
+      <link rel="manifest" href="manifest.json" />
+    </Head>
     <div className={styles.canvasBody} id="canvasContainer"></div>
     <div className={styles.homeBody} id="homeContainer">
       <div className={styles.frontHeading}>

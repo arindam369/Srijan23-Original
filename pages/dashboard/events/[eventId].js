@@ -151,7 +151,7 @@ export default function EventDetailsPage({ eventData }) {
           content="srijan, cultural, ju, fest, srijanju, technology, events, games, coding, srijan23, techfest"
         />
         <meta name="author" content="FETSU" />
-        <link rel="manifest" href="manifest.json" />
+        <link rel="manifest" href="/../../manifest.json" />
         <title>SRIJAN'23 | Jadavpur University</title>
 
         <meta property="og:locale" content="en_US" />
@@ -169,10 +169,10 @@ export default function EventDetailsPage({ eventData }) {
         <meta
           property="og:image"
           itemProp="image"
-          content="https://srijanju.in/favicon.ico"
+          content="https://srijanju.in/favicon2.ico"
         />
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="shortcut icon" href="favicon2.ico" type="image/x-icon" />
+        <link rel="icon" type="image/x-icon" href="favicon2.ico" />
       </Head>
       <Modal
         isOpen={visibleRegistrationModal}

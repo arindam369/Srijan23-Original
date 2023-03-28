@@ -97,9 +97,9 @@ function UserProfiles(){
                 />
                 <meta property="og:url" content="https://srijanju.in" />
                 <meta property="og:site_name" content="SRIJAN'23 | Jadavpur University" />
-                <meta property="og:image" itemProp="image" content="https://srijanju.in/favicon.ico"/>
-                <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
-                <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+                <meta property="og:image" itemProp="image" content="https://srijanju.in/favicon2.ico"/>
+                <link rel="shortcut icon" href="../favicon2.ico" type="image/x-icon" />
+                <link rel="icon" type="image/x-icon" href="../favicon2.ico" />
             </Head>
             <div className={styles.canvasContainer}>
                 <Canvas>

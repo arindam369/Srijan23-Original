@@ -68,10 +68,10 @@ function AdminEventDetailsPage({ eventData }) {
         <meta
           property="og:image"
           itemProp="image"
-          content="https://srijanju.in/favicon.ico"
+          content="https://srijanju.in/favicon2.ico"
         />
-        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
-        <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+        <link rel="shortcut icon" href="../favicon2.ico" type="image/x-icon" />
+        <link rel="icon" type="image/x-icon" href="../favicon2.ico" />
       </Head>
       <div className={styles.canvasContainer}>
         <Canvas>

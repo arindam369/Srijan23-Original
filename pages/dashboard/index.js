@@ -17,6 +17,7 @@ import Events from "@/components/Dashboard/Events";
 import Watchlist from "@/components/Dashboard/Watchlist";
 import ProtectedRoute from "@/hoc/ProtectedRoute";
 import Notification from "@/components/Dashboard/Notification";
+import Head from "next/head";
 
 
 function DashboardPage(){
@@ -118,6 +119,9 @@ function DashboardPage(){
     const userData = authCtx.userData;
     return (
         <>
+            <Head>
+                <link rel="manifest" href="manifest.json" />
+            </Head>
             <div className={styles.canvasContainer}>
                 <Canvas>
                     <Stars/>

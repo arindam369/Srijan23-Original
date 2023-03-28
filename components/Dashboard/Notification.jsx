@@ -137,7 +137,7 @@ export default function Notification(){
             });
         });
     }
-    function rejectInvitation(userId, eventId, teamLeader, teamName){
+    function rejectInvitation(userId, eventId, eventName, teamLeader, teamName){
         if(!authCtx.userData.name ||!authCtx.userData.email || !authCtx.userData.phone || !authCtx.userData.college || !authCtx.userData.dept || !authCtx.userData.year){
             notification['error']({
                 message: `Complete your profile to reject the invitation`,
