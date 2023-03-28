@@ -92,7 +92,7 @@ export default function RegisterPage2(){
             </div>
 
 
-            <div className={styles.homeBody} id="homeContainer">
+            <div className={styles.homeBody2} id="homeContainer">
                 {!visibleRegister && !visibleLogin && <div className={styles.homeBox1}>
                     <div className={styles.homeHeading} id="homeHeading" ref={homeHeadingRef}>
                         <Image src={"/assets/JU-white.png"} height={55} width={55} alt="ju_logo" draggable="false" className={styles.juLogo}/>
@@ -133,7 +133,7 @@ export default function RegisterPage2(){
                     <div className={styles.merchandiseButton} onClick={goToMerchandise}>Srijan'23 Merchandise</div>
                 </div>} */}
                 {!authCtx.isAuthenticated && !visibleRegister && !visibleLogin &&
-                <div>
+                <div className={styles.loginRegisterBox}>
                     <div className={styles.loginRegisterButton} onClick={toggleRegister}>Register</div>
                     <div className={styles.loginRegisterButton} onClick={toggleLogin}>Login</div>
                 </div>}
@@ -144,7 +144,7 @@ export default function RegisterPage2(){
 
                 {authCtx.isAuthenticated && <div className={styles.dashboardButton} onClick={goToDashboard}>Go to Dashboard</div>}
                 {authCtx.isAuthenticated && <div className={styles.dashboardButton} onClick={handleLogout}>Logout</div>}
-                {!authCtx.isAuthenticated && !visibleRegister && !visibleLogin && <div>
+                {!authCtx.isAuthenticated && !visibleRegister && !visibleLogin && <div className={styles.loginRegisterBox}>
                     <button className={styles.googleButton} onClick={signInUsingGoogle}>
                         <FcGoogle className={styles.googleIcon}/>
                         <span>Sign in with Google</span>

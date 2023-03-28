@@ -15,6 +15,20 @@
   bottom: 0;
   overflow-y: auto;
 }
+.homeBody2{
+  /* position: absolute; */
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  height: 100vh;
+}
 .homeHeading{
   display: flex;
   justify-content: center;
@@ -85,7 +99,8 @@
   100% { color: #bc2fd8; }
 }
 .homeBox1{
-  margin: 10px 0px 40px;
+  margin: 5px 0px 10px;
+  /* border: 1px solid red; */
 }
 .homeBox4{
   display: none;
@@ -101,6 +116,7 @@
   border-radius: 8px;
   animation: animate 5s ease infinite;
   background-size: 400% 400%;
+  z-index: 2;
 }
 @keyframes animate {
     0%{
@@ -147,6 +163,7 @@
   border-radius: 6px;
   font-family: 'Space Mono', monospace;
   margin-top: 50px;
+  z-index: 2;
 }
 .registerHeading{
   color: white;
@@ -157,7 +174,7 @@
   border-bottom: 2px solid white;
 }
 .registerInputBox{
-  padding: 6px 0px;
+  padding: 3px 0px;
 }
 .merchandiseForm .registerInputBox{
   padding: 18px 0px;
@@ -294,7 +311,8 @@
 .registerButton{
   border: 1px solid white;
   display: inline-block;
-  padding: 9px 20px;
+  padding: 6px 14px;
+  font-size: .9rem;
   border-radius: 5px;
   color: white;
   margin-bottom: 20px;
@@ -313,7 +331,8 @@
 .cancelButton{
   border: 1px solid white;
   display: inline-block;
-  padding: 9px 20px;
+  padding: 6px 14px;
+  font-size: .9rem;
   border-radius: 5px;
   color: white;
   margin-bottom: 20px;
@@ -338,6 +357,9 @@
   justify-content: flex-end;
   align-items: center;
 }
+.loginRegisterBox{
+  z-index: 2;
+}
 .loginRegisterButton{
   border: 1px solid white;
   display: inline-block;
@@ -355,6 +377,7 @@
   margin-left: 25px;
   margin-right: 25px;
   font-size: .8rem;
+  z-index: 2;
 }
 .loginRegisterButton:hover{
   color: rgb(53, 51, 51);
@@ -377,6 +400,7 @@
   /* margin-left: 25px; */
   /* margin-right: 25px; */
   font-size: .85rem;
+  z-index: 2;
 }
 .merchandiseButton:hover{
   color: rgb(53, 51, 51);
@@ -487,6 +511,7 @@
   margin-right: 25px;
   text-align: center;
   width: 100px;
+  z-index: 2;
 }
 .dashboardButton:hover{
   color: rgb(53, 51, 51);
@@ -603,9 +628,16 @@
     bottom: 13px;
   }
 }
-
+@media (max-width: 600px){
+  .registerInputBox{
+    padding: 6px 0px;
+  }
+}
 
 @media (max-width: 460px){
+  .registerInputBox{
+    padding: 6px 0px;
+  }
   .registerInput input{
     width: 240px;
   }
@@ -768,7 +800,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  z-index: 2;
 }
 .googleButton:hover{
   background-position: left;
@@ -785,7 +818,7 @@
   }
   .homeBox4{
     display: block;
-    margin: 40px 0px 40px;
+    margin: 40px 0px 10px;
   }
   .srijanLogo{
     width: 220px;
@@ -797,7 +830,7 @@
     margin-right: 16px;
   }
   .homeBox2{
-    margin: 40px 0px 40px;
+    margin: 10px 0px 30px;
   }
   .technoFestLogo{
     width: 400px;
@@ -842,8 +875,8 @@
 
 .countdownContainer{
   /* background: linear-gradient(to top right, rgba(29, 90, 161, 0.6), rgba(20, 114, 79, 0.6)); */
-  width: 500px;
-  height: 150px;
+  width: 430px;
+  height: 100px;
   border-radius: 6px;
   display: flex;
   justify-content: space-between;
@@ -943,5 +976,177 @@
   .errorContainer h1{
     font-size: 8rem;
     margin: 0;
+  }
+}
+
+/* About Us Page ----------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,700;0,800;0,900;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
+.homeRegisterPage{
+  padding: 0px 0px 5px;
+}
+.homeSectionPage{
+  padding: 50px 10px 20px;
+  background-color: #022116 ;
+}
+.homeSectionPage2{
+  padding: 50px 10px 20px;
+  background-color: #193f26 ;
+}
+.homeSectionHeading{
+  color: white;
+  font-family: 'Poppins', sans-serif;
+
+  font-weight: 900;
+  font-size: 3rem;
+  text-align: center;
+}
+.aboutContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 50px;
+  margin-top: 60px;
+  margin-bottom: 100px;
+}
+.aboutBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 1000px; */
+  padding: 20px 30px;
+  border-radius: 12px;
+  /* background: linear-gradient(to top right, rgba(18, 87, 167, 0.6), rgba(21, 127, 11, 0.6)); */
+  background-color: #053a21 ;
+}
+.aboutLeftPart{
+
+}
+.aboutSectionImage{
+  width: 450px;
+  height: 450px;
+  border-radius: 7px;
+}
+.aboutRightPart{
+  color: rgb(225, 225, 225);
+  margin-left: 40px;
+  font-family: 'Hind', sans-serif;
+  font-size: .84rem;
+  text-align: justify;
+  line-height: 18px;
+}
+@media (max-width: 1000px){
+  .aboutBox{
+    flex-direction: column;
+  }
+  .aboutRightPart{
+    margin-top: 20px;
+    margin-left: 0px;
+    font-size: .87rem;
+    line-height: 19px;
+  }
+}
+@media (max-width: 550px){
+  .aboutSectionImage{
+    width: 350px;
+    height: 350px;
+    border-radius: 7px;
+  }
+  .homeSectionHeading{
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 440px){
+  .aboutSectionImage{
+    width: 300px;
+    height: 300px;
+    border-radius: 7px;
+  }
+  .homeSectionHeading{
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 390px){
+  .aboutSectionImage{
+    width: 275px;
+    height: 275px;
+    border-radius: 7px;
+  }
+  .homeSectionHeading{
+    font-size: 2rem;
+  }
+  .aboutBox{
+    padding: 20px 20px;
+    border-radius: 12px;
+  }
+}
+
+/* Timeline ------------------------------------ */
+.timelineContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  margin-bottom: 100px;
+  position: relative;
+  height: 100px;
+  border: 1px solid red;
+}
+.timelineValue{
+  width: 800px;
+  height: 6px;
+  background-color:rgba(157, 202, 167, 0.774);
+  border-radius: 6px;
+  position: relative;
+}
+.timelineValue div{
+
+}
+.robotImage{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  /* left: -30px; */
+  left: -80px;
+  z-index: 3;
+  /* transform: translateX(400px); */
+}
+.timelineLabel{
+  background-color:rgba(17, 136, 43, 0.498);
+  height: 100%;
+  border-radius: 6px;
+  position: absolute;
+  left: 0;
+}
+.timelineCircle1, .timelineCircle2, .timelineCircle3, .timelineCircle4, .timelineCircle5{
+  background-color: yellowgreen;
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  border-radius: 50%;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: -5px;
+}
+.timelineCircle2{
+  transform: translateX(200px);
+}
+.timelineCircle3{
+  transform: translateX(400px);
+}
+.timelineCircle4{
+  transform: translateX(600px);
+}
+.timelineCircle5{
+  transform: translateX(800px);
+}
+
+@media (max-width: 1050px){
+  .timelineContainer{
+    flex-direction: column;
   }
 }

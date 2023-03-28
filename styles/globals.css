@@ -663,6 +663,36 @@ input:disabled{
   cursor: pointer;
 }
 
+[timeline-title]:hover:after {
+  opacity: 1;
+  transition: all 0.1s ease 0.1s;
+  visibility: visible;
+}
+[timeline-title]:after {
+  content: attr(timeline-title);
+  position: absolute;
+  bottom: -50px;
+  left: 20px;
+  padding: 6px 18px;
+  color: white;
+  white-space: nowrap; 
+  -moz-border-radius: 5px; 
+  -webkit-border-radius: 5px;  
+  border-radius: 5px;  
+  -moz-box-shadow: 0px 0px 4px #222;  
+  -webkit-box-shadow: 0px 0px 4px #222;  
+  box-shadow: 0px 0px 4px #222;  
+  background: #032d1e;
+  opacity: 0;
+  z-index: 99;
+  font-size: .82rem;
+  visibility: hidden;
+}
+[timeline-title] {
+  position: relative;
+  cursor: pointer;
+}
+
 /* merchandise product zoom */
 .productImageIcons{
   margin: 5px 10px;

@@ -34,7 +34,7 @@ export default function Countdown(){
             <div className={styles.countdownContainer}>
 
                 <div className={styles.countDownBox}>
-                    <div style={{ width: 100, height: 100 }}>
+                    <div style={{ width: 90, height: 90 }}>
                         <CircularProgressbar value={(days*100)/365} text={days>9?`${days} Days`:(days<=1?`0${days} Day`:`0${days} Days`)} styles={buildStyles({
                             textSize: '13px',
                             textColor: '#f88',
@@ -44,7 +44,7 @@ export default function Countdown(){
                 </div>
                 
                 <div className={styles.countDownBox}>
-                    <div style={{ width: 100, height: 100 }}>
+                    <div style={{ width: 90, height: 90 }}>
                         <CircularProgressbar value={(hours*100)/24} text={hours>9?`${hours} Hours`:(hours<=1?`0${hours} Hour`:`0${hours} Hours`)} styles={buildStyles({
                             textSize: '13px',
                             textColor: '#67A82D',
@@ -53,7 +53,7 @@ export default function Countdown(){
                     </div>
                 </div>
                 <div className={styles.countDownBox}>
-                    <div style={{ width: 100, height: 100 }}>
+                    <div style={{ width: 90, height: 90 }}>
                         <CircularProgressbar value={(minutes*100)/60} text={minutes>9?`${minutes} Minutes`:(minutes<=1?`0${minutes} Minute`:`0${minutes} Minutes`)} styles={buildStyles({
                             textSize: '13px',
                             textColor: '#FFD700',
@@ -62,7 +62,7 @@ export default function Countdown(){
                     </div>
                 </div>
                 <div className={styles.countDownBox}>
-                    <div style={{ width: 100, height: 100 }}>
+                    <div style={{ width: 90, height: 90 }}>
                         <CircularProgressbar value={(seconds*100)/60} text={seconds>9?`${seconds} Seconds`:(seconds<=1?`0${seconds} Second`:`0${seconds} Seconds`)} styles={buildStyles({
                             textSize: '12px',
                             textColor: '#079FEB',

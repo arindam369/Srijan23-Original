@@ -15,6 +15,7 @@ const AuthContext = React.createContext({
     updateAuthenticationStatus: (isUserAuthenticated)=>{},
     updateUserData: (userData)=>{},
     interestedEvents: "",
+    registeredEvents: "",
     isLoading: "",
     startLoading: ()=>{},
     stopLoading: ()=>{},
@@ -29,6 +30,7 @@ export const AuthContextProvider = (props)=>{
     const [userData, setUserData] = useState(null);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [interestedEvents, setInterestedEvents] = useState(null);
+    const [registeredEvents, setRegisteredEvents] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
     const startLoading = ()=>{
@@ -116,6 +118,24 @@ export const AuthContextProvider = (props)=>{
             });
         }
     }, [userId])
+    useEffect(()=>{
+        if(userId){
+            let registeredEventsArray = [];
+            onValue(ref_database(database, 'srijan/profiles/' + userId + '/events') , (snapshot)=>{
+                if(snapshot){
+                    const interestedEvents = snapshot.val();
+                    for(let registeredEventId in interestedEvents){
+                        const eventDetails = getEventById(registeredEventId);
+                        registeredEventsArray.push(eventDetails);
+                    }
+                    setRegisteredEvents(registeredEventsArray);
+                    stopLoading();
+                }
+            }, {
+                onlyOnce: true
+            });
+        }
+    }, [userId])
 
     const refetchInterestedEvents = ()=>{
         if(userId){
@@ -144,6 +164,7 @@ export const AuthContextProvider = (props)=>{
         updateUserData: updateUserData,
         logout: logout,
         interestedEvents: interestedEvents,
+        registeredEvents: registeredEvents,
         isLoading: isLoading,
         startLoading: startLoading,
         stopLoading: stopLoading,

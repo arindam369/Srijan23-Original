@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import styles from "../../styles/Dashboard.module.css";
 import EventBox from "./EventBox";
 import {IoIosArrowDropleft, IoIosArrowDropright} from "react-icons/io";
 import {IoMdSearch, IoMdClose} from "react-icons/io";
 import { events } from "@/helper/events";
 import { useEffect } from "react";
+import AuthContext from "@/store/AuthContext";
 
 export default function Events(){
 
@@ -22,6 +23,7 @@ export default function Events(){
     // const goRight = ()=>{
     //     setEventIndex((eventIndex+1)%events.length);
     // }
+    const authCtx = useContext(AuthContext);
 
     const [visibleSortBox, setVisibleSortBox] = useState(false);
     const [sortedType, setSortedType] = useState("all-events");
@@ -38,6 +40,12 @@ export default function Events(){
     useEffect(()=>{
         if(sortedType === "all-events"){
             setSortedEvents(events);
+        }
+        else if(sortedType === "registered"){
+            setSortedEvents(authCtx.registeredEvents);
+        }
+        else if(sortedType === "unregistered"){
+            setSortedEvents(events.filter(eventData => !authCtx.registeredEvents.includes(eventData)));
         }
         else{
             setSortedEvents(events.filter((eventData)=>(eventData.eventType === sortedType)));
@@ -70,6 +78,12 @@ export default function Events(){
         }
         else if(eventType === "misc"){
             setSortedEventType("Misc");
+        }
+        else if(eventType === "registered"){
+            setSortedEventType("Registered");
+        }
+        else if(eventType === "unregistered"){
+            setSortedEventType("Not Registered");
         }
         setVisibleSortBox(false);
     }
@@ -106,7 +120,7 @@ export default function Events(){
                         {
                             sortedEvents && sortedEvents.map((eventData)=>{
                                 return (
-                                    <EventBox key={eventData.eventId} eventId={eventData.eventId} eventName={eventData.eventName} eventDate={eventData.eventDate} eventInterested={eventData.eventInterested} eventRegistered={eventData.eventRegistered} eventPoster={eventData.eventPoster} eventHashtags={eventData.eventHashtags} eventShortDescription={eventData.eventShortDescription}/>
+                                    <EventBox key={eventData.eventId} eventId={eventData.eventId} eventName={eventData.eventName} eventDate={eventData.eventDate} eventInterested={eventData.eventInterested} eventRegistered={eventData.eventRegistered} eventPoster={eventData.eventPoster} eventHashtags={eventData.eventHashtags} eventShortDescription={eventData.eventShortDescription} isRegistered={authCtx.registeredEvents.includes(eventData)}/>
                                 )
                             })
                         }
@@ -128,6 +142,8 @@ export default function Events(){
                             <li onClick={()=>{showEvents("business-management")}}>Business & Management</li>
                             <li onClick={()=>{showEvents("brainstorming")}}>Brainstorming</li>
                             <li onClick={()=>{showEvents("misc")}}>Misc</li>
+                            <li onClick={()=>{showEvents("registered")}}>Registered</li>
+                            <li onClick={()=>{showEvents("unregistered")}}>Not Registered</li>
                         </div>}
                     </div>
 

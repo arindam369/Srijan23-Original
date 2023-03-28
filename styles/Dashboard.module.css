@@ -6,6 +6,7 @@
 
 /* dashboard ----------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,700;0,800;0,900;1,600&display=swap');
 
 
 .dashboardContainer{
@@ -458,7 +459,56 @@ padding: 4px 15px 4px 0px;
 border-radius: 8px;
 background: linear-gradient(to top right, rgba(29, 90, 161, 0.6), rgba(20, 114, 79, 0.6));
 margin-bottom: 15px;
+position: relative;
 }
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+.registeredLabel{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.registeredLabel div{
+  background-color: #DC4C64;
+  padding: 6px 15px;
+  color: white;
+  margin-top: 20px;
+  /* display: inline-block; */
+  font-size: .75rem;
+  border-radius: 4px;
+  
+}
+.registeredLabel2{
+  color: white;
+  position: absolute;
+  /* top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: red;
+  /* color: rgb(215, 229, 16); */
+  text-shadow: 0px 0px 0px black,   /* Right shadow */
+  -3px 1px 0px black,               /* Left shadow */
+  0px 3px 0px black,                /* Bottom shadow */
+  0px -1px 0px black;
+  /* letter-spacing: 8px; */
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  border: 2px solid red;
+  border-radius: 40%;
+  font-size: 1rem;
+  transform: rotate(28deg);
+  top: 10px;
+  right: -8px;
+  z-index: 3;
+}
+
 .eventImageBox{
 padding: 10px;
 }
@@ -1341,7 +1391,13 @@ cursor: pointer;
 .eventBodyBox{
   padding: 25px 0px;
   width: 100%;
-  height: 80px;
+  height: 120px;
+}
+.registeredLabel{
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
 }
 .eventBodyTitle{
   margin-top: -10px;
