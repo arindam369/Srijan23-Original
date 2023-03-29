@@ -186,6 +186,23 @@ export const events = [
         eventRules: ["The event consists of two rounds. Prelims and Finale. The fastest 4 teams finishing the prelims will qualify for the finale.", "Prelims: Each team will have 3-4 members, and they will face an 8x8 matrix full of brainstorming questions.", "Each element of the matrix will have two questions; the answers to the questions will give the row address and column address of the next element. Beware! Don't guess the elements, as you'll be disqualified upon guessing the wrong element! Upon solving each element, your team receives a key. Each key has a part of a jumbled puzzle.", "The goal is to solve the elements one by one, decipher the next location, solve that element, and in this way, collect all four keys, and unscramble the puzzle!", "The first four teams to SUBMIT THE FINAL ANSWER wins, and qualify for the finale.", "Finals: 4 Teams qualify", "Two teams will enter one room together. Look. Understand. Analyse.", "The clue lies right there, everywhere around you, be it the curtain on the floor, or the poster on the wall; they can be anywhere. Decipher the clues chronologically, each clue will lead to the next clue. Points will be given for each clue found for the first time and subsequent clues will hold more points. The numbers put together will give the answer to the combination lock that holds the key to unlock the room. The first team to earn their freedom wins! (In case of no winners, the team with maximum points will win)", "That the questions will be logic, mathematics, and science-based, but nothing out of the blue!"],
         eventRuleLink: "https://docs.google.com/document/d/1aZIh99ggLv_t2-AndWl_QoXs-aQbefqU6QJXSzab9hU/edit"
     },
+    {
+        eventId: "012",
+        eventName: "Homecoming",
+        eventDate: {prelims: ["April 14, 2023", "April 15, 2023"], finals: ""},
+        // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
+        eventPoster: "/assets/events/homecoming.png" ,
+        eventType: "circuit-robotics",
+        eventHashtags: ["Maze", "Line-Follower"],
+        eventCoordinators: ["Rupayan Pal [ 7439562371 ]", "Sayantan Murmu [ 7599420654 ]"],
+        // eventVenue: "SMCC - 4th Floor - Lab",
+        minMembers: 1,
+        maxMembers: 5,
+        // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
+        eventDescription: ["I can hardly contain my excitement as I board my flight from Germany to India. It's been years since I've seen my family, and I can't wait to be reunited with them. As I settle into my seat and watch the plane take off, memories of my time in Germany flood my mind. The sights, sounds, and smells of the country are still fresh in my mind, but I'm ready to leave it all behind and embrace the familiar warmth of my homeland.", "Get ready for an exciting and innovative event, Homecoming! Join us for a thrilling line follower bot race where you'll design and build your own bot to follow a path until it reaches the finish line. This competition is open to everyone who loves coding and engineering challenges. Don't miss the chance to showcase your skills and creativity!", "Problem Statement: Build a robot that can trace a complicated network of paths and crossroads, using line following."],
+        eventRules: ["Each team may consist of 1-5 members. The team members may be from different colleges.", "Physical damage to the arena or misbehavior with any member of team Srijan is subject to disqualification. The participants can test-run their robots in the arena before each round. However, after the commencement of a round, the participants will not be allowed to make technical changes, such as wiring or code. The decision of the JUSC event officials is final and abiding.", "Event Rules: The evaluation of each robot will be based on points. If the robot crosses a particular segment in the arena, points will be awarded. The robot cannot be adjusted manually, once it takes off from the beginning of a segment.", "If the robot wanders away from the line or gets stuck in the middle of a segment, there are two options - a) Restart from the beginning of the previous segment or b) Skipping to the next segment", "Please click upon the 'Click Here' button below to access the HOMECOMING RULE BOOK"],
+        eventRuleLink: "https://docs.google.com/document/d/1qVgofVWyZ6Mm6beBLVjnNr331HorJZme8uF5kgoOKLE/edit"
+    },
        // {
        // eventId: "011",
        // eventName: "FIFA",
