@@ -47,7 +47,16 @@ export default function EventRegistration({eventName, eventId, minMembers, maxMe
             // setError("You must provide a Team name");
             notification['error']({
                 message: `You must provide a Team name`,
-                duration: 2
+                duration: 4
+            })
+            authCtx.stopLoading();
+            return;
+        }
+        const teamNameRegex = /^[a-zA-Z0-9]{3,16}$/;
+        if (!teamNameRegex.test(teamName)) {
+            notification['error']({
+                message: `Invalid team name. Team name should be 3-16 letters long and should contain letters or numbers`,
+                duration: 5
             })
             authCtx.stopLoading();
             return;
@@ -56,7 +65,7 @@ export default function EventRegistration({eventName, eventId, minMembers, maxMe
             // setError("Team name must not contain any whitespace");
             notification['error']({
                 message: `Team name must not contain any whitespace`,
-                duration: 2
+                duration: 4
             })
             authCtx.stopLoading();
             return;
@@ -65,7 +74,7 @@ export default function EventRegistration({eventName, eventId, minMembers, maxMe
             // setError("You must provide your email");
             notification['error']({
                 message: `You must provide your email`,
-                duration: 2
+                duration: 4
             })
             authCtx.stopLoading();
             return;
@@ -74,7 +83,7 @@ export default function EventRegistration({eventName, eventId, minMembers, maxMe
             // setError("You must provide your mobile no");
             notification['error']({
                 message: `You must provide your mobile no.`,
-                duration: 2
+                duration: 4
             })
             authCtx.stopLoading();
             return;
@@ -85,7 +94,7 @@ export default function EventRegistration({eventName, eventId, minMembers, maxMe
             // setError("Invalid Email input");
             notification['error']({
                 message: `Invalid email input`,
-                duration: 2
+                duration: 3
             })
             authCtx.stopLoading();
             return;
@@ -95,7 +104,7 @@ export default function EventRegistration({eventName, eventId, minMembers, maxMe
         if(!authCtx.userData.name ||!authCtx.userData.email || !authCtx.userData.phone || !authCtx.userData.college || !authCtx.userData.dept || !authCtx.userData.year){
             notification['error']({
                 message: `Complete your profile first to register in an event`,
-                duration: 2
+                duration: 5
             })
             authCtx.stopLoading();
             return;
