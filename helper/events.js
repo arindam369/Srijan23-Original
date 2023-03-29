@@ -169,6 +169,23 @@ export const events = [
         eventRules: ["Teams can’t register and expect to play from outside the gaming premises of JUSL. Physical presence of all the team members in mandatory.", "It is a LAN event and henceforth, the teams are requested to treat it accordingly.", "5 members from each team", "Matches will be played among the 9 maps depending on the ‘Ban and pick’ Method. (Ascent, Bind, Split, Breeze, Fracture, Lotus, Icebox, Haven, Pearl)", "Overtime will be played if a 12-12 score occurs. First Team to win two consecutive round wins.", "In case of an odd number of teams in the semi-final round, the team with the highest score difference (in the semi final round) will get qualified for the finals.", "Headphones, Keyboards, mouse will be provided. But you can bring your own accessories if you want.", "In case of any discrepancy the decision of the coordinators will be considered to be final.", "Please click upon the 'Click Here' button below to access the VALORANT RULE BOOK"],
         eventRuleLink: "https://docs.google.com/document/d/1MuGdQyPaRWjBWwioKPDon0mvbExAc_Favx_CBAX5IxA/edit"
     },
+    {
+        eventId: "011",
+        eventName: "Escape Room",
+        eventDate: {prelims: ["April 14, 2023"], finals: "April 15, 2023"},
+        // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
+        eventPoster: "/assets/events/EscapeRoom.png" ,
+        eventType: "brainstorming",
+        eventHashtags: ["Quest", "Puzzle"],
+        eventCoordinators: ["Arkojit Sen [ 8768605763 ]", "Jyotishman Sarkar [ 9674318486 ]"],
+        // eventVenue: "SMCC - 4th Floor - Lab",
+        minMembers: 3,
+        maxMembers: 4,
+        // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
+        eventDescription: ["Escape Room is an enthralling event full of startling questions guaranteed to make one’s mind stumble and stutter, in desperate need of being solved to proceed to the next mind-bender and subsequently through this provocative process,  find one's way out of the labyrinthine paths of the room (no puns intended *wink* *wink*). The fastest 4 teams to ace the prelims will go to the Finals, where even more brutal brainstorming will be expected of them to survive and emerge victorious! Soaring adrenaline levels hand in hand with an ingenious mind is all that is requisite to see the light at the end of the tunnel!"],
+        eventRules: ["The event consists of two rounds. Prelims and Finale. The fastest 4 teams finishing the prelims will qualify for the finale.", "Prelims: Each team will have 3-4 members, and they will face an 8x8 matrix full of brainstorming questions.", "Each element of the matrix will have two questions; the answers to the questions will give the row address and column address of the next element. Beware! Don't guess the elements, as you'll be disqualified upon guessing the wrong element! Upon solving each element, your team receives a key. Each key has a part of a jumbled puzzle.", "The goal is to solve the elements one by one, decipher the next location, solve that element, and in this way, collect all four keys, and unscramble the puzzle!", "The first four teams to SUBMIT THE FINAL ANSWER wins, and qualify for the finale.", "Finals: 4 Teams qualify", "Two teams will enter one room together. Look. Understand. Analyse.", "The clue lies right there, everywhere around you, be it the curtain on the floor, or the poster on the wall; they can be anywhere. Decipher the clues chronologically, each clue will lead to the next clue. Points will be given for each clue found for the first time and subsequent clues will hold more points. The numbers put together will give the answer to the combination lock that holds the key to unlock the room. The first team to earn their freedom wins! (In case of no winners, the team with maximum points will win)", "That the questions will be logic, mathematics, and science-based, but nothing out of the blue!"],
+        eventRuleLink: "https://docs.google.com/document/d/1aZIh99ggLv_t2-AndWl_QoXs-aQbefqU6QJXSzab9hU/edit"
+    },
        // {
        // eventId: "011",
        // eventName: "FIFA",
