@@ -14,8 +14,8 @@ export default function RegisterPage(){
             </Head>
             <div className={styles.homeRegisterPage}>
                 <RegisterPage2/>
-                <AboutPage/>
-                <Timeline/>
+                {/* <AboutPage/> */}
+                {/* <Timeline/> */}
             </div>
         </>
     )
