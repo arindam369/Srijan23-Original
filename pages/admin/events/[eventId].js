@@ -1,22 +1,36 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
-import AdminProtectedRoute from "@/hoc/AdminProtectedRoute";
+import { useState, useEffect, useContext } from "react";
 import Head from "next/head";
+import { onValue, ref as ref_database } from "firebase/database";
 import { database } from "@/firebase";
 import { getEventById } from "@/helper/event-utils";
 import { events } from "@/helper/events";
-import { onValue, ref as ref_database } from "firebase/database";
-import { useContext, useEffect, useState } from "react";
 import styles from "../../../styles/Dashboard.module.css";
 import AuthContext from "@/store/AuthContext";
+import RegisterPage2 from "@/components/Register/Register2";
+import { admins } from "@/helper/admins";
+import PermissionDeniedPage from "@/components/PermissionError";
 
 function AdminEventDetailsPage({ eventData }) {
+  const authCtx = useContext(AuthContext);
+
+  if(!authCtx.isAuthenticated){
+    return (
+        <RegisterPage2/>
+    )
+  }
+  if(!admins[`${eventData.eventId}`].includes(authCtx.userId)){
+    return (
+        <PermissionDeniedPage/>
+    )
+  }
+
   if (!eventData) {
     return <h2 className={styles.noEventsFound}>No Event Found</h2>;
   }
 
   const [teamDetails, setTeamDetails] = useState([]);
-  const authCtx = useContext(AuthContext);
 
   useEffect(() => {
     authCtx.stopLoading();
@@ -103,9 +117,9 @@ function AdminEventDetailsPage({ eventData }) {
         <div className={styles.userDetailsContainer}>
           {teamDetails &&
             teamDetails.length > 0 &&
-            teamDetails.map((team) => {
+            teamDetails.map((team, idx) => {
               return (
-                <div className={styles.adminEventDetailsBox}>
+                <div className={styles.adminEventDetailsBox} key={idx}>
                   <div className={styles.eventDetailsTop}>
                     <h4>{team.teamDetails && team.teamDetails.teamName}</h4>
                   </div>
@@ -177,5 +191,4 @@ export async function getStaticPaths() {
     fallback: true,
   };
 }
-
-export default AdminProtectedRoute(AdminEventDetailsPage);
+export default AdminEventDetailsPage;

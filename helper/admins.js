@@ -1,0 +1,15 @@
+export const admins = {
+    "001": ["halderarindam10000", "sanghitagharami2000"],
+    "002": ["halderarindam10000"],
+    "003": ["halderarindam10000"],
+    "004": ["halderarindam10000"],
+    "005": ["halderarindam10000"],
+    "006": ["halderarindam10000"],
+    "007": ["halderarindam10000"],
+    "008": ["halderarindam10000"],
+    "009": ["halderarindam10000"],
+    "010": ["halderarindam10000"],
+    "011": ["halderarindam10000"],
+    "012": ["halderarindam10000"],
+    "013": ["halderarindam10000"],
+}
