@@ -203,6 +203,23 @@ export const events = [
         eventRules: ["Each team may consist of 1-5 members. The team members may be from different colleges.", "Physical damage to the arena or misbehavior with any member of team Srijan is subject to disqualification. The participants can test-run their robots in the arena before each round. However, after the commencement of a round, the participants will not be allowed to make technical changes, such as wiring or code. The decision of the JUSC event officials is final and abiding.", "Event Rules: The evaluation of each robot will be based on points. If the robot crosses a particular segment in the arena, points will be awarded. The robot cannot be adjusted manually, once it takes off from the beginning of a segment.", "If the robot wanders away from the line or gets stuck in the middle of a segment, there are two options - a) Restart from the beginning of the previous segment or b) Skipping to the next segment", "Please click upon the 'Click Here' button below to access the HOMECOMING RULE BOOK"],
         eventRuleLink: "https://docs.google.com/document/d/1qVgofVWyZ6Mm6beBLVjnNr331HorJZme8uF5kgoOKLE/edit"
     },
+     {
+        eventId: "013",
+        eventName: "Cold Case",
+        eventDate: {prelims: ["April 14, 2023"], finals: "April 16,2023"},
+        // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
+        eventPoster: "/assets/events/coldcase.png" ,
+        eventType: "Brainstorming",
+        eventHashtags: ["Mystery", "Decypher and Problem Solving"],
+        eventCoordinators: ["Shrobona De[ 9163821724 ]", "Shreyoshi De [ 8961800461 ]","Kaustav Chakraborty[ 8420437800]"],
+        // eventVenue: "SMCC - 4th Floor - Lab",
+        minMembers: 1,
+        maxMembers: 1,
+        // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
+        eventDescription: ["Cold Case is a two-round exciting mystery-solving event in which participants take on the role of investigator. When given a case, they must examine it, comprehend the clues, and crack it with precision and speed.", "A twirling interweb of scenarios and cases which will take you on different roads - Your answers will guide you to the portal of victory, we will always be there with the clues and hints you deserve. No Watsons will be the last man standing, do you have what it takes to conquer this curious game of cat and mouse and bring the victory trophy _holme_? ", "Note: we are expecting to launch a website to gamify the whole event ","Need more info? Give the brochure a read:https://drive.google.com/file/d/1YpvsrLYJKWEJMhp8TEJWPy5wr9h5g0b3/view"],
+        eventRules: ["Rules:","1.It is a solo event where participation shall be on the basis of online registration as well as spot registration.", "2.No prerequisite skills required.","3.The event will be held in 2 rounds- Prelims and Finals","4.Prelims will be held in several slots so students can participate at their preferred time","5.The slots for prelims will each be of 1 hr and allotment of slots to the participants will be on a first come first serve basis.","6.Top participants from each slot in the prelims round will qualify for the finals.","7.For both the rounds, the participants will be presented with a case along with clues using which they have to identify the perpetrator(s).The case will progress stepwise where the participants will be provided with more hints as the case progresses,ultimately leading to a conclusion.","8.The decision of the organizing committee shall be final and binding. No further queries in this regard shall be entertained."],
+        eventRuleLink: "https://docs.google.com/document/d/1goH-LmiDzLxiGqCs__uVwhk3qN6C1FkDX-Cnxx08mJA/edit"
+    },
        // {
        // eventId: "011",
        // eventName: "FIFA",
