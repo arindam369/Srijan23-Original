@@ -209,7 +209,7 @@ export const events = [
         eventDate: {prelims: ["April 14, 2023"], finals: "April 16,2023"},
         // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
         eventPoster: "/assets/events/coldcase.png" ,
-        eventType: "Brainstorming",
+        eventType: "brainstorming",
         eventHashtags: ["Mystery", "Decypher and Problem Solving"],
         eventCoordinators: ["Shrobona De[ 9163821724 ]", "Shreyoshi De [ 8961800461 ]","Kaustav Chakraborty[ 8420437800]"],
         // eventVenue: "SMCC - 4th Floor - Lab",
