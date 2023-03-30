@@ -210,14 +210,14 @@ export const events = [
         // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
         eventPoster: "/assets/events/coldcase.png" ,
         eventType: "brainstorming",
-        eventHashtags: ["Mystery", "Decypher and Problem Solving"],
-        eventCoordinators: ["Shrobona De[ 9163821724 ]", "Shreyoshi De [ 8961800461 ]","Kaustav Chakraborty[ 8420437800]"],
+        eventHashtags: ["Mystery", "Decypher"],
+        eventCoordinators: ["Shrobona De [ 9163821724 ]", "Shreyoshi De [ 8961800461 ]","Kaustav Chakraborty [ 8420437800]"],
         // eventVenue: "SMCC - 4th Floor - Lab",
         minMembers: 1,
         maxMembers: 1,
         // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
         eventDescription: ["Cold Case is a two-round exciting mystery-solving event in which participants take on the role of investigator. When given a case, they must examine it, comprehend the clues, and crack it with precision and speed.", "A twirling interweb of scenarios and cases which will take you on different roads - Your answers will guide you to the portal of victory, we will always be there with the clues and hints you deserve. No Watsons will be the last man standing, do you have what it takes to conquer this curious game of cat and mouse and bring the victory trophy _holme_? ", "Note: we are expecting to launch a website to gamify the whole event "],
-        eventRules: ["Rules:","1.It is a solo event where participation shall be on the basis of online registration as well as spot registration.", "2.No prerequisite skills required.","3.The event will be held in 2 rounds- Prelims and Finals","4.Prelims will be held in several slots so students can participate at their preferred time","5.The slots for prelims will each be of 1 hr and allotment of slots to the participants will be on a first come first serve basis.","6.Top participants from each slot in the prelims round will qualify for the finals.","7.For both the rounds, the participants will be presented with a case along with clues using which they have to identify the perpetrator(s).The case will progress stepwise where the participants will be provided with more hints as the case progresses,ultimately leading to a conclusion.","8.The decision of the organizing committee shall be final and binding. No further queries in this regard shall be entertained."],
+        eventRules: ["It is a solo event where participation shall be on the basis of online registration as well as spot registration.", "No prerequisite skills required.","The event will be held in 2 rounds - Prelims and Finals","Prelims will be held in several slots so students can participate at their preferred time","The slots for prelims will each be of 1 hr and allotment of slots to the participants will be on a first come first serve basis.","Top participants from each slot in the prelims round will qualify for the finals.","For both the rounds, the participants will be presented with a case along with clues using which they have to identify the perpetrator(s). The case will progress stepwise where the participants will be provided with more hints as the case progresses,ultimately leading to a conclusion.","The decision of the organizing committee shall be final and binding. No further queries in this regard shall be entertained."],
         eventRuleLink: "https://drive.google.com/file/d/1YpvsrLYJKWEJMhp8TEJWPy5wr9h5g0b3/view"
     },
        // {

@@ -1148,5 +1148,57 @@
 @media (max-width: 1050px){
   .timelineContainer{
     flex-direction: column;
+    height: auto;
+  }
+  .timelineValue{
+    height: 800px;
+    width: 6px;
+    background-color:rgba(157, 202, 167, 0.774);
+    border-radius: 6px;
+    position: relative;
+  }
+  .timelineValue div{
+  
+  }
+  .robotImage{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    /* left: -30px; */
+    left: -80px;
+    z-index: 3;
+    /* transform: translateX(400px); */
+  }
+  .timelineLabel{
+    background-color:rgba(17, 136, 43, 0.498);
+    height: 100%;
+    border-radius: 6px;
+    position: absolute;
+    left: 0;
+    width: 100%;
+  }
+  .timelineCircle1, .timelineCircle2, .timelineCircle3, .timelineCircle4, .timelineCircle5{
+    background-color: yellowgreen;
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: -5px;
+  }
+  .timelineCircle2{
+    transform: translateY(200px);
+  }
+  .timelineCircle3{
+    transform: translateY(400px);
+  }
+  .timelineCircle4{
+    transform: translateY(600px);
+  }
+  .timelineCircle5{
+    transform: translateY(800px);
   }
 }
