@@ -1708,6 +1708,14 @@ cursor: pointer;
   align-items: center;
   float: right;
 }
+.acceptRejectbuttonBox2{
+  display: flex;
+  align-items: center;
+  float: right;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
 .rejectButton{
   background: #DC4C64;
   color: white;
@@ -2187,6 +2195,20 @@ cursor: pointer;
   font-family: 'Roboto', sans-serif;
   padding: 10px 20px;
   height: 223px;
+}
+.adminMerchandiseDetailsBox{
+  width: 300px;
+  background: linear-gradient(to top right, rgba(29, 90, 161, 0.6), rgba(20, 114, 79, 0.6));
+  display: flex;
+  color: white;
+  /* justify-content: center; */
+  flex-direction: column;
+  margin: 6px;
+  border-radius: 6px;
+  font-family: 'Roboto', sans-serif;
+  padding: 10px 20px;
+  height: 300px;
+  position: relative;
 }
 .teamMemberData{
   margin: 0;

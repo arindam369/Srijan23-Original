@@ -79,37 +79,56 @@ export const getAllInterestedEvents = (userId)=>{
         onlyOnce: true
     });
 }
-export async function bookMerchandise(fullname, email, phone, college, dept, tshirtName, tshirtColor, tshirtSize, paymentMethod){
-    const userId = email.split("@")[0].replace(/[.+-]/g, "_");
-
-    onValue(ref_database(database, 'srijan/merchandise/'+userId), (snapshot) => {
-        if(snapshot.val() !== null){
-            notification['error']({
-                message: `You have already placed an order`,
-                duration: 2
-            })
-            return;
-        }
-        else{
-            set(ref_database(database, 'srijan/merchandise/' + userId), { fullname, email, phone, college, dept, tshirtName, tshirtColor, tshirtSize, paymentMethod}
-            ).then((res) => {
-                // console.log("Merchandise Booked successfully!");
-                notification['success']({
-                    message: `Order placed successfully`,
-                    duration: 2
-                })
-            })
-            .catch((err) => {
-                // console.log("Booking failed for Merchandise...");
+export async function bookMerchandise(fullname, email, phone, college, dept, tshirtName, tshirtColor, tshirtSize, paymentMethod, transactionId, paymentCollector){
+    // const userId = email.split("@")[0].replace(/[.+-]/g, "_");
+    if(paymentMethod === "UPI"){
+        onValue(ref_database(database, 'srijan/merchandise/' + transactionId), (snapshot) => {
+            if(snapshot.val() !== null){
                 notification['error']({
-                    message: `Order failed for merchandise`,
-                    duration: 2
+                    message: `One order is already placed with this transaction id`,
+                    duration: 8
                 })
-            });
-        }
-    }, {
-        onlyOnce: true
-    });
+                return;
+            }
+            else{
+                set(ref_database(database, 'srijan/merchandise/' + transactionId), { fullname, email, phone, college, dept, tshirtName, tshirtColor, tshirtSize, paymentMethod, transactionId, paymentCollector, "verified": false, "id":transactionId}
+                ).then((res) => {
+                    // console.log("Merchandise Booked successfully!");
+                    notification['success']({
+                        message: `Order Pending.  Please wait for an admin to verify your order details`,
+                        duration: 10
+                    })
+                })
+                .catch((err) => {
+                    // console.log("Booking failed for Merchandise...");
+                    notification['error']({
+                        message: `Order failed for merchandise`,
+                        duration: 5
+                    })
+                });
+            }
+        }, {
+            onlyOnce: true
+        });
+    }
+    else{
+        const merchandiseId = uuid();
+        set(ref_database(database, 'srijan/merchandise/' + merchandiseId), { fullname, email, phone, college, dept, tshirtName, tshirtColor, tshirtSize, paymentMethod, paymentCollector, id: merchandiseId, "verified": false}
+        ).then((res) => {
+            // console.log("Merchandise Booked successfully!");
+            notification['success']({
+                message: `Order Pending.  Please wait for an admin to verify your order details`,
+                duration: 10
+            })
+        })
+        .catch((err) => {
+            // console.log("Booking failed for Merchandise...");
+            notification['error']({
+                message: `Order failed for merchandise`,
+                duration: 5
+            })
+        });
+    }
 }
 
 

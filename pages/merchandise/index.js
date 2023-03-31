@@ -42,7 +42,7 @@ export default function MerchandisePage() {
   // const [imageFile, setImageFile] = useState(null);
   // const [file, setFile] = useState(null);
   // const [progress, setProgress] = useState(0);
-  const [isUpdatedAvatar, setIsUpdatedAvatar] = useState(false);
+  // const [isUpdatedAvatar, setIsUpdatedAvatar] = useState(false);
   const [paymentCollector, setPaymentCollector] = useState("trishit");
 
   const handleMerchandiseBook = async (e)=>{
@@ -50,11 +50,11 @@ export default function MerchandisePage() {
     authCtx.startLoading();
 
     // handle all validations
-    if(fullname.trim().length === 0 || email.trim().length === 0 || phone.trim().length === 0 || college.trim().length === 0 || dept.trim().length === 0 || tshirtName.trim().length === 0){
+    if(fullname.trim().length === 0 || email.trim().length === 0 || phone.trim().length === 0 || college.trim().length === 0 || dept.trim().length === 0 || tshirtName.trim().length === 0 || (paymentMethod==="UPI" && transactionId.trim().length === 0)){
       // setError("All fields are mandatory");
       notification['error']({
         message: `All fields are mandatory`,
-        duration: 2
+        duration: 3
     })
       authCtx.stopLoading();
       return;
@@ -62,17 +62,27 @@ export default function MerchandisePage() {
     const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
     const isEmailValid = emailRegex.test(email);
     if(!isEmailValid){
-        notification['error']({
-          message: `Invalid email input`,
-          duration: 2
+      notification['error']({
+        message: `Invalid email input`,
+        duration: 2
       })
-        authCtx.stopLoading();
-        return;
+      authCtx.stopLoading();
+      return;
+    }
+    const transactionIdRegex = /^[0-9]{12}$/;
+    const isTransactionIdValid = transactionIdRegex.test(transactionId);
+    if(paymentMethod==="UPI" && !isTransactionIdValid){
+      notification['error']({
+        message: `Invalid Transaction Id, please see the instructions carefully`,
+        duration: 5
+      })
+      authCtx.stopLoading();
+      return;
     }
     // setError(null);
     
     // store data in firebase
-    await bookMerchandise(fullname, email, phone, college, dept, tshirtName, tshirtColor, tshirtSize, paymentMethod);
+    await bookMerchandise(fullname, email, phone, college, dept, tshirtName, tshirtColor, tshirtSize, paymentMethod, transactionId, paymentCollector);
     setFullname("");
     setEmail("");
     setPhone("");
@@ -82,6 +92,7 @@ export default function MerchandisePage() {
     setTshirtColor("Black");
     setTshirtSize("L");
     setPaymentMethod("Cash");
+    setTransactionId("");
     authCtx.stopLoading();
   }
 
@@ -295,14 +306,14 @@ export default function MerchandisePage() {
                   <HiIdentification className={styles.registerIcon} />
                 </div>
               </div>}
-              {isPaymentOnline && <div className={styles.registerInputBox}>
+              {/* {isPaymentOnline && <div className={styles.registerInputBox}>
                 <div className={styles.registerInput}>
                     <label htmlFor="transactionScreenshot" className={styles.registerInputLabel}>Transaction Screenshot</label>
                     <input type="file" id="transactionScreenshot" accept="image/*" />
                   <HiIdentification className={styles.registerIcon} />
                 </div>
-              </div>}
-              {isPaymentOnline && <div className={styles.registerInputBox}>
+              </div>} */}
+              <div className={styles.registerInputBox}>
                 <div className={styles.registerInput}>
                     <label htmlFor="paymentCollector" className={styles.registerInputLabel}>Payment Collector</label>
                     <select id="[paymentCollector]" value={paymentCollector} onChange={(e)=>{setPaymentCollector(e.target.value)}}>
@@ -311,7 +322,7 @@ export default function MerchandisePage() {
                     </select>
                   <SlSizeFullscreen className={styles.registerIcon} />
                 </div>
-              </div>}
+              </div>
               <div className={styles.centerBox}>
               <button className={styles.registerButton}>Place Order</button>
               </div>
