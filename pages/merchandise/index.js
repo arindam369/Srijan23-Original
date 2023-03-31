@@ -9,6 +9,7 @@ import { RiProfileLine } from "react-icons/ri";
 import { ImMobile } from "react-icons/im";
 import { IoIosColorPalette } from "react-icons/io";
 import { SlSizeFullscreen } from "react-icons/sl";
+import {HiIdentification} from "react-icons/hi";
 import { MdPayment } from "react-icons/md";
 import { useContext } from "react";
 import AuthContext from "@/store/AuthContext";
@@ -34,7 +35,15 @@ export default function MerchandisePage() {
   const [tshirtColor, setTshirtColor] = useState("Black");
   const [tshirtSize, setTshirtSize] = useState("L");
   const [paymentMethod, setPaymentMethod] = useState("Cash");
+  const [isPaymentOnline, setIsPaymentOnline] = useState(false);
+  const [transactionId, setTransactionId] = useState("");
   // const [error, setError] = useState(null);
+  // const fileRef = useRef(null);
+  // const [imageFile, setImageFile] = useState(null);
+  // const [file, setFile] = useState(null);
+  // const [progress, setProgress] = useState(0);
+  const [isUpdatedAvatar, setIsUpdatedAvatar] = useState(false);
+  const [paymentCollector, setPaymentCollector] = useState("trishit");
 
   const handleMerchandiseBook = async (e)=>{
     e.preventDefault();
@@ -85,6 +94,13 @@ export default function MerchandisePage() {
   const [currImage, setCurrImage] = useState(merchandiseImages[0]);
   const loadImageOnHover = (index)=>{
     setCurrImage(merchandiseImages[index]);
+  }
+
+  const selectUpi = ()=>{
+    setIsPaymentOnline(true);
+  }
+  const selectCash = ()=>{
+    setIsPaymentOnline(false);
   }
 
   return (
@@ -262,16 +278,40 @@ export default function MerchandisePage() {
                 <div className={styles.registerInput2}>
                     <label htmlFor="paymentMode" className={styles.registerInputLabel}>Payment Mode</label>
                     <div className={styles.paymentOptions}>
-                        <input type="radio" value="Cash" checked={paymentMethod==="Cash"} id="paymentMode" name="paymentMode" onChange={(e)=>{setPaymentMethod(e.target.value)}} />
+                        <input type="radio" value="Cash" checked={paymentMethod==="Cash"} id="paymentMode" onChange={(e)=>{setPaymentMethod(e.target.value); selectCash();}} />
                         <div>Cash</div>
                     </div>
                     <div className={styles.paymentOptions}>
-                        <input type="radio" value="Paytm" checked={paymentMethod === "Paytm"} id="paymentMode" name="paymentMode" onChange={(e)=>{setPaymentMethod(e.target.value)}}/> 
-                        <div>Paytm</div>
+                        <input type="radio" value="UPI" checked={paymentMethod === "UPI"} id="paymentMode" onChange={(e)=>{setPaymentMethod(e.target.value); selectUpi();}}/> 
+                        <div>UPI</div>
                     </div>
                   <MdPayment className={styles.registerIcon} />
                 </div>
               </div>
+              {isPaymentOnline && <div className={styles.registerInputBox}>
+                <div className={styles.registerInput}>
+                    <label htmlFor="transactionId" className={styles.registerInputLabel}>Transaction ID</label>
+                    <input type="text" value={transactionId} id="transactionId" onChange={(e)=>{setTransactionId(e.target.value)}} placeholder="Enter the UPI Transaction ID" />
+                  <HiIdentification className={styles.registerIcon} />
+                </div>
+              </div>}
+              {isPaymentOnline && <div className={styles.registerInputBox}>
+                <div className={styles.registerInput}>
+                    <label htmlFor="transactionScreenshot" className={styles.registerInputLabel}>Transaction Screenshot</label>
+                    <input type="file" id="transactionScreenshot" accept="image/*" />
+                  <HiIdentification className={styles.registerIcon} />
+                </div>
+              </div>}
+              {isPaymentOnline && <div className={styles.registerInputBox}>
+                <div className={styles.registerInput}>
+                    <label htmlFor="paymentCollector" className={styles.registerInputLabel}>Payment Collector</label>
+                    <select id="[paymentCollector]" value={paymentCollector} onChange={(e)=>{setPaymentCollector(e.target.value)}}>
+                        <option value="trishit">Trishit Pal</option>
+                        <option value="ayush">Ayush Mishra</option>
+                    </select>
+                  <SlSizeFullscreen className={styles.registerIcon} />
+                </div>
+              </div>}
               <div className={styles.centerBox}>
               <button className={styles.registerButton}>Place Order</button>
               </div>
