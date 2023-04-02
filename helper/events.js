@@ -225,7 +225,7 @@ export const events = [
         eventName: "Eggs-Plosion",
         eventDate: {prelims: ["April 14, 2023"], finals: "April 16,2023"},
         // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
-        eventPoster: "/assets/events/coldcase.png" ,
+        eventPoster: "/assets/events/eggplosion.png" ,
         eventType: "misc",
         eventHashtags: ["Design", "Challenges"],
         eventCoordinators: ["Amaan Ahmed [ 7439525481 ]", "Arghadeep Mukherjee [ 7439693606 ]","Subhodip Das [ 8902678949]"],
