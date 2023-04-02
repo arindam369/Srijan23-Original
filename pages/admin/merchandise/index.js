@@ -144,9 +144,9 @@ function AdminEventDetailsPage() {
                     </p>}
                     <p>
                       Payment Collector: <span>{merchandise.paymentCollector}</span>
-                    </p>
-                    <p>
-                      Payment Verification: <span>{merchandise.verified===false?"Not Verified":"Verified"}</span>
+                    {/* </p>
+                    <p> */}
+                      &emsp;Verification: <span>{merchandise.verified===false?"Not Verified":"Verified"}</span>
                     </p>
                     {merchandise.status && <p>
                       Payment Status: <span>{merchandise.status==="accepted"?"Accepted":"Rejected"}</span>

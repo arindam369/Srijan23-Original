@@ -233,8 +233,8 @@ export const events = [
         minMembers: 3,
         maxMembers: 4,
         // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
-        eventDescription: ["Egg Drop Challenge "],
-        eventRules: ["1. We plan on providing raw materials to the participating teams", "2. Raw materials will include everyday items such as eggs, cardboards boxes, cups, plastic plates, paper etc. ","3. There will be three levels during the testing.","4. Students are required to build mechanisms which will prevent the egg from breaking when dropped.","5. This is an on-spot event. Building time for the mechanisms will be disclosed later. Students are required to build the mechanisms in front of the organizing committee."],
+        eventDescription: ["This is an Egg Drop Challenge planned by Team XLR8 ( JUMSC )"],
+        eventRules: ["We plan on providing raw materials to the participating teams", "Raw materials will include everyday items such as eggs, cardboards boxes, cups, plastic plates, paper etc. ","There will be three levels during the testing.","Students are required to build mechanisms which will prevent the egg from breaking when dropped.","This is an on-spot event. Building time for the mechanisms will be disclosed later. Students are required to build the mechanisms in front of the organizing committee."],
         eventRuleLink: "https://docs.google.com/document/d/190L7udpkDvx7gXh7EH9xBHFOxHQ4yjSQU7OyX1OJ40I/edit"
     },
   //  {

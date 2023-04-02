@@ -133,7 +133,7 @@ function AdminEventDetailsPage({ merchantData }) {
         </div>
         {merchandiseDetails && (
           <div className={styles.dashboardSectionHeading3}>
-            {merchandiseDetails.length} Orders Placed
+            {merchandiseDetails.length} Orders Pending
           </div>
         )}
         <br />

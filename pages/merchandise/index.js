@@ -7,10 +7,12 @@ import { TfiPencilAlt } from "react-icons/tfi";
 import { MdOutlineEmail } from "react-icons/md";
 import { RiProfileLine } from "react-icons/ri";
 import { ImMobile } from "react-icons/im";
-import { IoIosColorPalette } from "react-icons/io";
+import { IoIosColorPalette, IoMdClose } from "react-icons/io";
 import { SlSizeFullscreen } from "react-icons/sl";
-import {HiIdentification} from "react-icons/hi";
+import { HiIdentification } from "react-icons/hi";
 import { MdPayment } from "react-icons/md";
+import {GiBeveledStar} from "react-icons/gi";
+import {TfiHandPointRight} from "react-icons/tfi";
 import { useContext } from "react";
 import AuthContext from "@/store/AuthContext";
 import { useEffect } from "react";
@@ -18,11 +20,13 @@ import { useState } from "react";
 import { bookMerchandise } from "@/helper/login-utils";
 import { notification } from "antd";
 import Head from "next/head";
+import Modal from "react-modal";
+import Link from "next/link";
 
 export default function MerchandisePage() {
   const authCtx = useContext(AuthContext);
 
-  useEffect(()=>{
+  useEffect(() => {
     authCtx.stopLoading();
   }, [])
 
@@ -44,24 +48,31 @@ export default function MerchandisePage() {
   // const [progress, setProgress] = useState(0);
   // const [isUpdatedAvatar, setIsUpdatedAvatar] = useState(false);
   const [paymentCollector, setPaymentCollector] = useState("trishit");
+  const [visibleGuidelinesModal, setVisibleGuidelinesModal] = useState(false);
+  const [visibleInstructionsModal, setVisibleInstructionsModal] = useState(false);
+  const toggleVisibleGuidelinesModal = () => {
+    setVisibleGuidelinesModal(!visibleGuidelinesModal);
+  }
+  const toggleVisibleInstructionsModal = () => {
+    setVisibleInstructionsModal(!visibleInstructionsModal);
+  }
 
-  const handleMerchandiseBook = async (e)=>{
+  const handleMerchandiseBook = async (e) => {
     e.preventDefault();
-    authCtx.startLoading();
 
     // handle all validations
-    if(fullname.trim().length === 0 || email.trim().length === 0 || phone.trim().length === 0 || college.trim().length === 0 || dept.trim().length === 0 || tshirtName.trim().length === 0 || (paymentMethod==="UPI" && transactionId.trim().length === 0)){
+    if (fullname.trim().length === 0 || email.trim().length === 0 || phone.trim().length === 0 || college.trim().length === 0 || dept.trim().length === 0 || tshirtName.trim().length === 0 || (paymentMethod === "UPI" && transactionId.trim().length === 0)) {
       // setError("All fields are mandatory");
       notification['error']({
         message: `All fields are mandatory`,
         duration: 3
-    })
+      })
       authCtx.stopLoading();
       return;
     }
     const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
     const isEmailValid = emailRegex.test(email);
-    if(!isEmailValid){
+    if (!isEmailValid) {
       notification['error']({
         message: `Invalid email input`,
         duration: 2
@@ -71,7 +82,7 @@ export default function MerchandisePage() {
     }
     const transactionIdRegex = /^[0-9]{12}$/;
     const isTransactionIdValid = transactionIdRegex.test(transactionId);
-    if(paymentMethod==="UPI" && !isTransactionIdValid){
+    if (paymentMethod === "UPI" && !isTransactionIdValid) {
       notification['error']({
         message: `Invalid Transaction Id, please see the instructions carefully`,
         duration: 5
@@ -79,8 +90,14 @@ export default function MerchandisePage() {
       authCtx.stopLoading();
       return;
     }
+    toggleVisibleGuidelinesModal();
+
+
     // setError(null);
-    
+  }
+  const acceptGuideline = async () => {
+    setVisibleGuidelinesModal(false);
+    authCtx.startLoading();
     // store data in firebase
     await bookMerchandise(fullname, email, phone, college, dept, tshirtName, tshirtColor, tshirtSize, paymentMethod, transactionId, paymentCollector);
     setFullname("");
@@ -103,16 +120,24 @@ export default function MerchandisePage() {
     "/assets/tshirts/white_back.png",
   ]
   const [currImage, setCurrImage] = useState(merchandiseImages[0]);
-  const loadImageOnHover = (index)=>{
+
+  const loadImageOnHover = (index) => {
     setCurrImage(merchandiseImages[index]);
   }
 
-  const selectUpi = ()=>{
+  const selectUpi = () => {
     setIsPaymentOnline(true);
   }
-  const selectCash = ()=>{
+  const selectCash = () => {
     setIsPaymentOnline(false);
   }
+
+  const customEventModalStyles = {
+    overlay: {
+      background: "rgba(0,0,0,0.65)",
+      zIndex: "100"
+    }
+  };
 
   return (
     <>
@@ -135,7 +160,90 @@ export default function MerchandisePage() {
           <spotLight position={[10, 15, 10]} angle={0.3} />
         </Canvas>
       </div>
-      
+
+      <Modal
+        isOpen={visibleGuidelinesModal}
+        onRequestClose={() => {
+          toggleVisibleGuidelinesModal();
+        }}
+        className={styles.guidelinesModal}
+        ariaHideApp={false}
+        style={customEventModalStyles}
+        closeTimeoutMS={700}
+      >
+        <div>
+          <h2><Image src={"/assets/warning.png"} height={50} width={50} alt="warning" draggable={false} className={styles.dangerIcon} />CAUTION</h2>
+          <IoMdClose className={styles.exitIcon} onClick={toggleVisibleGuidelinesModal} />
+          <p>&emsp;By accepting, you agree that you have gone through the guidelines. In case you have not done please <Link href={"https://drive.google.com/file/d/1YpvsrLYJKWEJMhp8TEJWPy5wr9h5g0b3/view"} className={styles.guidelineLink}>click here</Link> and take a few minutes to read and understand them.</p>
+          <button onClick={acceptGuideline}>Accept</button>
+        </div>
+      </Modal>
+
+      <Modal isOpen={visibleInstructionsModal}
+        onRequestClose={() => {
+          toggleVisibleInstructionsModal();
+        }}
+        className={styles.instructionsModal}
+        ariaHideApp={false}
+        style={customEventModalStyles}
+        closeTimeoutMS={700}
+      >
+        <div>
+          <h2>How to order a SRIJAN'23 Official Merchandise?</h2>
+            <div className={styles.paymentScannerBox}>
+              <div>
+                <Image src={"/assets/qr.png"} height={300} width={300} alt="qr_image" className={styles.qrScannerImage} draggable={false} />
+                <h4>Trishit Pal</h4>
+                <h5>1234567890@ybl</h5>
+              </div>
+              <div>
+                <Image src={"/assets/qr.png"} height={300} width={300} alt="qr_image" className={styles.qrScannerImage} draggable={false} />
+                <h4>Ayush Mishra</h4>
+                <h5>9876543210@ybl</h5>
+              </div>
+            </div>
+            <div className={styles.instructions}>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span> You can order your merchandise in both - Offline & Online mode </span>
+            </div>
+            {/* <div className={styles.instructions}>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span> To order in offline mode: please contact with <strong>Trishit Pal</strong> [ 1234567890 ] or <strong>Ayush Mishra</strong> [ 9876543210 ] </span>
+            </div> */}
+            <div className={styles.instructions}>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span>At first, enter the details such as name, email, mobile, college, dept in the Merchandise Form</span>
+            </div>
+            <div className={styles.instructions}>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span>Enter the name you want to print upon your SRIJAN Merchandise. If you don't want any name printed upon the Tshirt, write "NA"</span>
+            </div>
+            <div className={styles.instructions}>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span>Choose size of the Tshirt i.e. suitable for you</span>
+            </div>
+            <div className={styles.instructions}>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span>If you want to order merchandise via Cash, select "CASH" and complete the payment to one of the Payment Collectors within a day</span>
+            </div>
+            <div className={styles.instructions}>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span>If you want to make the payment via UPI, please select "UPI" and complete the payment to one of the Payment Collector within a day via <strong>Google Pay</strong>, <strong>Phone Pe</strong>, <strong>Amazon Pay</strong>, <strong>Paytm</strong> or <strong>Whatsapp Pay</strong></span>
+            </div>
+
+            <div className={styles.instructions}>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span>If you select method: "UPI", 2 more fields will be visible where you have to give the Transaction ID & Transaction Screenshot. [ PS: provide the 12 digit unique numeric number (UTR) e.g. <i>123456789012</i>]</span>
+            </div>
+            <div className={styles.instructions}>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span>Now select the Payment Collector whom you have sent your payment and then place your order</span>
+            </div>
+            <div className={styles.instructions}>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span><b>Congrats! Your order has been placed.</b> You can check the order status in your Dashboard</span>
+            </div>
+            <div className={styles.instructions}>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span> For any further queries, reach out to Trishit Pal [ 1234567890 ] or Ayush Mishra [ 9876543210 ] anytime</span>
+            </div>
+            {/* please scan any one of the two QR codes shown above. If you choose 1st one, then at the time  */}
+
+            <div className={styles.merchandiseUnderstoodButtonBox}>
+              <button onClick={toggleVisibleInstructionsModal}>Ok, I understand</button>
+            </div>
+        </div>
+      </Modal>
+
       <div className={styles.merchandiseContainer}>
         <div className={styles.merchandiseHeading}>
           Srijan'23 Official Merchandise
@@ -168,16 +276,16 @@ export default function MerchandisePage() {
           <div className={styles.productZoomContainer}>
             <div className={styles.productsZoomSection}>
               <div className={styles.productLeftSidebar}>
-                {merchandiseImages.map((merchandiseImage, i)=>{
+                {merchandiseImages.map((merchandiseImage, i) => {
                   return (
-                    <div className={styles.productImageWrap} key={i} onMouseOver={()=>{loadImageOnHover(i)}}>
-                      <Image height={40} width={40} src={merchandiseImage} alt="productImageIcon" draggable={false} className={currImage===merchandiseImage?"productImageActiveIcons":"productImageIcons"}/>
+                    <div className={styles.productImageWrap} key={i} onMouseOver={() => { loadImageOnHover(i) }}>
+                      <Image height={40} width={40} src={merchandiseImage} alt="productImageIcon" draggable={false} className={currImage === merchandiseImage ? "productImageActiveIcons" : "productImageIcons"} />
                     </div>
                   )
                 })}
               </div>
               <div className={styles.productsPicture}>
-                <Image height={100} width={200} src={currImage} alt="productImage" className={styles.productImageScreen} draggable={false}/>
+                <Image height={400} width={500} src={currImage} alt="productImage" className={styles.productImageScreen} draggable={false} />
                 {/* <div className={styles.productImageScreen}>
                   <ReactImageMagnify {...{
                           smallImage: {
@@ -202,70 +310,73 @@ export default function MerchandisePage() {
               </div>
             </div>
             <br />
+            {/* <div className={styles.offlinePaymentDetails}>
+              Srijan'23 Official Merchandise
+            </div> */}
             <div className={styles.offlinePaymentDetails}>
-            Srijan'23 Official Merchandise
-        </div>
+              <button className={styles.merchandiseInstructionButton} onClick={toggleVisibleInstructionsModal}>How to Order a SRIJAN Merchandise?</button>
+            </div>
           </div>
 
 
 
           <div className={styles.merchandiseForm} id="merchandiseForm">
             <form onSubmit={handleMerchandiseBook}>
-                  {/* {error && <div className={styles.errorBox2}>
+              {/* {error && <div className={styles.errorBox2}>
                     {error}
                   </div>} */}
               <div className={styles.registerInputBox}>
-                
+
                 <div className={styles.registerInput}>
-                <label htmlFor="fullname" className={styles.registerInputLabel}>Full Name</label>
-                  <input type="text" placeholder="Enter your full name" id="fullname" value={fullname} onChange={(e)=>{setFullname(e.target.value)}}/>
+                  <label htmlFor="fullname" className={styles.registerInputLabel}>Full Name</label>
+                  <input type="text" placeholder="Enter your full name" id="fullname" value={fullname} onChange={(e) => { setFullname(e.target.value) }} />
                   <FaUserAlt className={styles.registerIcon} />
                 </div>
               </div>
               <div className={styles.registerInputBox}>
                 <div className={styles.registerInput}>
-                    <label htmlFor="email" className={styles.registerInputLabel}>Email</label>
-                  <input type="text" placeholder="Enter your email id" id="email" value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
+                  <label htmlFor="email" className={styles.registerInputLabel}>Email</label>
+                  <input type="text" placeholder="Enter your email id" id="email" value={email} onChange={(e) => { setEmail(e.target.value) }} />
                   <MdOutlineEmail className={styles.registerIcon} />
                 </div>
               </div>
               <div className={styles.registerInputBox}>
                 <div className={styles.registerInput}>
-                    <label htmlFor="mobile" className={styles.registerInputLabel}>Mobile</label>
-                  <input type="number" placeholder="Enter your mobile number" id="mobile" value={phone} onChange={(e)=>{setPhone(e.target.value)}}/>
+                  <label htmlFor="mobile" className={styles.registerInputLabel}>Mobile</label>
+                  <input type="number" placeholder="Enter your mobile number" id="mobile" value={phone} onChange={(e) => { setPhone(e.target.value) }} />
                   <ImMobile className={styles.registerIcon} />
                 </div>
               </div>
               <div className={styles.registerInputBox}>
                 <div className={styles.registerInput}>
-                <label htmlFor="college" className={styles.registerInputLabel}>College</label>
-                  <input type="text" placeholder="Enter your college name" id="college" value={college} onChange={(e)=>{setCollege(e.target.value)}}/>
+                  <label htmlFor="college" className={styles.registerInputLabel}>College</label>
+                  <input type="text" placeholder="Enter your college name" id="college" value={college} onChange={(e) => { setCollege(e.target.value) }} />
                   <FaSchool className={styles.registerIcon} />
                 </div>
               </div>
               <div className={styles.registerInputBox}>
                 <div className={styles.registerInput}>
-                <label htmlFor="dept" className={styles.registerInputLabel}>Department</label>
-                  <input type="text" placeholder="Enter your department name" id="dept" value={dept} onChange={(e)=>{setDept(e.target.value)}}/>
+                  <label htmlFor="dept" className={styles.registerInputLabel}>Department</label>
+                  <input type="text" placeholder="Enter your department name" id="dept" value={dept} onChange={(e) => { setDept(e.target.value) }} />
                   <RiProfileLine className={styles.registerIcon} />
                 </div>
               </div>
               <div className={styles.registerInputBox}>
                 <div className={styles.registerInput}>
-                <label htmlFor="tshirtName" className={styles.registerInputLabel}>Name on Tshirt</label>
+                  <label htmlFor="tshirtName" className={styles.registerInputLabel}>Name on Tshirt</label>
                   <input
                     type="text"
                     placeholder="Enter the name to be printed on the Tshirt"
                     id="tshirtName"
-                    value={tshirtName} onChange={(e)=>{setTshirtName(e.target.value)}}
+                    value={tshirtName} onChange={(e) => { setTshirtName(e.target.value) }}
                   />
                   <TfiPencilAlt className={styles.registerIcon} />
                 </div>
               </div>
               <div className={styles.registerInputBox}>
                 <div className={styles.registerInput}>
-                <label htmlFor="tshirtColor" className={styles.registerInputLabel}>Tshirt Color</label>
-                  <select id="tshirtColor" value={tshirtColor} onChange={(e)=>{setTshirtColor(e.target.value)}}>
+                  <label htmlFor="tshirtColor" className={styles.registerInputLabel}>Tshirt Color</label>
+                  <select id="tshirtColor" value={tshirtColor} onChange={(e) => { setTshirtColor(e.target.value) }}>
                     <option value="Black">Black</option>
                     <option value="White">White</option>
                   </select>
@@ -274,35 +385,36 @@ export default function MerchandisePage() {
               </div>
               <div className={styles.registerInputBox}>
                 <div className={styles.registerInput}>
-                    <label htmlFor="tshirtSize" className={styles.registerInputLabel}>Tshirt Size</label>
-                    <select id="tshirtSize" value={tshirtSize} onChange={(e)=>{setTshirtSize(e.target.value)}}>
-                        <option value="S">S(38)</option>
-                        <option value="M">M(40)</option>
-                        <option value="L">L(42)</option>
-                        <option value="XL">XL(44)</option>
-                        <option value="XXL">XXL(46)</option>
-                    </select>
+                  <label htmlFor="tshirtSize" className={styles.registerInputLabel}>Tshirt Size</label>
+                  <select id="tshirtSize" value={tshirtSize} onChange={(e) => { setTshirtSize(e.target.value) }}>
+                    <option value="S">S(38)</option>
+                    <option value="M">M(40)</option>
+                    <option value="L">L(42)</option>
+                    <option value="XL">XL(44)</option>
+                    <option value="XXL">XXL(46)</option>
+                    <option value="XXXL">XXXL(48)</option>
+                  </select>
                   <SlSizeFullscreen className={styles.registerIcon} />
                 </div>
               </div>
               <div className={styles.registerInputBox}>
                 <div className={styles.registerInput2}>
-                    <label htmlFor="paymentMode" className={styles.registerInputLabel}>Payment Mode</label>
-                    <div className={styles.paymentOptions}>
-                        <input type="radio" value="Cash" checked={paymentMethod==="Cash"} id="paymentMode" onChange={(e)=>{setPaymentMethod(e.target.value); selectCash();}} />
-                        <div>Cash</div>
-                    </div>
-                    <div className={styles.paymentOptions}>
-                        <input type="radio" value="UPI" checked={paymentMethod === "UPI"} id="paymentMode" onChange={(e)=>{setPaymentMethod(e.target.value); selectUpi();}}/> 
-                        <div>UPI</div>
-                    </div>
+                  <label htmlFor="paymentMode" className={styles.registerInputLabel}>Payment Mode</label>
+                  <div className={styles.paymentOptions}>
+                    <input type="radio" value="Cash" checked={paymentMethod === "Cash"} id="paymentMode" onChange={(e) => { setPaymentMethod(e.target.value); selectCash(); }} />
+                    <div>Cash</div>
+                  </div>
+                  <div className={styles.paymentOptions}>
+                    <input type="radio" value="UPI" checked={paymentMethod === "UPI"} id="paymentMode" onChange={(e) => { setPaymentMethod(e.target.value); selectUpi(); }} />
+                    <div>UPI</div>
+                  </div>
                   <MdPayment className={styles.registerIcon} />
                 </div>
               </div>
               {isPaymentOnline && <div className={styles.registerInputBox}>
                 <div className={styles.registerInput}>
-                    <label htmlFor="transactionId" className={styles.registerInputLabel}>Transaction ID</label>
-                    <input type="text" value={transactionId} id="transactionId" onChange={(e)=>{setTransactionId(e.target.value)}} placeholder="Enter the UPI Transaction ID" />
+                  <label htmlFor="transactionId" className={styles.registerInputLabel}>Transaction ID</label>
+                  <input type="text" value={transactionId} id="transactionId" onChange={(e) => { setTransactionId(e.target.value) }} placeholder="Enter the UPI Transaction ID" />
                   <HiIdentification className={styles.registerIcon} />
                 </div>
               </div>}
@@ -315,25 +427,25 @@ export default function MerchandisePage() {
               </div>} */}
               <div className={styles.registerInputBox}>
                 <div className={styles.registerInput}>
-                    <label htmlFor="paymentCollector" className={styles.registerInputLabel}>Payment Collector</label>
-                    <select id="[paymentCollector]" value={paymentCollector} onChange={(e)=>{setPaymentCollector(e.target.value)}}>
-                        <option value="trishit">Trishit Pal</option>
-                        <option value="ayush">Ayush Mishra</option>
-                    </select>
+                  <label htmlFor="paymentCollector" className={styles.registerInputLabel}>Payment Collector</label>
+                  <select id="[paymentCollector]" value={paymentCollector} onChange={(e) => { setPaymentCollector(e.target.value) }}>
+                    <option value="trishit">Trishit Pal</option>
+                    <option value="ayush">Ayush Mishra</option>
+                  </select>
                   <SlSizeFullscreen className={styles.registerIcon} />
                 </div>
               </div>
               <div className={styles.centerBox}>
-              <button className={styles.registerButton}>Place Order</button>
+                <button className={styles.registerButton}>Place Order</button>
               </div>
             </form>
           </div>
         </div>
-        <div className={styles.offlinePaymentDetails}>
-            For offline payment, please contact: <br/>
-            Trishit Pal: 9831660378 <br/>
-            Suvankar: 7001082597
-        </div>
+        {/* <div className={styles.offlinePaymentDetails}>
+          For offline payment, please contact: <br />
+          Trishit Pal: 9831660378 <br />
+          Suvankar: 7001082597
+        </div> */}
       </div>
     </>
   );
