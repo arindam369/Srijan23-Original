@@ -227,7 +227,7 @@ export const events = [
         // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
         eventPoster: "/assets/events/eggplosion.png" ,
         eventType: "misc",
-        eventHashtags: ["Design", "Challenges"],
+        eventHashtags: ["Fun", "Egg Drop"],
         eventCoordinators: ["Amaan Ahmed [ 7439525481 ]", "Arghadeep Mukherjee [ 7439693606 ]","Subhodip Das [ 8902678949]"],
         // eventVenue: "SMCC - 4th Floor - Lab",
         minMembers: 1,
