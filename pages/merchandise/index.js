@@ -11,17 +11,21 @@ import { IoIosColorPalette, IoMdClose } from "react-icons/io";
 import { SlSizeFullscreen } from "react-icons/sl";
 import { HiIdentification } from "react-icons/hi";
 import { MdPayment } from "react-icons/md";
-import {GiBeveledStar} from "react-icons/gi";
 import {TfiHandPointRight} from "react-icons/tfi";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import AuthContext from "@/store/AuthContext";
 import { useEffect } from "react";
 import { useState } from "react";
 import { bookMerchandise } from "@/helper/login-utils";
 import { notification } from "antd";
+import { ref as ref_storage, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { update, ref as ref_database, onValue } from "firebase/database";
 import Head from "next/head";
 import Modal from "react-modal";
 import Link from "next/link";
+import { database, storage } from "@/firebase";
+import uuid from "react-uuid";
+import { useRouter } from "next/router";
 
 export default function MerchandisePage() {
   const authCtx = useContext(AuthContext);
@@ -31,7 +35,6 @@ export default function MerchandisePage() {
   }, [])
 
   const [fullname, setFullname] = useState("");
-  const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [college, setCollege] = useState("");
   const [dept, setDept] = useState("");
@@ -42,11 +45,10 @@ export default function MerchandisePage() {
   const [isPaymentOnline, setIsPaymentOnline] = useState(false);
   const [transactionId, setTransactionId] = useState("");
   // const [error, setError] = useState(null);
-  // const fileRef = useRef(null);
-  // const [imageFile, setImageFile] = useState(null);
-  // const [file, setFile] = useState(null);
+  const fileRef = useRef(null);
+  const [imageFile, setImageFile] = useState(null);
+  const [file, setFile] = useState(null);
   // const [progress, setProgress] = useState(0);
-  // const [isUpdatedAvatar, setIsUpdatedAvatar] = useState(false);
   const [paymentCollector, setPaymentCollector] = useState("trishit");
   const [visibleGuidelinesModal, setVisibleGuidelinesModal] = useState(false);
   const [visibleInstructionsModal, setVisibleInstructionsModal] = useState(false);
@@ -57,12 +59,28 @@ export default function MerchandisePage() {
     setVisibleInstructionsModal(!visibleInstructionsModal);
   }
 
+  function handleFileChange(e) {
+    const fileName = e.target.files[0].name;
+    const fileTypeArray = fileName.split(".");
+    const fileMimeType = fileTypeArray[fileTypeArray.length-1];
+    if(fileMimeType==="JPG" || fileMimeType==="jpg" || fileMimeType==="PNG" || fileMimeType==="png" || fileMimeType==="jfif" || fileMimeType==="JFIF" || fileMimeType==="JPEG"||fileMimeType==="jpeg"){
+      setFile(e.target.files[0]);
+    }
+    else{
+      notification['error']({
+        message: `Please upload JPG/JPEG/PNG/JFIF files`,
+        duration: 5
+      })
+      authCtx.stopLoading();
+      return;
+    }
+  }
+
   const handleMerchandiseBook = async (e) => {
     e.preventDefault();
 
     // handle all validations
-    if (fullname.trim().length === 0 || email.trim().length === 0 || phone.trim().length === 0 || college.trim().length === 0 || dept.trim().length === 0 || tshirtName.trim().length === 0 || (paymentMethod === "UPI" && transactionId.trim().length === 0)) {
-      // setError("All fields are mandatory");
+    if (fullname.trim().length === 0 || phone.trim().length === 0 || college.trim().length === 0 || dept.trim().length === 0 || tshirtName.trim().length === 0 || (paymentMethod === "UPI" && transactionId.trim().length === 0) || (paymentMethod === "UPI" && file===null)) {
       notification['error']({
         message: `All fields are mandatory`,
         duration: 3
@@ -70,16 +88,16 @@ export default function MerchandisePage() {
       authCtx.stopLoading();
       return;
     }
-    const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-    const isEmailValid = emailRegex.test(email);
-    if (!isEmailValid) {
-      notification['error']({
-        message: `Invalid email input`,
-        duration: 2
-      })
-      authCtx.stopLoading();
-      return;
-    }
+    // const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+    // const isEmailValid = emailRegex.test(email);
+    // if (!isEmailValid) {
+    //   notification['error']({
+    //     message: `Invalid email input`,
+    //     duration: 2
+    //   })
+    //   authCtx.stopLoading();
+    //   return;
+    // }
     const transactionIdRegex = /^[0-9]{12}$/;
     const isTransactionIdValid = transactionIdRegex.test(transactionId);
     if (paymentMethod === "UPI" && !isTransactionIdValid) {
@@ -91,26 +109,75 @@ export default function MerchandisePage() {
       return;
     }
     toggleVisibleGuidelinesModal();
-
-
-    // setError(null);
   }
+
   const acceptGuideline = async () => {
     setVisibleGuidelinesModal(false);
     authCtx.startLoading();
-    // store data in firebase
-    await bookMerchandise(fullname, email, phone, college, dept, tshirtName, tshirtColor, tshirtSize, paymentMethod, transactionId, paymentCollector);
-    setFullname("");
-    setEmail("");
-    setPhone("");
-    setCollege("");
-    setDept("");
-    setTshirtName("");
-    setTshirtColor("Black");
-    setTshirtSize("L");
-    setPaymentMethod("Cash");
-    setTransactionId("");
-    authCtx.stopLoading();
+
+    if(isPaymentOnline){
+      onValue(ref_database(database, 'srijan/merchandise/' + transactionId) , (snapshot)=>{
+        if(snapshot){
+            const foundOrder = snapshot.val();
+            if(foundOrder!==null){  // already present an order with this transactionId
+              notification['error']({
+                message: `One order is already placed with this transaction id`,
+                duration: 8
+              })
+              authCtx.stopLoading();
+              return;
+            }
+            else{
+                const {name} = file;
+                const filePath = `payment/${name}_${new Date().getTime()}`;
+                const folderRef = ref_storage(storage, filePath);
+
+                const uploadedFile = uploadBytesResumable(folderRef, file);
+                uploadedFile.on("state_changed", (snapshot)=>{
+                  if(snapshot.bytesTransferred === snapshot.totalBytes){
+                    setFile(null);
+                  }
+                },(error)=>{
+                  console.log(error);
+                  authCtx.stopLoading();
+                },()=>{
+                  getDownloadURL(uploadedFile.snapshot.ref).then(async (downloadUrl)=>{
+                    await bookMerchandise(fullname, authCtx.userData.email, phone, college, dept, tshirtName, tshirtColor, tshirtSize, paymentMethod, transactionId, paymentCollector, downloadUrl);
+                    setFullname("");
+                    setPhone("");
+                    setCollege("");
+                    setDept("");
+                    setTshirtName("");
+                    setTshirtColor("Black");
+                    setTshirtSize("L");
+                    setPaymentMethod("Cash");
+                    setIsPaymentOnline(false);
+                    setTransactionId("");
+                    setFile(null);
+                    authCtx.stopLoading();
+                  })
+                })
+            }
+        }
+      }, {
+          onlyOnce: true
+      });
+    }
+    else{
+      await bookMerchandise(fullname, authCtx.userData.email, phone, college, dept, tshirtName, tshirtColor, tshirtSize, paymentMethod, uuid().replace(/[.+-]/g, "_"), paymentCollector, "");
+        setFullname("");
+        setPhone("");
+        setCollege("");
+        setDept("");
+        setTshirtName("");
+        setTshirtColor("Black");
+        setTshirtSize("L");
+        setPaymentMethod("Cash");
+        setIsPaymentOnline(false);
+        setTransactionId("");
+        setFile(null);
+        authCtx.stopLoading();
+    }
   }
 
   const merchandiseImages = [
@@ -124,19 +191,22 @@ export default function MerchandisePage() {
   const loadImageOnHover = (index) => {
     setCurrImage(merchandiseImages[index]);
   }
-
   const selectUpi = () => {
     setIsPaymentOnline(true);
   }
   const selectCash = () => {
     setIsPaymentOnline(false);
   }
-
   const customEventModalStyles = {
     overlay: {
       background: "rgba(0,0,0,0.65)",
       zIndex: "100"
     }
+  };
+  
+  const router = useRouter();
+  const goToLoginPage = () => {
+    router.push("/register");
   };
 
   return (
@@ -321,10 +391,16 @@ export default function MerchandisePage() {
 
 
           <div className={styles.merchandiseForm} id="merchandiseForm">
-            <form onSubmit={handleMerchandiseBook}>
-              {/* {error && <div className={styles.errorBox2}>
-                    {error}
-                  </div>} */}
+            {!authCtx.isAuthenticated && 
+              <div className={styles.eventEndRightButtonBox}>
+                <button
+                  className={"interestedRegisteredButton"}
+                  onClick={goToLoginPage}
+                >
+                  Sign in to Order Merchandise
+                </button>
+              </div>}
+            {authCtx.isAuthenticated && <form onSubmit={handleMerchandiseBook}>
               <div className={styles.registerInputBox}>
 
                 <div className={styles.registerInput}>
@@ -336,7 +412,7 @@ export default function MerchandisePage() {
               <div className={styles.registerInputBox}>
                 <div className={styles.registerInput}>
                   <label htmlFor="email" className={styles.registerInputLabel}>Email</label>
-                  <input type="text" placeholder="Enter your email id" id="email" value={email} onChange={(e) => { setEmail(e.target.value) }} />
+                  <input type="text" placeholder="Enter your email id" id="email" value={authCtx.userData && authCtx.userData.email} disabled/>
                   <MdOutlineEmail className={styles.registerIcon} />
                 </div>
               </div>
@@ -418,13 +494,13 @@ export default function MerchandisePage() {
                   <HiIdentification className={styles.registerIcon} />
                 </div>
               </div>}
-              {/* {isPaymentOnline && <div className={styles.registerInputBox}>
+              {isPaymentOnline && <div className={styles.registerInputBox}>
                 <div className={styles.registerInput}>
                     <label htmlFor="transactionScreenshot" className={styles.registerInputLabel}>Transaction Screenshot</label>
-                    <input type="file" id="transactionScreenshot" accept="image/*" />
-                  <HiIdentification className={styles.registerIcon} />
+                    <input type="file" ref={fileRef} onChange={handleFileChange} id="transactionScreenshot" accept="image/*" />
+                    <HiIdentification className={styles.registerIcon} />
                 </div>
-              </div>} */}
+              </div>}
               <div className={styles.registerInputBox}>
                 <div className={styles.registerInput}>
                   <label htmlFor="paymentCollector" className={styles.registerInputLabel}>Payment Collector</label>
@@ -438,7 +514,7 @@ export default function MerchandisePage() {
               <div className={styles.centerBox}>
                 <button className={styles.registerButton}>Place Order</button>
               </div>
-            </form>
+            </form>}
           </div>
         </div>
         {/* <div className={styles.offlinePaymentDetails}>

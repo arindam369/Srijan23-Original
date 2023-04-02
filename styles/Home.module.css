@@ -1489,3 +1489,8 @@
     align-items: center;
   }
 }
+.eventEndRightButtonBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

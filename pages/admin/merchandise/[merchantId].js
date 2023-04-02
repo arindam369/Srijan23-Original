@@ -50,7 +50,7 @@ function AdminEventDetailsPage({ merchantData }) {
     }, [merchandiseChange]);
 
 
-    function acceptMerchandise(merchandiseId){
+    function acceptMerchandise(merchandiseId, userId){
       update(ref_database(database, 'srijan/merchandise/' + merchandiseId), {
           verified: true,
           status: "accepted"
@@ -60,9 +60,13 @@ function AdminEventDetailsPage({ merchantData }) {
               message: `Order accepted successfully`,
               duration: 6
           })
+          update(ref_database(database, 'srijan/profiles/'+ userId + "/merchandises/" + merchandiseId), {
+            verified: true,
+            status: "accepted"
+          })
       });
     }
-    function rejectMerchandise(merchandiseId){
+    function rejectMerchandise(merchandiseId, userId){
       update(ref_database(database, 'srijan/merchandise/' + merchandiseId), {
           verified: true,
           status: "rejected"
@@ -71,6 +75,10 @@ function AdminEventDetailsPage({ merchantData }) {
           notification['success']({
               message: `Order rejected successfully`,
               duration: 6
+          })
+          update(ref_database(database, 'srijan/profiles/'+ userId + "/merchandises/" + merchandiseId), {
+            verified: true,
+            status: "rejected"
           })
       });
     }
@@ -179,8 +187,8 @@ function AdminEventDetailsPage({ merchantData }) {
                     </p>
                   </div>
                     <div className={styles.acceptRejectbuttonBox2}>
-                        <button className={styles.acceptButton} onClick={()=>{acceptMerchandise(merchandise.id)}}>Accept</button>
-                        <button className={styles.rejectButton} onClick={()=>{rejectMerchandise(merchandise.id)}}>Reject</button>
+                        <button className={styles.acceptButton} onClick={()=>{acceptMerchandise(merchandise.id, merchandise.email.split("@")[0].replace(/[.+-]/g, "_"))}}>Accept</button>
+                        <button className={styles.rejectButton} onClick={()=>{rejectMerchandise(merchandise.id, merchandise.email.split("@")[0].replace(/[.+-]/g, "_"))}}>Reject</button>
                     </div>
                   {/* <div className={styles.userDetailsBottom}>
                       <div className={styles.sendNotificationButton} onClick={toggleVisibleNotificationForm}>Send Notification</div>

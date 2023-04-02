@@ -79,56 +79,35 @@ export const getAllInterestedEvents = (userId)=>{
         onlyOnce: true
     });
 }
-export async function bookMerchandise(fullname, email, phone, college, dept, tshirtName, tshirtColor, tshirtSize, paymentMethod, transactionId, paymentCollector){
-    // const userId = email.split("@")[0].replace(/[.+-]/g, "_");
-    if(paymentMethod === "UPI"){
-        onValue(ref_database(database, 'srijan/merchandise/' + transactionId), (snapshot) => {
-            if(snapshot.val() !== null){
-                notification['error']({
-                    message: `One order is already placed with this transaction id`,
-                    duration: 8
-                })
-                return;
-            }
-            else{
-                set(ref_database(database, 'srijan/merchandise/' + transactionId), { fullname, email, phone, college, dept, tshirtName, tshirtColor, tshirtSize, paymentMethod, transactionId, paymentCollector, "verified": false, "id":transactionId}
-                ).then((res) => {
-                    // console.log("Merchandise Booked successfully!");
-                    notification['success']({
-                        message: `Order Pending.  Please wait for an admin to verify your order details`,
-                        duration: 10
-                    })
-                })
-                .catch((err) => {
-                    // console.log("Booking failed for Merchandise...");
-                    notification['error']({
-                        message: `Order failed for merchandise`,
-                        duration: 5
-                    })
-                });
-            }
-        }, {
-            onlyOnce: true
-        });
-    }
-    else{
-        const merchandiseId = uuid();
-        set(ref_database(database, 'srijan/merchandise/' + merchandiseId), { fullname, email, phone, college, dept, tshirtName, tshirtColor, tshirtSize, paymentMethod, paymentCollector, id: merchandiseId, "verified": false}
-        ).then((res) => {
-            // console.log("Merchandise Booked successfully!");
-            notification['success']({
-                message: `Order Pending.  Please wait for an admin to verify your order details`,
-                duration: 10
-            })
-        })
-        .catch((err) => {
-            // console.log("Booking failed for Merchandise...");
+export async function bookMerchandise(fullname, email, phone, college, dept, tshirtName, tshirtColor, tshirtSize, paymentMethod, transactionId, paymentCollector, paymentSS){
+    const userId = email.split("@")[0].replace(/[.+-]/g, "_");
+    onValue(ref_database(database, 'srijan/profiles/' + userId + "/merchandises/"+transactionId), (snapshot) => {
+        if(snapshot.val() !== null){
             notification['error']({
-                message: `Order failed for merchandise`,
-                duration: 5
+                message: `One order is already placed with this transaction id`,
+                duration: 8
             })
-        });
-    }
+            return;
+        }
+        else{
+            update(ref_database(database, 'srijan/profiles/' + userId + "/merchandises/" + transactionId), { fullname, email, phone, college, dept, tshirtName, tshirtColor, tshirtSize, paymentMethod, transactionId, paymentCollector, "verified": false, "id":transactionId, paymentSS: paymentSS}
+            ).then((res) => {
+                notification['success']({
+                    message: `Order Pending.  Please wait for an admin to verify your order details`,
+                    duration: 10
+                })
+                update(ref_database(database, 'srijan/merchandise/'+transactionId), { fullname, email, phone, college, dept, tshirtName, tshirtColor, tshirtSize, paymentMethod, transactionId, paymentCollector, "verified": false, "id":transactionId, paymentSS: paymentSS});
+            })
+            .catch((err) => {
+                notification['error']({
+                    message: `Order failed for merchandise`,
+                    duration: 5
+                })
+            });
+        }
+    }, {
+        onlyOnce: true
+    });
 }
 
 

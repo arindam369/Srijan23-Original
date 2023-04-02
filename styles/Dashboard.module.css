@@ -2216,3 +2216,45 @@ cursor: pointer;
 .teamMemberData p{
   margin: 2px 0px;
 }
+.merchandiseBox{
+  background: linear-gradient(to top right, rgba(29, 90, 161, 0.6), rgba(20, 114, 79, 0.6));
+  font-family: 'Roboto', sans-serif;
+  /* padding: 10px 20px; */
+  padding: 0;
+  border-radius: 2px;
+  margin: 10px;
+  width: 300px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  font-size: .9rem
+}
+.merchandiseBox div{
+  width: 100%;
+  height: 100%;
+}
+.merchandiseBox h2{
+  font-size: .86rem;
+}
+.merchandiseBox p{
+  margin: 2px 0px;
+  margin-left: 20px;
+}
+.merchandiseBox span{
+  color: rgb(189, 207, 68);
+  font-size: .8rem;
+}
+.merchandisePendingAnimation{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid;
+  z-index: -10;
+  border-image: linear-gradient(45deg, gold, deeppink) 1;
+  clip-path: inset(0px round 3px);
+  animation: huerotate 1s infinite linear;
+  filter: hue-rotate(360deg);
+}

@@ -8,6 +8,7 @@ import styles from "../../styles/Dashboard.module.css";
 import PolarChart from "../PolarChart";
 import RegisteredEventBox from "./RegisteredEventBox";
 import Workshop from "./Workshop";
+import MerchandiseBox from "./MerchandiseBox";
 
 export default function Dashboard(){
     const authCtx = useContext(AuthContext);
@@ -15,6 +16,7 @@ export default function Dashboard(){
     const [pendingEventsUpdated, setPendingEventsUpdated] = useState(false);
     const [registeredEvents, setRegisteredEvents] = useState([]);
     const [pendingEvents, setPendingEvents] = useState([]);
+    const [merchandises, setMerchandises] = useState([]);
 
     useEffect(()=>{
         if(authCtx.userId){
@@ -34,6 +36,23 @@ export default function Dashboard(){
             });
         }
     }, [authCtx.userId, registeredEventsUpdated])
+
+    useEffect(()=>{
+        if(authCtx.userId){
+            onValue(ref_database(database, 'srijan/profiles/' + authCtx.userId + '/merchandises') , (snapshot)=>{
+                if(snapshot){
+                    let merchandisesArray = [];
+                    const allMerchandises = snapshot.val();
+                    for(let merchandise in allMerchandises){
+                        merchandisesArray.push({...allMerchandises[merchandise], merchandiseId: merchandise});
+                    }
+                    setMerchandises(merchandisesArray);
+                }
+            }, {
+                onlyOnce: true
+            });
+        }
+    }, [authCtx.userId])
     useEffect(()=>{
         if(authCtx.userId){
             onValue(ref_database(database, 'srijan/profiles/' + authCtx.userId + '/events') , (snapshot)=>{
@@ -174,6 +193,21 @@ export default function Dashboard(){
                         </div>
                     </div>
                 </div>
+                {/* <div className={styles.dashboardRegistrationContainer}>
+                    <h2 className={styles.notificationHeading}>Your Merchandises</h2>
+                    <div className={styles.dashboardInvitations}>
+                        <div className={styles.dashboardEventRequests}>
+                            {merchandises && merchandises.length > 0 && merchandises.map((merchandise)=>{
+                                return (
+                                    <MerchandiseBox merchandiseId={merchandise.merchandiseId} key={merchandise.merchandiseId} fullname={merchandise.fullname} phone={merchandise.phone} college={merchandise.college} dept={merchandise.dept} tshirtName={merchandise.tshirtName} tshirtSize={merchandise.tshirtSize} paymentMethod={merchandise.paymentMethod} verified={merchandise.verified} status={merchandise.status}/>
+                                );
+                            })}
+                            {merchandises && merchandises.length === 0 && <div className={styles.noInvitations}>
+                                <h4>No Merchandises found</h4>
+                            </div>}
+                        </div>
+                    </div>
+                </div> */}
             </div>
         </>
     );
