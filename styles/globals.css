@@ -710,14 +710,14 @@ input:disabled{
 
 /* merchandise product zoom */
 .productImageIcons{
-  margin: 5px 10px;
+  margin: 10px 10px;
   cursor: pointer;
   border: 1.5px solid rgba(243, 235, 235, 0.986);
   border-radius: 4px;
   padding: 3px;
 }
 .productImageActiveIcons{
-  margin: 5px 10px;
+  margin: 10px 10px;
   cursor: pointer;
   border: 1.5px solid rgb(228, 224, 17);
   box-shadow: 1px 1px 10px 1px rgb(194, 192, 64);

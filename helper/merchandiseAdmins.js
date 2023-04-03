@@ -1,15 +1,15 @@
 export const merchandiseAdmins = [
     {
         merchantId: "001",
-        merchantEmail: "sanghitagharami2000",
-        merchantName: "Sanghita Gharami",
-        merchantTitle: "sanghita"
+        merchantEmail: "ayushdtps",
+        merchantName: "Ayush Mishra",
+        merchantTitle: "ayush"
     },
     {
         merchantId: "002",
-        merchantEmail: "halderarindam10000",
-        merchantName: "Trishit Pal",
-        merchantTitle: "trishit"
+        merchantEmail: "bbanerjeeagp",
+        merchantName: "Bitan Banerjee",
+        merchantTitle: "bitan"
     }
 ]
-export const merchandiseAdminIds = ["halderarindam10000", "sanghitagharami2000"];
+export const merchandiseAdminIds = ["halderarindam10000", "ayushdtps", "bbanerjeeagp"];

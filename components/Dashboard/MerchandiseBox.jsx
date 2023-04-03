@@ -16,7 +16,7 @@ export default function MerchandiseBox({merchandiseId, fullname, phone, college,
                 <p>Size of Tshirt: <span>{tshirtSize}</span></p>
                 <p>Payment Method: <span>{paymentMethod}</span></p>
                 <p>Verification: <span>{verified?"Verified":"Not Verified"}</span></p>
-                <p>Status: <span>{status==="accepted"?"Accepted":"Rejected"}</span></p>
+                <p>Status: <span>{status==="accepted"?"Accepted": status==="rejected"?"Rejected":""}</span></p>
             </div>
         </div>
     );

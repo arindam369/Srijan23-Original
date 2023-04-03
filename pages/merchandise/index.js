@@ -49,7 +49,7 @@ export default function MerchandisePage() {
   const [imageFile, setImageFile] = useState(null);
   const [file, setFile] = useState(null);
   // const [progress, setProgress] = useState(0);
-  const [paymentCollector, setPaymentCollector] = useState("trishit");
+  const [paymentCollector, setPaymentCollector] = useState("ayush");
   const [visibleGuidelinesModal, setVisibleGuidelinesModal] = useState(false);
   const [visibleInstructionsModal, setVisibleInstructionsModal] = useState(false);
   const toggleVisibleGuidelinesModal = () => {
@@ -153,6 +153,7 @@ export default function MerchandisePage() {
                     setPaymentMethod("Cash");
                     setIsPaymentOnline(false);
                     setTransactionId("");
+                    setPaymentCollector("ayush");
                     setFile(null);
                     authCtx.stopLoading();
                   })
@@ -175,6 +176,7 @@ export default function MerchandisePage() {
         setPaymentMethod("Cash");
         setIsPaymentOnline(false);
         setTransactionId("");
+        setPaymentCollector("ayush");
         setFile(null);
         authCtx.stopLoading();
     }
@@ -184,7 +186,7 @@ export default function MerchandisePage() {
     "/assets/tshirts/tshirt_front.png",
     "/assets/tshirts/tshirt_back.png",
     "/assets/tshirts/tshirt_srijan.png",
-    "/assets/tshirts/tshirt_logo.png",
+    // "/assets/tshirts/tshirt_logo.png",
   ]
   const [currImage, setCurrImage] = useState(merchandiseImages[0]);
 
@@ -244,7 +246,7 @@ export default function MerchandisePage() {
         <div>
           <h2><Image src={"/assets/warning.png"} height={50} width={50} alt="warning" draggable={false} className={styles.dangerIcon} />CAUTION</h2>
           <IoMdClose className={styles.exitIcon} onClick={toggleVisibleGuidelinesModal} />
-          <p>&emsp;By accepting, you agree that you have gone through the guidelines. In case you have not done please <Link href={"https://drive.google.com/file/d/1YpvsrLYJKWEJMhp8TEJWPy5wr9h5g0b3/view"} className={styles.guidelineLink}>click here</Link> and take a few minutes to read and understand them.</p>
+          <p>&emsp;By accepting, you agree that you have gone through the guidelines. In case you have not done please <span className={styles.guidelineLink} onClick={()=>{toggleVisibleGuidelinesModal(); toggleVisibleInstructionsModal();}}>click here</span> and take a few minutes to read and understand them.</p>
           <button onClick={acceptGuideline}>Accept</button>
         </div>
       </Modal>
@@ -262,14 +264,14 @@ export default function MerchandisePage() {
           <h2>Order a SRIJAN'23 Official Merchandise</h2>
             <div className={styles.paymentScannerBox}>
               <div>
-                <Image src={"/assets/qr.png"} height={300} width={300} alt="qr_image" className={styles.qrScannerImage} draggable={false} />
-                <h4>Trishit Pal</h4>
-                <h5>1234567890@ybl</h5>
+                <Image src={"/assets/ayush_qr.jpg"} height={300} width={300} alt="qr_image" className={styles.qrScannerImage} draggable={false} />
+                <h4>Ayush Mishra</h4>
+                <h5>ayushdtps@oksbi</h5>
               </div>
               <div>
-                <Image src={"/assets/qr.png"} height={300} width={300} alt="qr_image" className={styles.qrScannerImage} draggable={false} />
-                <h4>Ayush Mishra</h4>
-                <h5>9876543210@ybl</h5>
+                <Image src={"/assets/bitan_qr.jpg"} height={300} width={300} alt="qr_image" className={styles.qrScannerImage} draggable={false} />
+                <h4>Bitan Banerjee</h4>
+                <h5>bbanerjeeagp@oksbi</h5>
               </div>
             </div>
             <div className={styles.instructions}>
@@ -295,7 +297,7 @@ export default function MerchandisePage() {
             </div>
 
             <div className={styles.instructions}>
-              <TfiHandPointRight className={styles.instructionBullets}/> <span>If you select method: "UPI", 2 more fields will be visible where you have to give the Transaction ID & Transaction Screenshot. [ PS: provide the 12 digit unique numeric number (UTR) e.g. <i>123456789012</i>]</span>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span>If you select method: "UPI", 2 more fields will be visible where you have to give the Transaction ID & Transaction Screenshot. [ <strong>PS:</strong> provide the 12 digit unique numeric number (UTR) e.g. <i>123456789012</i> ]</span>
             </div>
             <div className={styles.instructions}>
               <TfiHandPointRight className={styles.instructionBullets}/> <span>Now select the Payment Collector whom you have sent your payment and then place your order</span>
@@ -304,7 +306,7 @@ export default function MerchandisePage() {
               <TfiHandPointRight className={styles.instructionBullets}/> <span><b>Congrats! Your order has been placed.</b> You can check the order status in your Dashboard</span>
             </div>
             <div className={styles.instructions}>
-              <TfiHandPointRight className={styles.instructionBullets}/> <span> For any further queries, reach out to Trishit Pal [ 1234567890 ] or Ayush Mishra [ 9876543210 ] anytime</span>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span> For any further queries, reach out to Ayush Mishra [ 8927898690 ] or Bitan Banerjee [ 7439377598 ] anytime</span>
             </div>
             {/* please scan any one of the two QR codes shown above. If you choose 1st one, then at the time  */}
 
@@ -507,8 +509,8 @@ export default function MerchandisePage() {
                 <div className={styles.registerInput}>
                   <label htmlFor="paymentCollector" className={styles.registerInputLabel}>Payment Collector</label>
                   <select id="[paymentCollector]" value={paymentCollector} onChange={(e) => { setPaymentCollector(e.target.value) }}>
-                    <option value="trishit">Trishit Pal</option>
                     <option value="ayush">Ayush Mishra</option>
+                    <option value="bitan">Bitan Banerjee</option>
                   </select>
                   <SlSizeFullscreen className={styles.registerIcon} />
                 </div>
