@@ -393,7 +393,7 @@ export default function MerchandisePage() {
               <button className={styles.merchandiseInstructionButton} onClick={toggleVisibleInstructionsModal}>How to Order a SRIJAN Merchandise?</button>
             </div>
             <div className={styles.pricep}>
-              <p id="p1">Price of each t-shirt is Rs. 380 .</p>
+              <p className={styles.p1}">Price of each t-shirt is Rs. 380 .</p>
             </div>
           </div>
 
