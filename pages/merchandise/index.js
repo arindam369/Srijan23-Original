@@ -300,6 +300,9 @@ export default function MerchandisePage() {
               <TfiHandPointRight className={styles.instructionBullets}/> <span>If you select method: "UPI", 2 more fields will be visible where you have to give the Transaction ID & Transaction Screenshot. [ <strong>PS:</strong> provide the 12 digit unique numeric number (UTR) e.g. <i>123456789012</i> ]</span>
             </div>
             <div className={styles.instructions}>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span>Price for each t-shirt is Rs. 380 </span>
+            </div>
+            <div className={styles.instructions}>
               <TfiHandPointRight className={styles.instructionBullets}/> <span>Now select the Payment Collector whom you have sent your payment and then place your order</span>
             </div>
             <div className={styles.instructions}>
@@ -387,6 +390,14 @@ export default function MerchandisePage() {
             </div> */}
             <div className={styles.offlinePaymentDetails}>
               <button className={styles.merchandiseInstructionButton} onClick={toggleVisibleInstructionsModal}>How to Order a SRIJAN Merchandise?</button>
+            </div>
+            <div id="price">
+              <p id="p1">Price of each t-shirt is Rs. 380 .</p>
+               <script>
+                let p = document.querySelector('#p1');
+                p.style.color = 'white';
+                p.style.fontWeight = 'bold';
+              </script>
             </div>
           </div>
 
