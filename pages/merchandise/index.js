@@ -205,6 +205,12 @@ export default function MerchandisePage() {
       zIndex: "100"
     }
   };
+   const styles = {
+      background: "#f42020",
+      color: "#fff",
+     font-weight: 800;
+     font-size: 1.1rem;
+    };
   
   const router = useRouter();
   const goToLoginPage = () => {
@@ -391,13 +397,8 @@ export default function MerchandisePage() {
             <div className={styles.offlinePaymentDetails}>
               <button className={styles.merchandiseInstructionButton} onClick={toggleVisibleInstructionsModal}>How to Order a SRIJAN Merchandise?</button>
             </div>
-            <div id="price">
+            <div style={styles}>
               <p id="p1">Price of each t-shirt is Rs. 380 .</p>
-               <script>
-                let p = document.querySelector('#p1');
-                p.style.color = 'white';
-                p.style.fontWeight = 'bold';
-              </script>
             </div>
           </div>
 
