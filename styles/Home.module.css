@@ -570,18 +570,6 @@
 .homeHead{
   text-align: center;
 }
-.pricep{
-   background: "#f42020",
-   color: "#fff",
-   font-weight: 800;
-   font-size: 1.1rem;
- }
-.p1{
-    background: "#f42020",
-   color: "#fff",
-   font-weight: 800;
-   font-size: 1.1rem;
-}
 @media(max-width: 840px){
   .homeBox{
     width: 600px;
@@ -1344,6 +1332,15 @@
   font-size: 1.1rem;
   border-radius: 30px;
   cursor: pointer;
+}
+.p1{
+   border: 0;
+  background: linear-gradient(to top right, rgb(157, 26, 26), rgb(244, 32, 32));
+  color: white;
+  padding: 18px 40px;
+  font-family: 'Exo', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
 }
 .instructionsModal h2{
   font-family: 'Poppins', sans-serif;
