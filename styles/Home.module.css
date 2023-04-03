@@ -576,6 +576,12 @@
    font-weight: 800;
    font-size: 1.1rem;
  }
+.p1{
+    background: "#f42020",
+   color: "#fff",
+   font-weight: 800;
+   font-size: 1.1rem;
+}
 @media(max-width: 840px){
   .homeBox{
     width: 600px;
