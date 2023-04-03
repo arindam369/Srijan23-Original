@@ -193,7 +193,7 @@ export default function Dashboard(){
                         </div>
                     </div>
                 </div>
-                <div className={styles.dashboardRegistrationContainer}>
+                {/* <div className={styles.dashboardRegistrationContainer}>
                     <h2 className={styles.notificationHeading}>Your Merchandises</h2>
                     <div className={styles.dashboardInvitations}>
                         <div className={styles.dashboardEventRequests}>
@@ -207,7 +207,7 @@ export default function Dashboard(){
                             </div>}
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </>
     );
