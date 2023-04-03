@@ -1403,7 +1403,7 @@
 @media (max-width: 550px){
   .instructionsModal{
     width: 410px;
-    height: 700px;
+    height: 600px;
     border-radius: 10px;
     padding: 10px 25px;
   }
@@ -1415,11 +1415,17 @@
     font-size: .96rem;
     align-items: center;
   }
+  .instructions span{
+    font-size: .79rem;
+    line-height: 12px;
+    width: 90%;
+    text-align: justify;
+  }
 }
 @media (max-width: 480px){
   .instructionsModal{
     width: 365px;
-    height: 700px;
+    height: 620px;
     border-radius: 10px;
     padding: 0px 25px;
   }
@@ -1433,12 +1439,12 @@
     align-items: center;
   }
   .qrScannerImage{
-    width: 140px;
-    height: 140px;
+    width: 100px;
+    height: 100px;
   }
   .instructions span{
     font-size: .79rem;
-    line-height: 15px;
+    line-height: 13px;
     width: 90%;
     text-align: justify;
   }
@@ -1457,7 +1463,7 @@
 @media (max-width: 440px){
   .instructionsModal{
     width: 320px;
-    height: 700px;
+    height: 620px;
     border-radius: 10px;
     padding: 0px 25px;
   }
@@ -1471,12 +1477,12 @@
     align-items: center;
   }
   .qrScannerImage{
-    width: 125px;
-    height: 125px;
+    width: 115px;
+    height: 115px;
   }
   .instructions span{
     font-size: .77rem;
-    line-height: 15px;
+    line-height: 13px;
     width: 90%;
     text-align: justify;
   }
@@ -1484,17 +1490,24 @@
 @media (max-width: 390px){
   .instructionsModal{
     width: 310px;
-    height: 700px;
-    padding: 0px 15px;
+    height: 620px;
+    padding: 0px 20px;
   }
   .instructionsModal h2{
     top: 6px;
     left: 0px;
     right: 0;
     justify-content: center;
-    font-size: .9rem;
+    font-size: .89rem;
     text-align: center;
     align-items: center;
+  }
+  .instructions span{
+    font-size: .75rem;
+    line-height: 12.5px;
+    width: 90%;
+    text-align: justify;
+
   }
 }
 .eventEndRightButtonBox{
