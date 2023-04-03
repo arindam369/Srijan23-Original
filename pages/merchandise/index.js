@@ -301,9 +301,6 @@ export default function MerchandisePage() {
               <TfiHandPointRight className={styles.instructionBullets}/> <span>If you select method: "UPI", 2 more fields will be visible where you have to give the Transaction ID & Transaction Screenshot. [ <strong>PS:</strong> provide the 12 digit unique numeric number (UTR) e.g. <i>123456789012</i> ]</span>
             </div>
             <div className={styles.instructions}>
-              <TfiHandPointRight className={styles.instructionBullets}/> <span>Price for each t-shirt is Rs. 380 </span>
-            </div>
-            <div className={styles.instructions}>
               <TfiHandPointRight className={styles.instructionBullets}/> <span>Now select the Payment Collector whom you have sent your payment and then place your order</span>
             </div>
             <div className={styles.instructions}>
@@ -392,8 +389,8 @@ export default function MerchandisePage() {
             <div className={styles.offlinePaymentDetails}>
               <button className={styles.merchandiseInstructionButton} onClick={toggleVisibleInstructionsModal}>How to Order a SRIJAN Merchandise?</button>
             </div>
-            <div className={styles.pricep}>
-              <p className={styles.p1}">Price of each t-shirt is Rs. 380 .</p>
+            <div className={styles.merchandisePrice}>
+              <h4>Only for Rs. 380/-</h4>
             </div>
           </div>
 
@@ -516,8 +513,8 @@ export default function MerchandisePage() {
                 <div className={styles.registerInput}>
                   <label htmlFor="paymentCollector" className={styles.registerInputLabel}>Payment Collector</label>
                   <select id="[paymentCollector]" value={paymentCollector} onChange={(e) => { setPaymentCollector(e.target.value) }}>
-                    <option value="ayush">Ayush Mishra</option>
-                    <option value="bitan">Bitan Banerjee</option>
+                    <option value="ayush">Ayush Mishra ( SL Campus )</option>
+                    <option value="bitan">Bitan Banerjee ( JU Campus )</option>
                   </select>
                   <SlSizeFullscreen className={styles.registerIcon} />
                 </div>
