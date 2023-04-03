@@ -27,6 +27,7 @@ import { database, storage } from "@/firebase";
 import uuid from "react-uuid";
 import { useRouter } from "next/router";
 
+
 export default function MerchandisePage() {
   const authCtx = useContext(AuthContext);
 
@@ -205,12 +206,6 @@ export default function MerchandisePage() {
       zIndex: "100"
     }
   };
-   const styles = {
-      background: "#f42020",
-      color: "#fff",
-     font-weight: 800;
-     font-size: 1.1rem;
-    };
   
   const router = useRouter();
   const goToLoginPage = () => {
