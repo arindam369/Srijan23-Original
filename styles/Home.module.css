@@ -686,10 +686,9 @@
   align-items: center;
 }
 .productImageScreen{
-  width: 300px;
+  width: 320px;
   height: 350px;
   border-radius: 5px;
-  margin-left: 10px;
 }
 
 
@@ -1303,7 +1302,7 @@
 
 .instructionsModal{
   width: 450px;
-  height: 700px;
+  height: 630px;
   position: absolute;
   top: 0;
   left: 0;
@@ -1336,12 +1335,15 @@
   font-family: 'Poppins', sans-serif;
   position: absolute;
   top: 5px;
-  left: 25px;
+  left: 0;
+  right: 0;
+  justify-content: center;
   font-size: 1.1rem;
   display: flex;
   align-items: center;
   /* color: rgb(167, 31, 31); */
-  color: rgb(103, 103, 103);
+  /* color: rgb(103, 103, 103); */
+  color: rgb(143, 12, 12);
   font-weight: 800;
 }
 .instructionsModal .exitIcon{
@@ -1360,7 +1362,7 @@
 }
 .instructions span{
   font-size: .79rem;
-  line-height: 17px;
+  line-height: 16px;
   width: 90%;
 }
 .instructions span i{
@@ -1399,13 +1401,15 @@
 @media (max-width: 550px){
   .instructionsModal{
     width: 410px;
-    height: 750px;
+    height: 700px;
     border-radius: 10px;
     padding: 10px 25px;
   }
   .instructionsModal h2{
     top: 5px;
-    left: 25px;
+    left: 0;
+    right: 0;
+    justify-content: center;
     font-size: .96rem;
     align-items: center;
   }
@@ -1413,13 +1417,15 @@
 @media (max-width: 480px){
   .instructionsModal{
     width: 365px;
-    height: 750px;
+    height: 700px;
     border-radius: 10px;
     padding: 0px 25px;
   }
   .instructionsModal h2{
     top: 15px;
-    left: 13px;
+    left: 0;
+    right: 0;
+    justify-content: center;
     font-size: .91rem;
     text-align: center;
     align-items: center;
@@ -1430,7 +1436,7 @@
   }
   .instructions span{
     font-size: .79rem;
-    line-height: 16px;
+    line-height: 15px;
     width: 90%;
     text-align: justify;
   }
@@ -1455,7 +1461,7 @@
   }
   .instructionsModal h2{
     top: 6px;
-    left: 0px;
+    left: 0;
     right: 0;
     justify-content: center;
     font-size: .9rem;
@@ -1493,4 +1499,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.transactionSSButton{
+  background: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: .7rem;
+  padding: 5px 15px;
+  border-radius: 3px;
+  position: absolute;
+  left: 50px;
+  cursor: pointer;
 }

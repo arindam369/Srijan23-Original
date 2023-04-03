@@ -7,6 +7,7 @@ import styles from "../../../styles/Dashboard.module.css";
 import { MdDescription, MdPlace } from "react-icons/md";
 import { HiUserGroup } from "react-icons/hi";
 import { FaRegDotCircle, FaBookOpen } from "react-icons/fa";
+import {AiFillQuestionCircle} from "react-icons/ai";
 import EventPosters from "@/components/Dashboard/EventPosters";
 import { BsFillCalendarCheckFill } from "react-icons/bs";
 import { IoCall } from "react-icons/io5";
@@ -28,6 +29,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { SiWhatsapp } from "react-icons/si";
+import {TfiHandPointRight} from "react-icons/tfi";
 
 export default function EventDetailsPage({ eventData }) {
   // console.log(eventData);
@@ -42,9 +44,13 @@ export default function EventDetailsPage({ eventData }) {
     )
   }
   const [userInterested, setUserInterested] = useState(false);
-  const [visibleRegistrationModal, setVisibleRegistrationModal] =
-    useState(false);
+  const [visibleRegistrationModal, setVisibleRegistrationModal] = useState(false);
+  const [visibleRegistrationInfo, setVisibleRegistrationInfo] = useState(false);
   const [isRegistered, setIsRegistered] = useState(false);
+  const [infoPage1, setInfoPage1] = useState(true);
+  const toggleInfoPage = ()=>{
+    setInfoPage1(!infoPage1);
+  }
 
   const authCtx = useContext(AuthContext);
 
@@ -141,6 +147,10 @@ export default function EventDetailsPage({ eventData }) {
     window.open(wpUrl);
   };
 
+  const toggleRegistrationInfo = ()=>{
+    setVisibleRegistrationInfo(!visibleRegistrationInfo);
+  }
+
   return (
     <>
       <Head>
@@ -194,6 +204,73 @@ export default function EventDetailsPage({ eventData }) {
           toggleVisibleRegistrationForm={toggleVisibleRegistrationForm}
           onRegister={handleRegisterEvent}
         />
+      </Modal>
+
+      <Modal isOpen={visibleRegistrationInfo}
+        onRequestClose={() => {
+          toggleRegistrationInfo();
+        }}
+        className={styles.registrationInfoModal}
+        ariaHideApp={false}
+        style={customEventModalStyles}
+        closeTimeoutMS={700}
+      >
+        <div>
+          <h2>Register for an Event</h2>
+          {infoPage1 && <h4>Procedure</h4>}
+          {!infoPage1 && <h4>Important Points</h4>}  
+            {infoPage1 && <><div className={styles.instructions}>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span>Please login to your <strong>SRIJAN</strong> account first and make sure your profile is complete and then go to dashboard</span>
+            </div>
+            <div className={styles.instructions}>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span>Now click on the <strong>Register</strong> button</span>
+            </div>
+            <div className={styles.instructions}>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span>Now note a point that if <strong>YOU</strong> are doing the registration then you are the leader. So as a Leader email id, your id will be shown and you can't change it</span>
+            </div>
+            <div className={styles.instructions}>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span>Now as per your team, give the appropriate email ids (make sure those ids have already been registered for Srijan)</span>
+            </div>
+            <div className={styles.instructions}>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span><strong>Keep NOTE of 2 points </strong> - <br/>&emsp;<strong>A. </strong>Any of your team members must have <strong>NOT</strong> registered for the same event with any other team. <br/>&emsp;<strong>B. </strong>Your team name must be valid i.e. Team name must be 3-16 letters long and should contain Letters or Numbers without any WhiteSpaces</span>
+            </div>
+            <div className={styles.instructions}>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span>Click on the <strong>Add Member</strong> button to add your teammates</span>
+            </div>
+            <div className={styles.instructions}>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span>Then click on the <strong>Register</strong> button. ( You will see a pop up notification after a successful registration )</span>
+            </div>
+            <div className={styles.instructions}>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span>After this, the event will be added as a <strong>Pending</strong> registration. Don't worry all of your teammates will have to go to the Notification Tab. And there, they have to accept the invitation. </span>
+            </div>
+            <div className={styles.instructions}>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span><strong>NOTE:</strong> If you are a "Single Person" team, then your registration will be directly moved to <strong>Registered</strong> events</span>
+            </div>
+            <div className={styles.instructions}>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span>Otherwise, if all of your teammates accept the invitation then you will see that the event has moved to <strong>Registered</strong> events</span>
+            </div></>}
+            {
+              !infoPage1 && <>
+                <div className={styles.instructions}>
+                  <TfiHandPointRight className={styles.instructionBullets}/> <span>Teammates can reject the invitation. If anyone do so, the registration will be automatically cancelled.</span>
+                </div>
+                <div className={styles.instructions}>
+                  <TfiHandPointRight className={styles.instructionBullets}/> <span><strong>Team Leader</strong> can delete the registrations / invitations anytime.</span>
+                </div>
+                <div className={styles.instructions}>
+                  <TfiHandPointRight className={styles.instructionBullets}/> <span><strong>PS:</strong> All of these activites can be tracked in the Notification Tab ( Like - who rejected and which event and also with the timestamp ). So keep an eye on the <strong>Notification Tab</strong> </span>
+                </div>
+                <div className={styles.instructions}>
+                  <TfiHandPointRight className={styles.instructionBullets}/> <span>Hope this helps. For any further query, feel free to reach out</span>
+                </div>
+              </>
+            }
+            
+            <div className={styles.registrationInfoButtonBox}>
+              {!infoPage1 && <button onClick={toggleInfoPage}>Back</button>}
+              {infoPage1 && <button onClick={toggleInfoPage}>Next</button>}
+            </div>
+        </div>
       </Modal>
 
       <div className={homeStyles.canvasContainer}>
@@ -412,6 +489,12 @@ export default function EventDetailsPage({ eventData }) {
                 </div>
 
                 <div className={styles.eventEndRightButtonBox}>
+                  <div className={styles.infoDiv} data-title="How to register for an event?">
+                    <AiFillQuestionCircle
+                      className={"infoButton"}
+                      onClick={toggleRegistrationInfo}
+                    />
+                  </div>
                   <SiWhatsapp
                     className={"whatsappButton"}
                     onClick={handleWhatsappShare}

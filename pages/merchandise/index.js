@@ -181,10 +181,10 @@ export default function MerchandisePage() {
   }
 
   const merchandiseImages = [
-    "/assets/tshirts/black_front.png",
-    "/assets/tshirts/black_back.png",
-    "/assets/tshirts/white_front.png",
-    "/assets/tshirts/white_back.png",
+    "/assets/tshirts/tshirt_front.png",
+    "/assets/tshirts/tshirt_back.png",
+    "/assets/tshirts/tshirt_srijan.png",
+    "/assets/tshirts/tshirt_logo.png",
   ]
   const [currImage, setCurrImage] = useState(merchandiseImages[0]);
 
@@ -259,7 +259,7 @@ export default function MerchandisePage() {
         closeTimeoutMS={700}
       >
         <div>
-          <h2>How to order a SRIJAN'23 Official Merchandise?</h2>
+          <h2>Order a SRIJAN'23 Official Merchandise</h2>
             <div className={styles.paymentScannerBox}>
               <div>
                 <Image src={"/assets/qr.png"} height={300} width={300} alt="qr_image" className={styles.qrScannerImage} draggable={false} />
@@ -454,7 +454,6 @@ export default function MerchandisePage() {
                   <label htmlFor="tshirtColor" className={styles.registerInputLabel}>Tshirt Color</label>
                   <select id="tshirtColor" value={tshirtColor} onChange={(e) => { setTshirtColor(e.target.value) }}>
                     <option value="Black">Black</option>
-                    <option value="White">White</option>
                   </select>
                   <IoIosColorPalette className={styles.registerIcon} />
                 </div>
@@ -498,6 +497,9 @@ export default function MerchandisePage() {
                 <div className={styles.registerInput}>
                     <label htmlFor="transactionScreenshot" className={styles.registerInputLabel}>Transaction Screenshot</label>
                     <input type="file" ref={fileRef} onChange={handleFileChange} id="transactionScreenshot" accept="image/*" />
+                    {/* <div className={styles.transactionSSButton} onClick={() => {
+                      fileRef.current.click();
+                    }}>Upload Screenshot </div> */}
                     <HiIdentification className={styles.registerIcon} />
                 </div>
               </div>}

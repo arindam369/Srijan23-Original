@@ -333,6 +333,21 @@ input:disabled{
 .whatsappButton:hover{
   filter: brightness(1.1);
 }
+.infoButton{
+  font-size: 1.1rem;
+  margin: 0px 5px;
+  padding: 7px 8px;
+  border-radius: 6px;
+  background: linear-gradient(to top right, rgba(29, 90, 161, 0.6), rgba(20, 114, 79, 0.6));
+  cursor: pointer;
+  color: rgb(179, 255, 0);
+  font-weight: 600;
+  border: 0px;
+  outline: 0;
+}
+.infoButton:hover{
+  filter: brightness(1.1);
+}
 .interestedButton{
   font-size: .8rem;
   margin: 0px 20px;
