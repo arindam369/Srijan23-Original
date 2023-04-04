@@ -237,7 +237,7 @@ export const events = [
         eventRules: ["We plan on providing raw materials to the participating teams", "Raw materials will include everyday items such as eggs, cardboards boxes, cups, plastic plates, paper etc. ","There will be three levels during the testing.","Students are required to build mechanisms which will prevent the egg from breaking when dropped.","This is an on-spot event. Building time for the mechanisms will be disclosed later. Students are required to build the mechanisms in front of the organizing committee."],
         eventRuleLink: "https://docs.google.com/document/d/190L7udpkDvx7gXh7EH9xBHFOxHQ4yjSQU7OyX1OJ40I/edit"
     },
-      {
+    {
         eventId: "015",
         eventName: "Math-E-Magician",
         eventDate: {prelims: ["April 14, 2023"], finals: "April 16,2023"},
@@ -245,7 +245,7 @@ export const events = [
         eventPoster: "/assets/events/mathemagician.png" ,
         eventType: "brainstorming",
         eventHashtags: ["Mathematics", "Brainstorming"],
-        eventCoordinators: ["Shubhayan Ghosal[ 9903297707 ]", "Subha Bhattacharya [ 9073701438 ]"],
+        eventCoordinators: ["Shubhayan Ghosal [ 9903297707 ]", "Subha Bhattacharya [ 9073701438 ]"],
         // eventVenue: "SMCC - 4th Floor - Lab",
         minMembers: 2,
         maxMembers: 3,
@@ -254,6 +254,25 @@ export const events = [
         eventRules: ["As it has been already told, there will be 2 events that Prelims will consist of a Terrific Brainstorming Math Olympiad and the Finals will be consisting of a Math Seminar to be organized by Finalists grouped in appropriate teams on the APPLICATIONS OF MATHEMATICS IN YOUR FAVOURITE ENGINEERING SCIENCE, we frame the following rules.", "PRELIMS OLYMPIAD There will be 25 questions,and a 90 minutes and Max Marks 100 time will be provided. Correct answer will be rewarded with a 4 pointer boost, Unanswered will fetch 1. 0 in all other cases. Questions will be of standard type and an candidates are required to fill the answers in the Response sheet to be provided. Candidates should not scribble the answers answers nor correct a previously filled response. They Can use a pencil to fill first for safety but scribbled or recorrected answers will be not be evaluated. ","FINALS Cut off marks for the Olympiad will be soon released. Short listed candidates will be grouped accordingly to present a seminar on the ap-plication of a mathematical topic in any discipline of technology. Candi-dates should present only MS PowerPoint/Overleaf LaTex Presentations and will be judged by a set of experts (who are professionally Research Scholars in Mathematics or Engineering Sciences). A sharp 20 minutes time will be provided. Decisions of Judges will be final and non challenge-able.","Everyone will be provided Certificate of Appreciation , Achieve-ment in Prelims(those who qualify) and Certificate of Merit to the top 3 Finalists ! Because, We Care for your CV/Resume."],
         eventRuleLink: "https://drive.google.com/file/d/1pN0rF7FCuHBLePTTWWz5eOioROWZ3Fkl/view"
     },
+    {
+        eventId: "016",
+        eventName: "Water-Chute",
+        eventDate: {prelims: ["April 14, 2023"], finals: "April 16,2023"},
+        // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
+        eventPoster: "/assets/events/WaterChute.png" ,
+        eventType: "misc",
+        eventHashtags: ["Fun", "Brainstorming"],
+        eventCoordinators: ["Srinjoy Das [ 9007992609 ]", "Tridibesh Chattoraj [ 8240093146 ]", "Soutrik Nag [ 9330266360 ]"],
+        // eventVenue: "SMCC - 4th Floor - Lab",
+        minMembers: 2,
+        maxMembers: 3,
+        // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
+        eventDescription: ["Do you remember the good old days when you used to watch people in Discovery Science make cool gadgets like homemade rockets? You were thrilled to see it, right? Why not recreate that thrill again?", "Stratosphere, Jadavpur University Aerospace Club introduces “Water-Chute”, a contest where you get an opportunity to showcase your engineering skills by making a water rocket using bottles and collections of valves and gaskets.", "So, are you ready to build the one that flies the greatest distance?"],
+        eventRules: ["TEAM SIZE:  2-3 (Cross-year teams are allowed)", "Materials: Two-liter plastic bottles, Tape-any kind; NO GLUE of any kind, Paper or plastic sheet material such as cardboard, Styrofoam, thin plastic sheet, etc.", "Construction Rules: Rockets must be built by the participating students using only the above listed materials.", "Only one two-liter bottle may be filled with water and pressurized. The pressurized bottle itself must not be modified structurally. Additions to the bottle (such as fins, nose cone, etc.) may be attached using ONLY tape.", "Paint or decorations on the plastic of the pressurized bottles are prohibited. Only tape, paper and plastic may be in direct contact with the pressurized bottle. Tape covering the bottle and other parts of the rocket may be painted or otherwise decorated.", "The mouth of the pressurized bottle must fit over a half-inch schedule 40 PVC pipe(standard 2 lit bottle mouth).", "Additional two 2-liter bottles(maximum) may be cut and added to the pressurized bottle.", "Fins must not interfere with the mouth of the pressurized bottle so that it can fit on the launcher.", "Competition Rules: The competitors add the desired amount of water to their rockets prior to being pressurized. If over-pressurized bottles fail during launch there will be no other chance given to the competitors & 0 point will be rewarded to the chance.", "Competitors select the desired launch angle.", "Participants will get only 2 chances in Prelims & 3 chances in Finals. Best of the chances will be considered as final mark.", "Rockets considered unsafe to launch by the judges will be disqualified.", "The distance from the launcher to the closest part (possibly detached) of the fully-at-rest rocket is measured by the judges.", "Participants can modify their rockets but the rocket should remain same during prelims and finals. If a different rocket is used then the team will be disqualified.", "There will be a Preliminary round and Finals. Top 5 teams will proceed to finals.", "Scoring system in finals = (0.25*Prelims + 0.75* Finals). Awards for the longest distances. Ties are broken by the following criteria, in order:  rocket weight (lighter is favored), average of the 2 runs. Top 3 teams will receive certificates and prizes."],
+        eventRuleLink: "https://docs.google.com/document/d/1PyU5Iz36MOMIKz3SudzOhLfDm_-vqqev/edit"
+    },
+
+    
   //  {
   //      eventId: "015",
   //      eventName: "Pixellense",
