@@ -288,6 +288,23 @@ export const events = [
         eventRules: ["Each team can consist of a maximum of 5 members.", "The competition will be bisected into wired and wireless categories. The prize money will be separate for the winners of these two categories.", "The main goal of participating bot is to shoot the ball into the opponent's goal.", "The ball is to be taken across the field only by pushing. It cannot be clamped or lifted in the air and at no point of time should the ball be covered by all sides by the participant's bot or any part of it.", "Dribbling mechanisms can be used; however, the ball must have at least one direction for free motion.", "A participant's bot is not supposed to interact directly with the opponent's bot when it is not in possession of the ball. If one of the bots is in possession of the ball, the other can attempt to dis-possess it by attacking only the ball.", "Physical interaction between the bots in this process will be tolerated if it is judged that the attacking bot went for the ball.", "If a bot is found to commit a foul (directly hitting/obstructing the motion of the opponent’s bot), the opponent will be given a free-shot.","In case of entangling of the wires, there can be a restart, with the ball placed at the point where it was before the entangling of the wires, upon the discretion of the referee.", "Damaging the arena in any form will lead to immediate disqualification", "After every goal is scored the ball would be placed back in the centre circle and each bot shall restart from their respective D-lines.", "There shall be red regions in the four corners. If a bot pushes its opponent to that area completely, it receives points (only applicable in Round 1).", "Own goals are taken into account.", "Please click upon the 'Click Here' button below to access the ELECTROSOCCER SMASH-UP RULE BOOK"],
         eventRuleLink: "https://docs.google.com/document/d/1kWRqkStcxKS0nHFgMe8Uagzkv9lLI0EQUt2RObO3zxA/edit"
     },
+    {
+        eventId: "018",
+        eventName: "Highway to Hell",
+        eventDate: {prelims: ["April 13, 2023 to April 15,2023"], finals: "April 16,2023"},
+        // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
+        eventPoster: "/assets/events/highwaytohell.png" ,
+        eventType: "circuit-robotics",
+        eventHashtags: ["Electro", "Racing"],
+        eventCoordinators: ["Soumyadeep Sarkar [ 93303 25248 ]", "Neetideepta Banerjee [ 85858 16088  ]"],
+        // eventVenue: "SMCC - 4th Floor - Lab",
+        minMembers: 1,
+        maxMembers: 5,
+        // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
+        eventDescription: ["Midst the monotony of our erudite walls. The brazen fury of Srijan calls . The event ,so crazy and fast-paced .A glance leaves the opponent defaced .Its one hard life ,not crafted for the frail, Blaze it up with your flair in Highway to hell.","Problem Statement:","Drive your manual 4-wheeler robot through the perilous tracks of the JUSC arena in the shortest time."],
+        eventRules: ["1.Each team can consist of a maximum of 5 members.","2.The decision of the JUSC officials is final and abiding.","3.If a participant crosses a specific obstacle in the arena,points will be given.","4.Each time the participant bot touches the boundary of the arena, points will be deducted. If the bot continues to touch the boundary for more than 5 seconds, it will be considered equivalent of two touches.","5.The robot can be wired or wireless.","6.Participants will have to arrange for any other power supplies required for bot.","7.No receiver and transmitter will be provided to the participant.","8.LEGO kits or spare mechanical parts are not allowed.","9.Participant can skip any obstacle, up to a certain limit,although for each time, points will be deducted.","10.Power supply at 220 volts for the bot will be provided.(Bring additional wires of sufficient length)","Arena :","The arena of the competition is a race track with obstacles.The obstacles may contain uneven surfaces, sand, grease, turns, various types of slopes up to 45 degrees. The other obstacles shall be revealed on the day of the competition.The arena of the competition is a race track with obstacles.","Robot Specifications :","1.Maximum dimensions (lxbxh) - 40cm x 40cm x 30cm","2.Maximum weight - 3 kg.","3.Minimum width of wheels – 3 cm.","4.Maximum RPM of motors - 500.(Planetary Motors are not allowed)","5.Wireless robots will gain an extra edge over the wired ones.","Task :","Complete the arena in the least amount of time."],
+        eventRuleLink: "https://drive.google.com/drive/folders/1bLjGqocI4F7ReM0R2xITKNEsNDCmJii6"
+    },
 
     
   //  {
