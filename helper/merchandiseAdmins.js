@@ -8,7 +8,7 @@ export const merchandiseAdmins = [
     {
         merchantId: "002",
         merchantEmail: ["bbanerjeeagp", "jyotishman917"],
-        merchantName: "Bitan Banerjee",
+        merchantName: "Bitan - Jyotishman",
         merchantTitle: "bitan"
     }
 ]

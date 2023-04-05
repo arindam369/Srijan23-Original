@@ -4,7 +4,7 @@ import styles from "../../styles/Home.module.css";
 import Image from "next/image";
 import { FaUserAlt, FaSchool } from "react-icons/fa";
 import { TfiPencilAlt } from "react-icons/tfi";
-import { MdOutlineEmail } from "react-icons/md";
+import { MdOutlineEmail, MdPlace } from "react-icons/md";
 import { RiProfileLine } from "react-icons/ri";
 import { ImMobile } from "react-icons/im";
 import { IoIosColorPalette, IoMdClose } from "react-icons/io";
@@ -301,7 +301,7 @@ export default function MerchandisePage() {
               <TfiHandPointRight className={styles.instructionBullets}/> <span>If you select method: "UPI", 2 more fields will be visible where you have to give the Transaction ID & Transaction Screenshot. [ <strong>PS:</strong> provide the 12 digit unique numeric number (UTR) e.g. <i>123456789012</i> ]</span>
             </div>
             <div className={styles.instructions}>
-              <TfiHandPointRight className={styles.instructionBullets}/> <span>Now select the Payment Collector whom you have sent your payment and then place your order</span>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span>Now select Campus where you want to complete your payment. <strong>Non JU Students</strong> please select Salt Lake Campus & complete your payment to the corresponding Payment Collector and then place your order</span>
             </div>
             <div className={styles.instructions}>
               <TfiHandPointRight className={styles.instructionBullets}/> <span><b>Congrats! Your order has been placed.</b> You can check the order status in your Dashboard</span>
@@ -511,10 +511,20 @@ export default function MerchandisePage() {
               </div>}
               <div className={styles.registerInputBox}>
                 <div className={styles.registerInput}>
-                  <label htmlFor="paymentCollector" className={styles.registerInputLabel}>Payment Collector</label>
+                  <label htmlFor="paymentCollector" className={styles.registerInputLabel}>Campus</label>
                   <select id="[paymentCollector]" value={paymentCollector} onChange={(e) => { setPaymentCollector(e.target.value) }}>
+                    <option value="ayush">Salt Lake Campus</option>
+                    <option value="bitan">Jadavpur Campus</option>
+                  </select>
+                  <MdPlace className={styles.registerIcon} />
+                </div>
+              </div>
+              <div className={styles.registerInputBox}>
+                <div className={styles.registerInput}>
+                  <label htmlFor="paymentCollector" className={styles.registerInputLabel}>Payment Collector</label>
+                  <select id="paymentCollector" value={paymentCollector} disabled onChange={(e) => { setPaymentCollector(e.target.value) }}>
                     <option value="ayush">Ayush Mishra ( SL Campus )</option>
-                    <option value="bitan">Bitan Banerjee ( JU Campus )</option>
+                    <option value="bitan">Bitan/Jyotishman ( JU Campus )</option>
                   </select>
                   <SlSizeFullscreen className={styles.registerIcon} />
                 </div>
