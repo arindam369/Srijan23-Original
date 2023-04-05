@@ -301,7 +301,7 @@ export default function MerchandisePage() {
               <TfiHandPointRight className={styles.instructionBullets}/> <span>If you select method: "UPI", 2 more fields will be visible where you have to give the Transaction ID & Transaction Screenshot. [ <strong>PS:</strong> provide the 12 digit unique numeric number (UTR) e.g. <i>123456789012</i> ]</span>
             </div>
             <div className={styles.instructions}>
-              <TfiHandPointRight className={styles.instructionBullets}/> <span>Now select Campus where you want to complete your payment. <strong>Non JU Students</strong> please select Salt Lake Campus & complete your payment to the corresponding Payment Collector and then place your order</span>
+              <TfiHandPointRight className={styles.instructionBullets}/> <span>Now select Campus where you want to complete your payment and then place your order</span>
             </div>
             <div className={styles.instructions}>
               <TfiHandPointRight className={styles.instructionBullets}/> <span><b>Congrats! Your order has been placed.</b> You can check the order status in your Dashboard</span>
