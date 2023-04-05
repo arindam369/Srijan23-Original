@@ -298,7 +298,7 @@ export const events = [
         eventHashtags: ["Electro", "Racing"],
         eventCoordinators: ["Soumyadeep Sarkar [ 93303 25248 ]", "Neetideepta Banerjee [ 85858 16088  ]"],
         // eventVenue: "SMCC - 4th Floor - Lab",
-        minMembers: 1,
+        minMembers: 2,
         maxMembers: 5,
         // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
         eventDescription: ["Midst the monotony of our erudite walls. The brazen fury of Srijan calls . The event ,so crazy and fast-paced .A glance leaves the opponent defaced .Its one hard life ,not crafted for the frail, Blaze it up with your flair in Highway to hell.","Problem Statement:","Drive your manual 4-wheeler robot through the perilous tracks of the JUSC arena in the shortest time."],
