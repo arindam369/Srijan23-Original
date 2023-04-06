@@ -308,7 +308,7 @@ export const events = [
      {
         eventId: "019",
         eventName: "Quiz-o-mania",
-        eventDate: {prelims: ["April 13, 2023"], finals: "April 14,2023"},
+        eventDate: {prelims: ["April 14, 2023"], finals: "April 15,2023"},
         // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
         eventPoster: "/assets/events/quizomania.jpg" ,
         eventType: "misc",
