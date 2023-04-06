@@ -23,6 +23,8 @@ function AdminEventDetailsPage() {
     }
 
     const [merchandiseDetails, setMerchandiseDetails] = useState([]);
+    const [sortedMerchandises, setSortedMerchandises] = useState([]);
+    const [sortedHeading, setSortedHeading] = useState("total");
 
     useEffect(() => {
         authCtx.stopLoading();
@@ -34,6 +36,7 @@ function AdminEventDetailsPage() {
                     merchandiseDetailsArray.push({ ...merchandiseDetailsResult[merchandise], merchandiseKey: merchandise });
                 }
                 setMerchandiseDetails(merchandiseDetailsArray);
+                setSortedMerchandises(merchandiseDetailsArray);
             }
         },
         {
@@ -41,6 +44,23 @@ function AdminEventDetailsPage() {
         }
         );
     }, []);
+
+    const findVerifiedMerchandises = ()=>{
+      setSortedHeading("verified");
+      setSortedMerchandises(merchandiseDetails.filter(merchandise => merchandise.verified===true));
+    }
+    const findNotVerifiedMerchandises = ()=>{
+      setSortedHeading("notVerified");
+      setSortedMerchandises(merchandiseDetails.filter(merchandise => merchandise.verified===false));
+    }
+    const findAcceptedMerchandises = ()=>{
+      setSortedHeading("accepted");
+      setSortedMerchandises(merchandiseDetails.filter(merchandise => merchandise.status==="accepted"));
+    }
+    const findRejectedMerchandises = ()=>{
+      setSortedHeading("rejected");
+      setSortedMerchandises(merchandiseDetails.filter(merchandise => merchandise.status==="rejected"));
+    }
 
 
     return (
@@ -99,14 +119,22 @@ function AdminEventDetailsPage() {
         <div className={styles.dashboardSectionHeading2}>
           Merchandise Database
         </div>
-        {merchandiseDetails && (
+        <br />
+        <div className={styles.merchandiseSortingButtonBox}>
+          <div className={sortedHeading!=="verified"? "merchandiseSortingButton" : "merchandiseSortingButton activeMerchandiseSortingButton"} onClick={findVerifiedMerchandises}>Verified</div>
+          <div className={sortedHeading!=="notVerified"? "merchandiseSortingButton" : "merchandiseSortingButton activeMerchandiseSortingButton"} onClick={findNotVerifiedMerchandises}>Not Verified</div>
+          <div className={sortedHeading!=="accepted"? "merchandiseSortingButton" : "merchandiseSortingButton activeMerchandiseSortingButton"} onClick={findAcceptedMerchandises}>Accepted</div>
+          <div className={sortedHeading!=="rejected"? "merchandiseSortingButton" : "merchandiseSortingButton activeMerchandiseSortingButton"} onClick={findRejectedMerchandises}>Rejected</div>
+        </div>
+        {sortedMerchandises && (
           <div className={styles.dashboardSectionHeading3}>
-            {merchandiseDetails.length} Orders Placed
+            {sortedHeading==="verified"?"Verified":sortedHeading==="notVerified"?"Not Verified":sortedHeading==="accepted"?"Accepted":sortedHeading==="rejected"?"Rejected":"Total"} Orders : {sortedMerchandises.length} 
           </div>
         )}
-        <br />
+        <br/>
+
         <div className={styles.userDetailsContainer}>
-          {merchandiseDetails && merchandiseDetails.length > 0 && merchandiseDetails.map((merchandise, idx) => {
+          {sortedMerchandises && sortedMerchandises.length > 0 && sortedMerchandises.map((merchandise, idx) => {
               return (
                 <div className={styles.adminMerchandiseDetailsBox} key={idx}>
                   <div className={styles.eventDetailsTop}>

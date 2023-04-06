@@ -3,7 +3,7 @@ export const admins = {
     "002": ["halderarindam10000", "dhritimandebnath02", "urwahjawaid", "shuddhasattwaguha"],
     "003": ["halderarindam10000", "02_abhijd", "dwai_payan152002", "sukalyanbisui"],
     "004": ["halderarindam10000", "asmitacharya24", "supritijpg", "aneeshranjangupta"],
-    "005": ["halderarindam10000"],
+    "005": ["halderarindam10000", "banerjeedebamita13", "harsham_jitendra", "sparshgupta2407"],
     "006": ["halderarindam10000", "ekbalh620", "dipendugupta123"],
     "007": ["halderarindam10000", "mittalkrishna1611", "urwahjawaid"],
     "008": ["halderarindam10000", "hoquesksamiul", "showaritra"],
@@ -15,4 +15,5 @@ export const admins = {
     "014": ["halderarindam10000", "arghadeepischatting", "ahmedamaan1234", "subhodipdas39"],
     "015": ["halderarindam10000", "shubhayanghosal17", "ayushpareek179", "rimibhattacharya0"],
     "016": ["halderarindam10000", "srinjoydas78", "soutriknag16", "tridibeshchattoraj"],
+    "017": ["halderarindam10000", "sougata_social", "reetamsau0510", "brahma_dwip_56"],
 }

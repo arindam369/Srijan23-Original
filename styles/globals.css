@@ -756,3 +756,23 @@ input:disabled{
   font-weight: 600;
   font-size: .76rem !important;
 }
+.merchandiseSortingButton{
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to top right, rgba(29, 90, 161, 0.6), rgba(20, 114, 79, 0.6));
+  padding: 12px 20px;
+  margin: 0px 10px;
+  border-radius: 6px;
+  font-size: .9rem;
+  cursor: pointer;
+}
+.activeMerchandiseSortingButton{
+  color: yellow;
+}
+@media (max-width: 510px){
+  .merchandiseSortingButton{
+    font-size: .8rem;
+    margin: 0px 5px;
+    padding: 10px 12px;
+  }
+}

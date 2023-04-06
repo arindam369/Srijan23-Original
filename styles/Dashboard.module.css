@@ -2376,3 +2376,9 @@ cursor: pointer;
     line-height: 15.5px;
   }
 }
+.merchandiseSortingButtonBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
