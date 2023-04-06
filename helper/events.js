@@ -305,6 +305,23 @@ export const events = [
         eventRules: ["Each team can consist of a maximum of 5 members.","The decision of the JUSC officials is final and abiding.","If a participant crosses a specific obstacle in the arena,points will be given.","Each time the participant bot touches the boundary of the arena, points will be deducted. If the bot continues to touch the boundary for more than 5 seconds, it will be considered equivalent of two touches.","The robot can be wired or wireless.","Participants will have to arrange for any other power supplies required for bot.","No receiver and transmitter will be provided to the participant.","LEGO kits or spare mechanical parts are not allowed.","Participant can skip any obstacle, up to a certain limit,although for each time, points will be deducted.","Power supply at 220 volts for the bot will be provided.(Bring additional wires of sufficient length)","Arena :","The arena of the competition is a race track with obstacles.The obstacles may contain uneven surfaces, sand, grease, turns, various types of slopes up to 45 degrees. The other obstacles shall be revealed on the day of the competition.The arena of the competition is a race track with obstacles.","Robot Specifications :","1.Maximum dimensions (lxbxh) - 40cm x 40cm x 30cm","2.Maximum weight - 3 kg.","3.Minimum width of wheels – 3 cm.","4.Maximum RPM of motors - 500.(Planetary Motors are not allowed)","5.Wireless robots will gain an extra edge over the wired ones.","Task : Complete the arena in the least amount of time."],
         eventRuleLink: "https://drive.google.com/drive/folders/1bLjGqocI4F7ReM0R2xITKNEsNDCmJii6"
     },
+     {
+        eventId: "019",
+        eventName: "Quiz-o-mania",
+        eventDate: {prelims: ["April 13, 2023"], finals: "April 14,2023"},
+        // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
+        eventPoster: "/assets/events/quizomania.png" ,
+        eventType: "circuit-robotics",
+        eventHashtags: ["Quiz", "General Affairs"],
+        eventCoordinators: ["Anusha Raj [ 91634 07359 ]", "Akancha Singh [ 77279 54915 ]"],
+        // eventVenue: "SMCC - 4th Floor - Lab",
+        minMembers: 1,
+        maxMembers: 2,
+        // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
+        eventDescription: ["Midst the monotony of our erudite walls. The brazen fury of Srijan calls . The event ,so crazy and fast-paced. A glance leaves the opponent defaced .Its one hard life ,not crafted for the frail, Blaze it up with your flair in Highway to hell.","Problem Statement:","Drive your manual 4-wheeler robot through the perilous tracks of the JUSC arena in the shortest time."],
+        eventRules: ["RULES AND REGULATIONS FOR PRELIMS","There will be 25 questions with a time constraint of 1min 30 seconds for solving each question.","The quiz will be based on general facts and science.","People can participate in groups of 1-2.","The decision of the organizing committee shall be final and binding.","RULES AND REGULATIONS FOR FINALS","There will be 20 questions with a time constraint of 1min 30 seconds for solving each question.","The quiz will be based on general facts and science.","People can participate in groups of 1-2.","The decision of the organizing committee shall be final and binding." ],
+        eventRuleLink: "https://docs.google.com/document/d/1DUmtKxcrZbAJPt3dGJA_EFGGQqHOdgbPiPT0M2r7ccE/edit"
+    },
 
     
   //  {
