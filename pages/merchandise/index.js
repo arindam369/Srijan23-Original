@@ -50,7 +50,7 @@ export default function MerchandisePage() {
   const [imageFile, setImageFile] = useState(null);
   const [file, setFile] = useState(null);
   // const [progress, setProgress] = useState(0);
-  const [paymentCollector, setPaymentCollector] = useState("ayush");
+  const [paymentCollector, setPaymentCollector] = useState("");
   const [visibleGuidelinesModal, setVisibleGuidelinesModal] = useState(false);
   const [visibleInstructionsModal, setVisibleInstructionsModal] = useState(false);
   const toggleVisibleGuidelinesModal = () => {
@@ -81,7 +81,7 @@ export default function MerchandisePage() {
     e.preventDefault();
 
     // handle all validations
-    if (fullname.trim().length === 0 || phone.trim().length === 0 || college.trim().length === 0 || dept.trim().length === 0 || tshirtName.trim().length === 0 || (paymentMethod === "UPI" && transactionId.trim().length === 0) || (paymentMethod === "UPI" && file===null)) {
+    if (fullname.trim().length === 0 || phone.trim().length === 0 || college.trim().length === 0 || dept.trim().length === 0 || tshirtName.trim().length === 0 || (paymentMethod === "UPI" && transactionId.trim().length === 0) || (paymentMethod === "UPI" && file===null) || (paymentCollector.trim().length === 0)) {
       notification['error']({
         message: `All fields are mandatory`,
         duration: 3
@@ -154,7 +154,7 @@ export default function MerchandisePage() {
                     setPaymentMethod("Cash");
                     setIsPaymentOnline(false);
                     setTransactionId("");
-                    setPaymentCollector("ayush");
+                    setPaymentCollector("");
                     setFile(null);
                     authCtx.stopLoading();
                   })
@@ -177,7 +177,7 @@ export default function MerchandisePage() {
         setPaymentMethod("Cash");
         setIsPaymentOnline(false);
         setTransactionId("");
-        setPaymentCollector("ayush");
+        setPaymentCollector("");
         setFile(null);
         authCtx.stopLoading();
     }
@@ -511,15 +511,17 @@ export default function MerchandisePage() {
               </div>}
               <div className={styles.registerInputBox}>
                 <div className={styles.registerInput}>
-                  <label htmlFor="paymentCollector" className={styles.registerInputLabel}>Campus</label>
-                  <select id="[paymentCollector]" value={paymentCollector} onChange={(e) => { setPaymentCollector(e.target.value) }}>
+                  <label htmlFor="paymentCampus" className={styles.registerInputLabel}>Campus</label>
+
+                  <select id="[paymentCampus]" value={paymentCollector} onChange={(e) => { setPaymentCollector(e.target.value) }}>
+                    <option value="" hidden>-- Select Campus --</option>
                     <option value="ayush">Salt Lake Campus</option>
                     <option value="bitan">Jadavpur Campus</option>
                   </select>
                   <MdPlace className={styles.registerIcon} />
                 </div>
               </div>
-              <div className={styles.registerInputBox}>
+              {paymentCollector.trim().length!==0 && <div className={styles.registerInputBox}>
                 <div className={styles.registerInput}>
                   <label htmlFor="paymentCollector" className={styles.registerInputLabel}>Payment Collector</label>
                   <select id="paymentCollector" value={paymentCollector} disabled onChange={(e) => { setPaymentCollector(e.target.value) }}>
@@ -528,7 +530,7 @@ export default function MerchandisePage() {
                   </select>
                   <SlSizeFullscreen className={styles.registerIcon} />
                 </div>
-              </div>
+              </div>}
               <div className={styles.centerBox}>
                 <button className={styles.registerButton}>Place Order</button>
               </div>
