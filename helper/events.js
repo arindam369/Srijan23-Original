@@ -310,7 +310,7 @@ export const events = [
         eventName: "Quiz-o-mania",
         eventDate: {prelims: ["April 13, 2023"], finals: "April 14,2023"},
         // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
-        eventPoster: "/assets/events/quizomania.png" ,
+        eventPoster: "/assets/events/quizomania.jpg" ,
         eventType: "misc",
         eventHashtags: ["Quiz", "General Affairs"],
         eventCoordinators: ["Anusha Raj [ 91634 07359 ]", "Akancha Singh [ 77279 54915 ]"],
