@@ -19,7 +19,7 @@ export const admins = {
     "018": ["halderarindam10000"],
     "019": ["halderarindam10000"],
     "020": ["halderarindam10000", "soumyadeeppal238", "tuhinchakraborty6000"],
-    "021": ["halderarindam10000"],
+    "021": ["halderarindam10000", "soumyadeeppal238", "tuhinchakraborty6000"],
     "022": ["halderarindam10000"],
     "023": ["halderarindam10000"],
     "024": ["halderarindam10000"],
