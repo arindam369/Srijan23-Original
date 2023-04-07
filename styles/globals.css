@@ -686,8 +686,8 @@ input:disabled{
 [timeline-title]:after {
   content: attr(timeline-title);
   position: absolute;
-  bottom: -50px;
-  left: 20px;
+  bottom: 30px;
+  left: -10px;
   padding: 6px 18px;
   color: white;
   white-space: nowrap; 
@@ -706,6 +706,12 @@ input:disabled{
 [timeline-title] {
   position: relative;
   cursor: pointer;
+}
+@media (max-width: 500px){
+  [timeline-title]:after {
+    bottom: -40px;
+    left: -50px;
+  }
 }
 
 /* merchandise product zoom */

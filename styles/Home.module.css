@@ -30,6 +30,7 @@
   bottom: 0;
   overflow-y: auto;
   height: 100vh;
+  z-index: 1000;
 }
 .homeHeading{
   display: flex;
@@ -368,8 +369,8 @@
   padding: 10px 16px;
   border-radius: 5px;
   color: white;
-  margin-bottom: 12px;
-  margin-top: 12px;
+  margin-bottom: 7px;
+  margin-top: 7px;
   cursor: pointer;
   transition: .5s ease-out;
   background: linear-gradient(to left, transparent 50%, white 50%) right;
@@ -391,8 +392,8 @@
   padding: 14px 30px;
   border-radius: 5px;
   color: white;
-  margin-bottom: 5px;
-  margin-top: 10px;
+  margin-bottom: 0px;
+  margin-top: 0px;
   cursor: pointer;
   transition: .5s ease-out;
   background: linear-gradient(to left, transparent 50%, white 50%) right;
@@ -819,7 +820,7 @@
   }
   .homeBox4{
     display: block;
-    margin: 40px 0px 10px;
+    margin: 13px 0px 10px;
   }
   .srijanLogo{
     width: 220px;
@@ -924,7 +925,7 @@
   .countdownContainer{
     justify-content: center;
     width: 300px;
-    height: 140px;
+    height: 110px;
   }
   .homeBox2{
     width: 300px;
@@ -1082,6 +1083,9 @@
     padding: 20px 20px;
     border-radius: 12px;
   }
+  .aboutContainer{
+    padding: 0px 20px;
+  }
 }
 
 /* Timeline ------------------------------------ */
@@ -1093,17 +1097,38 @@
   margin-bottom: 100px;
   position: relative;
   height: 100px;
+  flex-direction: column;
+  z-index: 100;
   /* border: 1px solid red; */
 }
 .timelineValue{
   width: 800px;
   height: 6px;
-  background-color:rgba(157, 202, 167, 0.774);
+  background-color:rgba(138, 179, 146, 0.774);
   border-radius: 6px;
   position: relative;
+  z-index: 100;
 }
 .timelineValue div{
+  position: absolute;
+}
 
+.timelineValue2{
+  height: 600px;
+  width: 6px;
+  background-color:rgba(162, 248, 162, 0.774);
+  border-radius: 6px;
+  position: relative;
+  display: none;
+}
+.timelineValue{
+  z-index: 0;
+}
+.robotTitleDiv{
+}
+.robotDiv{
+  position: absolute;
+  z-index: -10;
 }
 .robotImage{
   position: absolute;
@@ -1112,15 +1137,67 @@
   margin: auto;
   /* left: -30px; */
   left: -80px;
-  z-index: 3;
-  /* transform: translateX(400px); */
+  z-index: 10;
+  width: 60px;
+  height: 60px;
 }
 .timelineLabel{
-  background-color:rgba(17, 136, 43, 0.498);
+  /* background-color:rgba(17, 136, 43, 0.498); */
+  background-color:rgb(20, 174, 225);
   height: 100%;
   border-radius: 6px;
   position: absolute;
   left: 0;
+  z-index: -100; /* worked */
+}
+.timelineTitles{
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  width: 800px;
+  position: relative;
+}
+.timelineTitles2{
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  height: 600px;
+  position: relative;
+  display: none;
+}
+.timelineTitles div{
+  position: absolute;
+  width: 100px;
+  text-align: center;
+  top: 30px;
+  bottom: 0;
+  left: -48px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: .9rem;
+}
+.timelineTitles2 div{
+  position: absolute;
+  width: 100px;
+  top: -10px;
+  left: -140px;
+  text-align: center;
+  /* left: -48px; */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: .87rem;
+}
+.timelineTitles .timelineTitle2{
+  transform: translateX(200px);
+}
+.timelineTitles .timelineTitle3{
+  transform: translateX(400px);
+}
+.timelineTitles .timelineTitle4{
+  transform: translateX(600px);
+}
+.timelineTitles .timelineTitle5{
+  transform: translateX(800px);
 }
 .timelineCircle1, .timelineCircle2, .timelineCircle3, .timelineCircle4, .timelineCircle5{
   background-color: yellowgreen;
@@ -1132,6 +1209,7 @@
   bottom: 0;
   margin: auto;
   left: -5px;
+  z-index: -100; /* worked */
 }
 .timelineCircle2{
   transform: translateX(200px);
@@ -1148,20 +1226,32 @@
 
 @media (max-width: 1050px){
   .timelineContainer{
-    flex-direction: column;
+    flex-direction:initial;
     height: auto;
     margin-top: 100px;
   }
   .timelineValue{
-    height: 800px;
+    /* height: 800px;
     width: 6px;
     background-color:rgba(157, 202, 167, 0.774);
     border-radius: 6px;
-    position: relative;
+    position: relative; */
+    display: none;
   }
-  .timelineValue div{
-  
+  .timelineTitles div{
+    display: none;
   }
+  .timelineTitles{
+    display: none;
+  }
+  .timelineTitles2{
+    display: flex;
+  }
+  .timelineValue2{
+    display: block;
+    z-index: 100;
+  }
+
   .robotImage{
     position: absolute;
     top: 0;
@@ -1174,12 +1264,23 @@
     /* transform: translateX(400px); */
   }
   .timelineLabel{
-    background-color:rgba(17, 136, 43, 0.498);
     height: 100%;
     border-radius: 6px;
     position: absolute;
     left: 0;
     width: 100%;
+  }
+  .timelineTitles2 .timelineTitle2{
+    transform: translateY(150px);
+  }
+  .timelineTitles2 .timelineTitle3{
+    transform: translateY(300px);
+  }
+  .timelineTitles2 .timelineTitle4{
+    transform: translateY(450px);
+  }
+  .timelineTitles2 .timelineTitle5{
+    transform: translateY(600px);
   }
   .timelineCircle1, .timelineCircle2, .timelineCircle3, .timelineCircle4, .timelineCircle5{
     background-color: yellowgreen;
@@ -1187,22 +1288,22 @@
     height: 13px;
     position: absolute;
     border-radius: 50%;
-    top: -800px;
+    top: -600px;
     bottom: 0;
     margin: auto;
-    left: -5px;
+    left: -4px;
   }
   .timelineCircle2{
-    transform: translateY(200px);
+    transform: translateY(150px);
   }
   .timelineCircle3{
-    transform: translateY(400px);
+    transform: translateY(300px);
   }
   .timelineCircle4{
-    transform: translateY(600px);
+    transform: translateY(450px);
   }
   .timelineCircle5{
-    transform: translateY(800px);
+    transform: translateY(600px);
   }
 }
 
