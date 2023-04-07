@@ -16,4 +16,12 @@ export const admins = {
     "015": ["halderarindam10000", "shubhayanghosal17", "ayushpareek179", "rimibhattacharya0"],
     "016": ["halderarindam10000", "srinjoydas78", "soutriknag16", "tridibeshchattoraj"],
     "017": ["halderarindam10000", "sougata_social", "reetamsau0510", "brahma_dwip_56"],
+    "018": ["halderarindam10000"],
+    "019": ["halderarindam10000"],
+    "020": ["halderarindam10000", "soumyadeeppal238", "tuhinchakraborty6000"],
+    "021": ["halderarindam10000"],
+    "022": ["halderarindam10000"],
+    "023": ["halderarindam10000"],
+    "024": ["halderarindam10000"],
+    "025": ["halderarindam10000"],
 }
