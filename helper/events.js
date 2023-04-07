@@ -322,7 +322,7 @@ export const events = [
         eventRules: ["RULES AND REGULATIONS FOR PRELIMS","There will be 25 questions with a time constraint of 1min 30 seconds for solving each question.","The quiz will be based on general facts and science.","People can participate in groups of 1-2.","The decision of the organizing committee shall be final and binding.","RULES AND REGULATIONS FOR FINALS","There will be 20 questions with a time constraint of 1min 30 seconds for solving each question.","The quiz will be based on general facts and science.","People can participate in groups of 1-2.","The decision of the organizing committee shall be final and binding." ],
         eventRuleLink: "https://docs.google.com/document/d/1DUmtKxcrZbAJPt3dGJA_EFGGQqHOdgbPiPT0M2r7ccE/edit"
     },
- {
+    {
         eventId: "020",
         eventName: "Beat the Market",
         eventDate: {Single Round: ["April 14, 2023"]},
@@ -339,7 +339,7 @@ export const events = [
         eventRules:[" Eligibility: Students from any college/university currently pursuing their undergraduate, postgraduate from any discipline are welcome to enrol.", "Free Registration.","Individual Participation.","Participation Certificates for all participating teams.","Multiple registration from the same participant will be regarded as null and void."," Participants will be allotted with ‘Virtual Cash’ of INR 10 lakhs on Finlatics platform.","Trading activities will be limited to Cash Equity Market only. The participants will not get access to any other financial markets like Derivative market or Crypto market."," Trading hours will be live for 3 hours subject to real market fair prices."," At the end of 3 hours, the top three participants with maximum assets (total value of all shares owned by the team + cash in hand) will be declared the winners.","Participants are advised to remain updated with current market trends and news that might have effect on the market.","The event will be held both in offline as well as in online mode.","For online mode, the participants have to install Finlatics trading set-up in their respective devices to continue with the contest. The exact technicalities will be guided by the event coordinators beforehand.","For offline mode, the venue will be Jadavpur University Salt Lake Campus, where the participants will have to trade in desktop set-up. Participants from educational institutions of Kolkata are requested to opt for registering for the offline mode.","The final decision regarding the mode of conduct will be declared by the coordinators with respect to the availability of adequate consoles beforehand.","Disclaimer: No real money is involved in this competition. Finance Club, Jadavpur University will not be liable to any sorts of loss or gain incurred with the virtual money.","Further information will be provided to the participants via email."],
         eventRuleLink: "https://onedrive.live.com/view.aspx?resid=76C8830D541AF5EF!163&ithint=file%2cdocx&authkey=!AIZjscEnNxF3dS8"
     },
-        {
+      {
         eventId: "021",
         eventName: " Capital Clash",
         eventDate: {prelims: ["April 14, 2023"], finals: "April 15 and 16,2023"},
