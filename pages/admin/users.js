@@ -132,9 +132,7 @@ function UserProfiles(){
                 </div>
                 <div className={styles.userDetailsContainer}>
                     {sortedUsers && sortedUsers.length>0 && sortedUsers.slice(0, Math.min(sortedUsers.length, 40)).map((user)=>{
-                        return (
                             <UserDetailsBox name={user.profiledata.name} email={user.profiledata.email} phone={user.profiledata.phone} userId={user.userId} dept={user.profiledata.dept} college={user.profiledata.college} year={user.profiledata.year} avatar={user.profiledata.avatar} key={user.userId}/>
-                        )
                     })}
                     {sortedUsers && sortedUsers.length === 0 && 
                         <div className={styles.noEventsFound}>No User Found</div>
