@@ -325,7 +325,7 @@ export const events = [
     {
         eventId: "020",
         eventName: "Beat the Market",
-        eventDate: {Single Round: ["April 14, 2023"]},
+        eventDate: {finals: "April 14, 2023"},
         // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
         eventPoster: "/assets/events/beatmarket.png" ,
         eventType: "business-management",
