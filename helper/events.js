@@ -356,6 +356,40 @@ export const events = [
         eventRules:["Eligibility: All undergraduate and postgraduate students of any college/university from any disciple are welcome to enrol for this event."," Team Members: 2-4."," Cross-college/ Inter-college Participation is allowed."," Any member of a team can register on behalf of the whole team with the details of their teammates."," Free Registration for everyone.","An individual cannot be part of more than a single team. A person, if found to be part of multiple team will be disqualified.","The decisions of the Judges shall be final.","For Prelims: A case study will be supplied a few days before the event. Participants will be required to provide a rough ppt/doc file that has to be submitted online as a submission for Preliminary round.","The prelims round will be conducted completely in online mode, in which the participating teams have to upload their submission.","· For Finals:"," Top performers will be selected based on their approach towards the problem. They will be required to pitch their solution in front of the judges (Offline)."," The maximum number of slides are 8 (excluding the title slide and the names’ slide)"," The maximum time for the solution pitch is 8 minutes. Participants going above the mentioned time limit will be penalised."," The venue for Finals is Jadavpur University Salt Lake Campus where the participating team has to present in offline mode their solution to the case. The reporting time will communicated after the prelims by the event heads."," All the further information will be sent to the respective mails of the participants."," Participation certificates will be given to all participating teams."],
         eventRuleLink: "https://onedrive.live.com/view.aspx?resid=76C8830D541AF5EF!159&ithint=file%2cdocx&authkey=!ACsG6QlxR7-FROM"
     },
+  //    {
+  //      eventId: "022",
+  //      eventName: " Pass The Baton",
+  //      eventDate: {prelims: ["April 14, 2023"], finals: "April 15 & 16, 2023"},
+        // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
+  //      eventPoster: "/assets/events/capitalclash.png" ,
+  //      eventType: "business-management",
+  //      eventHashtags: ["Equity", "Challenges"],
+  //      eventCoordinators: ["Tuhin Chakraborty [ 9038432263 ]", "Abir Sen [ 8017778006 ]"],
+        // eventVenue: "SMCC - 4th Floor - Lab",
+  //      minMembers: 1,
+  //      maxMembers: 4,
+        // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
+  //      eventDescription: ["Finance Club, Jadavpur University brings you Fmi.online presents Equity Research Challenge (ERC), the first edition of a research-based case study competition inside the premises of Jadavpur University that would involve the analysis of a company belonging to a particular sector. The competition will test your financial acumen, analytical skills, and business knowledge in two consecutive rounds. What are you waiting for?","Hop in and enjoy showing off your analytical prowess to everyone and bag exclusive gifts and prizes worth 40k."],
+  //      eventRules:["Eligibility: All undergraduate and postgraduate students of any college/university from any disciple are welcome to enrol for this event."," Team Members: 2-4."," Cross-college/ Inter-college Participation is allowed."," Any member of a team can register on behalf of the whole team with the details of their teammates."," Free Registration for everyone.","An individual cannot be part of more than a single team. A person, if found to be part of multiple team will be disqualified.","The decisions of the Judges shall be final.","For Prelims: A case study will be supplied a few days before the event. Participants will be required to provide a rough ppt/doc file that has to be submitted online as a submission for Preliminary round.","The prelims round will be conducted completely in online mode, in which the participating teams have to upload their submission.","· For Finals:"," Top performers will be selected based on their approach towards the problem. They will be required to pitch their solution in front of the judges (Offline)."," The maximum number of slides are 8 (excluding the title slide and the names’ slide)"," The maximum time for the solution pitch is 8 minutes. Participants going above the mentioned time limit will be penalised."," The venue for Finals is Jadavpur University Salt Lake Campus where the participating team has to present in offline mode their solution to the case. The reporting time will communicated after the prelims by the event heads."," All the further information will be sent to the respective mails of the participants."," Participation certificates will be given to all participating teams."],
+  //      eventRuleLink: "https://onedrive.live.com/view.aspx?resid=76C8830D541AF5EF!159&ithint=file%2cdocx&authkey=!ACsG6QlxR7-FROM"
+   // },
+   //   {
+    //    eventId: "023",
+    //    eventName: " H42",
+    //    eventDate: {prelims: ["April 14, 2023"], finals: "April 15 & 16, 2023"},
+        // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
+    //    eventPoster: "/assets/events/capitalclash.png" ,
+     //   eventType: "business-management",
+     //   eventHashtags: ["Equity", "Challenges"],
+     //   eventCoordinators: ["Tuhin Chakraborty [ 9038432263 ]", "Abir Sen [ 8017778006 ]"],
+        // eventVenue: "SMCC - 4th Floor - Lab",
+      //  minMembers: 1,
+      //  maxMembers: 4,
+        // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
+       // eventDescription: ["Finance Club, Jadavpur University brings you Fmi.online presents Equity Research Challenge (ERC), the first edition of a research-based case study competition inside the premises of Jadavpur University that would involve the analysis of a company belonging to a particular sector. The competition will test your financial acumen, analytical skills, and business knowledge in two consecutive rounds. What are you waiting for?","Hop in and enjoy showing off your analytical prowess to everyone and bag exclusive gifts and prizes worth 40k."],
+       // eventRules:["Eligibility: All undergraduate and postgraduate students of any college/university from any disciple are welcome to enrol for this event."," Team Members: 2-4."," Cross-college/ Inter-college Participation is allowed."," Any member of a team can register on behalf of the whole team with the details of their teammates."," Free Registration for everyone.","An individual cannot be part of more than a single team. A person, if found to be part of multiple team will be disqualified.","The decisions of the Judges shall be final.","For Prelims: A case study will be supplied a few days before the event. Participants will be required to provide a rough ppt/doc file that has to be submitted online as a submission for Preliminary round.","The prelims round will be conducted completely in online mode, in which the participating teams have to upload their submission.","· For Finals:"," Top performers will be selected based on their approach towards the problem. They will be required to pitch their solution in front of the judges (Offline)."," The maximum number of slides are 8 (excluding the title slide and the names’ slide)"," The maximum time for the solution pitch is 8 minutes. Participants going above the mentioned time limit will be penalised."," The venue for Finals is Jadavpur University Salt Lake Campus where the participating team has to present in offline mode their solution to the case. The reporting time will communicated after the prelims by the event heads."," All the further information will be sent to the respective mails of the participants."," Participation certificates will be given to all participating teams."],
+       // eventRuleLink: "https://onedrive.live.com/view.aspx?resid=76C8830D541AF5EF!159&ithint=file%2cdocx&authkey=!ACsG6QlxR7-FROM"
+    //},
 
     
   //  {
