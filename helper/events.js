@@ -358,11 +358,11 @@ export const events = [
     },
       {
         eventId: "022",
-        eventName: "Pass The Baton",
+        eventName: " Pass The Baton",
         eventDate: {prelims: ["April 14, 2023"], finals: "April 16, 2023"},
         // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
         eventPoster: "/assets/events/ptb.jpg" ,
-        eventType: "Coding",
+        eventType: "coding",
         eventHashtags: ["Coding", "Marathon"],
         eventCoordinators: ["Ayush Sharma [ 9874180842 ]", "Arindam Dey [ 7318983814 ]","Dibyabrata Panja[ 8509184415]"],
         // eventVenue: "SMCC - 4th Floor - Lab",
