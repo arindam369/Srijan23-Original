@@ -361,7 +361,7 @@ export const events = [
         eventName: " Pass The Baton",
         eventDate: {prelims: ["April 14, 2023"], finals: "April 16, 2023"},
         // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
-        eventPoster: "/assets/events/ptb.jpg" ,
+        eventPoster: "/assets/events/ptb.png" ,
         eventType: "coding",
         eventHashtags: ["Coding", "Marathon"],
         eventCoordinators: ["Ayush Sharma [ 9874180842 ]", "Arindam Dey [ 7318983814 ]","Dibyabrata Panja[ 8509184415]"],
