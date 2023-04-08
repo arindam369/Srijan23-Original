@@ -387,7 +387,7 @@ export const events = [
         maxMembers: 3,
         // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
        eventDescription: ["Do you enjoy coding but fail to realize its significance in the real world ? Do you get bored with the mundane problems you get to solve ? Do you yearn to do more ? Do you want to rack your head and find the best suited algorithm ? Do you have the patience to do so ? ","H42 brought to you by Srijan, Jadavpur University, offers a splendid chance to prove your coding skills and end the boredom.","Come, be a part of this coding event and code to glory."],
-       eventRules:["This is a team event. Each team comprises 2 to 3 members. Inter-college teams are not allowed. ","There will be 2 rounds. Both the rounds will have 4 programming questions.","Two sets of prelims will be conducted. One online and the other offline.","The timing of the event will be notified later.","Top 10 teams from both the preliminary rounds will make it to the finals.","The decisions of Code Club Officials are final and binding"],
+       eventRules:["This is a team event. Each team comprises 3 members. Inter-college teams are not allowed. ","There will be 2 rounds. Both the rounds will have 4 programming questions.","Two sets of prelims will be conducted. One online and the other offline.","The timing of the event will be notified later.","Top 10 teams from both the preliminary rounds will make it to the finals.","The decisions of Code Club Officials are final and binding"],
        //eventRuleLink: "https://onedrive.live.com/view.aspx?resid=76C8830D541AF5EF!159&ithint=file%2cdocx&authkey=!ACsG6QlxR7-FROM"
     },
 
