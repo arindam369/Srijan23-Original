@@ -510,7 +510,16 @@ export default function EventDetailsPage({ eventData }) {
                     </button>
                   )}
 
-                  {authCtx.isAuthenticated && (
+                  {authCtx.isAuthenticated && eventData.registrationDisabled==="yes" ? (
+                    <Link href={"https://unstop.com/p/hack-for-humanity-empowering-communities-through-technology-srijan-2023-jadavpur-university-kolkata-664425"}
+                      className={
+                        "interestedRegisteredButton"
+                      }
+                      disabled={true}
+                    >
+                      {"Register"}
+                    </Link>
+                  ): (
                     <button
                       className={
                         !isRegistered
@@ -522,7 +531,7 @@ export default function EventDetailsPage({ eventData }) {
                     >
                       {isRegistered ? "Registered" : "Register"}
                     </button>
-                  )}
+                    )}
                   {!authCtx.isAuthenticated && (
                     <div className={styles.eventEndRightButtonBox}>
                       <button

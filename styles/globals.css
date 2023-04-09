@@ -317,6 +317,7 @@ input:disabled{
   font-weight: 600;
   border: 0px;
   outline: 0;
+  text-decoration: none;
 }
 .whatsappButton{
   font-size: .8rem;
