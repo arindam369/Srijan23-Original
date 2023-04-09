@@ -380,7 +380,7 @@ export const events = [
         // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
         eventPoster: "/assets/events/h42.png" ,
         eventType: "coding",
-        eventHashtags: ["Competetive Programming", "Challenges"],
+        eventHashtags: ["Competitive Programming", "Challenges"],
         eventCoordinators: ["Priyam Raj [ 8540038841 ]", "Chirag Jaiswal [ 9330715519 ]"],
         // eventVenue: "SMCC - 4th Floor - Lab",
         minMembers: 3,
