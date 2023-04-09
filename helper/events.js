@@ -390,7 +390,23 @@ export const events = [
        eventRules:["This is a team event. Each team comprises 3 members. Inter-college teams are not allowed. ","There will be 2 rounds. Both the rounds will have 4 programming questions.","Two sets of prelims will be conducted. One online and the other offline.","The timing of the event will be notified later.","Top 10 teams from both the preliminary rounds will make it to the finals.","The decisions of Code Club Officials are final and binding"],
        //eventRuleLink: "https://onedrive.live.com/view.aspx?resid=76C8830D541AF5EF!159&ithint=file%2cdocx&authkey=!ACsG6QlxR7-FROM"
     },
-
+ {
+        eventId: "024",
+        eventName: " Sherlocked",
+        eventDate: {prelims: ["April 14, 2023"], finals: "April 16, 2023"},
+        // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
+        eventPoster: "/assets/events/sherlocked.png" ,
+        eventType: "coding",
+        eventHashtags: ["Programming", "Mystery"],
+        eventCoordinators: ["Sayak China [ 6289430439 ]", "Mahak Chajjer [8777714983 ]","Anishwar Gupta [7003228776]"],
+        // eventVenue: "SMCC - 4th Floor - Lab",
+        minMembers: 3,
+        maxMembers: 3,
+        // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
+       eventDescription: ["If you want to explore your knack for solving mysteries, SHERLOCKED is just the event you're looking for. Thinking out of the box is the key. Your observational and imagination skills will be put to test, and so will your rational quick thinking abilities. You also need to have good knowledge of at least one mainstream programming language to get through the challenges. You have to be on your toes if you wanna match the genius of Holmes. Brace yourselves as things are about to get interesting."],
+       eventRules:["Inter-college teams are not allowed. Every team member must be from the same college.","The team size should be exactly 3","Only Submissions made through the team lead’s account will be considered. Submissions from any other account will not be considered.","Please refrain from discussing strategy during the contest","All submissions are run through a plagiarism detector. Any case of code plagiarism will disqualify the team from the contest."," Any sort of malpractice such as copying someone’s code or cheating would result in immediate disqualification of that team and not a single excuse would be entertained."," You need to code in the IDE provided in the platform only. Opening any other tabs would lead to disqualification according to Rule 6","The first round(Prelims) is a round which will consist of 10 puzzles and 2 coding questions and will be a 1 hr round.","The Top Teams moving to the Finals from Prelims will be declared on the same day or next day."," The Final Round "Sherlocked" is a 2-hour long event. It wil be designed to take place in levels. After clearing one level the participating team will move on to the next one with a greater level of difficulty and the team to clear all the levels in the shortest span of time will be declared the winner."," Winners and prizes will be declared after carefully going through all the codes."," In case of any conflicts, the decision of Code Club JUSL officials will be final and binding."],
+       eventRuleLink: "https://docs.google.com/document/d/1ijjcAB_ck5Sp-Q-9tLNHiDtZ27I0DP3B7OJM6b60jJc/edit"
+    },
     
   //  {
   //      eventId: "015",
