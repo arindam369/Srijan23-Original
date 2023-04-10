@@ -201,7 +201,7 @@ function DashboardPage(){
                     </div>
                     <div className={styles.logoutBox} onClick={()=>{authCtx.logout()}}>
                         <FiLogOut/>
-                        <span>{authCtx && authCtx.userId}</span>
+                        <span>{authCtx && authCtx.userId && authCtx.userId.length>20?authCtx.userId.slice(0, 17)+"..." : authCtx.userId}</span>
                     </div>
                     {/* <div className={styles.dashboardHeading}>Dashboard</div> */}
                     {/* {userData && <div>
