@@ -426,12 +426,12 @@ export const events = [
        eventRuleLink: "https://docs.google.com/document/d/17AjqneANkLE2hn_H3RwNELo1AWqrXBiIAuuDxIT3YRo/edit",
        registrationDisabled: "yes"
     },
-        {
+    {
         eventId: "026",
         eventName: "FIFA",
         eventDate: {prelims: ["April 15, 2023"], finals: "April 16, 2023"},
         // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
-        eventPoster: "/assets/events/fifa.png" ,
+        eventPoster: "/assets/events/Fifa.png" ,
         eventType: "gaming",
         eventHashtags: ["PC", "Gaming"],
         eventCoordinators: ["Swapnil Saha  [ 9123785487 ]"],
