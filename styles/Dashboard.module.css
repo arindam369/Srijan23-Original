@@ -1857,6 +1857,16 @@ cursor: pointer;
   font-size: 1.1rem;
   color: rgb(178, 234, 37);
   text-align: center;
+  margin: 0;
+  margin-top: 10px;
+}
+.eventRegisteredTeamName{
+  font-size: .72rem;
+  color: rgb(222, 219, 219);
+  text-align: center;
+  margin: 0;
+  margin-top: 2px;
+  margin-bottom: 10px;
 }
 .eventMemberButtonBox{
   width: 300px;

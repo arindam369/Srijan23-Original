@@ -40,14 +40,15 @@ export default function RegisteredEventBox({eventId, teamName, eventName, teamLe
             <h2 className={styles.eventRegisteredName}>{eventName}</h2>
             {authCtx.userId === teamLeader && 
             <Popconfirm
-                title="Delete Registration"
-                description="Are you sure you want to delete this registration?"
-                onConfirm={confirm}
-                okText="Delete"
-                cancelText="Cancel"
+            title="Delete Registration"
+            description="Are you sure you want to delete this registration?"
+            onConfirm={confirm}
+            okText="Delete"
+            cancelText="Cancel"
             >
                 <RiDeleteBack2Fill className={styles.deleteEventIcon}/>
             </Popconfirm>}
+            <p className={styles.eventRegisteredTeamName}>{teamName}</p>
             <Image height={200} width={400} src={`/assets/EventsByID/${eventId}.png`} draggable={false} className={styles.eventRegisteredImage} alt="eventImage"/>
             <div className={styles.eventMemberButtonBox}>
                 <div className={styles.eventTeamMembers}>

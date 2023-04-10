@@ -8,6 +8,7 @@ export default function MerchandiseBox({merchandiseId, fullname, phone, college,
             <div>
                 <h2 className={styles.eventRegisteredName}>{merchandiseId}</h2>
                 {/* <Image height={200} width={400} src={`/assets/tshirts/black_front.png`} draggable={false} className={styles.eventRegisteredImage} alt="merchandiseImage"/> */}
+                <br />
                 <p>Name: <span>{fullname}</span></p>
                 <p>Mobile: <span>{phone}</span></p>
                 <p>College: <span>{college}</span></p>

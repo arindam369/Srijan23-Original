@@ -218,7 +218,7 @@ function DashboardPage(){
                     {visibleSponsors && <Sponsors/>}
                     {visibleProfile && <Profile/>}
                     {visibleNotification && <Notification/>}
-                    
+        
                 </div>
 
             </div>
