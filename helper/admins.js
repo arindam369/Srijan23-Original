@@ -20,8 +20,8 @@ export const admins = {
     "019": ["halderarindam10000", "anusha_sbgs"],
     "020": ["halderarindam10000", "soumyadeeppal238", "tuhinchakraborty6000"],
     "021": ["halderarindam10000", "soumyadeeppal238", "tuhinchakraborty6000"],
-    "022": ["halderarindam10000", "dibyabrata1234", "aarindey", "arp23359", "kayush479"],
-    "023": ["halderarindam10000", "priyamjucode", "chiragjaiswal454", "kayush479"],
-    "024": ["halderarindam10000", "kayush479"],
+    "022": ["halderarindam10000", "dibyabrata1234", "aarindey", "arp23359", "kayush479", "sayakchina031001"],
+    "023": ["halderarindam10000", "priyamjucode", "chiragjaiswal454", "kayush479", "sayakchina031001"],
+    "024": ["halderarindam10000", "kayush479", "sayakchina031001"],
     "025": ["halderarindam10000"],
 }
