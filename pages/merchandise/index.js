@@ -532,7 +532,7 @@ export default function MerchandisePage() {
                 </div>
               </div>}
               <div className={styles.centerBox}>
-                <button className={styles.registerButton}>Place Order</button>
+                //<button className={styles.registerButton}>Place Order</button>
               </div>
             </form>}
           </div>
