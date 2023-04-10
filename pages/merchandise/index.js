@@ -531,9 +531,10 @@ export default function MerchandisePage() {
                   <SlSizeFullscreen className={styles.registerIcon} />
                 </div>
               </div>}
-        {/*  <div className={styles.centerBox}>
-                <button className={styles.registerButton}>Place Order</button>
-              </div>  */}
+         <div className={styles.centerBox}>
+                {/* <button className={styles.registerButton} disabled>Place Order</button> */}
+                <button className={"interestedButton"} disabled>Order Closed</button>
+              </div> 
             </form>}
           </div>
         </div>
