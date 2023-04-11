@@ -447,24 +447,24 @@ export const events = [
        eventRuleLink: "https://docs.google.com/document/d/1LN_0_fqKOR7MD0gfJKB_xz4yU_-JPjmfmX51I5_AENA/edit",
        //registrationDisabled: "yes"
     },
-  //     {
- //       eventId: "027",
- //       eventName: "Rocket League",
- //       eventDate: {prelims: ["April 15, 2023"], finals: "April 16, 2023"},
+       {
+        eventId: "027",
+        eventName: "Rocket League",
+        eventDate: {prelims: ["April 15, 2023"], finals: "April 16, 2023"},
         // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
- //       eventPoster: "/assets/events/rocketleague.png" ,
- //       eventType: "gaming",
- //       eventHashtags: ["PC", "Gaming"],
-       // eventCoordinators: ["Swapnil Saha  [ 9123785487 ]"],
+        eventPoster: "/assets/events/rocketleague.png" ,
+        eventType: "gaming",
+        eventHashtags: ["PC", "Gaming"],
+        eventCoordinators: ["Aika Nikhil  [ 9830435403 ]","Biswayan Mitra [7003909392]"],
         // eventVenue: "SMCC - 4th Floor - Lab",
-//        minMembers: 1,
-//        maxMembers: 1,
+        minMembers: 1,
+        maxMembers: 1,
         // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
- //      eventDescription: ["Welcome to the high-powered hybrid of arcade style soccer and vehicular mayhem.","Customise your car, hit the field and compete in one of the most critically acclaimed sports games of all time!","The stage is set!","Take your shot! Score the goal! ","THIS IS ROCKET LEAGUE!!!"],
-       //eventRules: [""],
+       eventDescription: ["Welcome to the high-powered hybrid of arcade style soccer and vehicular mayhem.","Customise your car, hit the field and compete in one of the most critically acclaimed sports games of all time!","The stage is set!For the First time in Kolkata in such a HUGE scale!","Take your shot! Score the goal! ","THIS IS ROCKET LEAGUE!!!"],
+       eventRules: ["Every Match will be held in a 2v2 format","Prelims' matches will be of 5 minutes each","Tied matches will go to overtime(GOLDEN GOAL RULE)","Participants are requested to bring their own controllers","Only one deciding match will be played for the 2nd round","Best of 3 Matches for Quarter Finals","Best of 5 Matches for Semi-finals","Best of 7 matches for finals"],
        //eventRuleLink: "https://docs.google.com/document/d/1-CpGRQCcZlT2_A--qoNeZ6LfZY7TpwEl3223KJ9fYD0/edit",
        //registrationDisabled: "yes"
- //   },
+    },
     
   //  {
   //      eventId: "015",
