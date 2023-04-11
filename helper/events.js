@@ -31,7 +31,8 @@ export const events = [
         // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
         eventDescription: ["Unleash the cryptographer in you and join us for an event filled with mystery, challenges, and excitement - Cypher 3331.", " The event will consist of a quick crash course on cryptography, followed by preliminary rounds of five consequent steps of cryptographic problems to uncover the clues and hints of the underlying treasure hunt . The first five teams to complete the prelims within the given time will qualify for the finals, where the challenges will get even more complex and gruelling. The top three teams to complete the final rounds within two hours will be crowned the winners of the event.", "Don't miss out on this exhilarating opportunity to test your cryptography skills and win big!"],
         eventRules: ["Prelims: A team must consist of 1 to 3 members to participate in the event.", "All participants will be given a quick crash course on cryptography.", "The prelims will consist of 5 consecutive steps of cryptographic problems, each providing clues and hints to solve a digital treasure hunt. The problems will be based on the concepts taught in the crash course.", "The time allocation for the prelims is 1.5 hours for the crash course and 1 hour for the competition rounds.The first 5 teams to complete the preliminary rounds within the timeslot of the event (1 hour) will qualify for the finals.", "Finals: The final stage will consist of more complex and challenging cryptographic problems, again based on the concepts of the quick course during prelims.", "Fundamental Structure of the finals will remain consistent with that of the prelims, with the exception of a few additional tools being provided to the qualifying five teams to aid in solving the problems.", "The first top 3 teams to complete the final rounds within 2 hours will be declared the winners of the event."],
-        eventRuleLink: "https://docs.google.com/document/d/1NYOjy76l8ra13i6isTOSf_AKbpG8RWeXQGALbtFULkE/edit"
+        eventRuleLink: "https://docs.google.com/document/d/1NYOjy76l8ra13i6isTOSf_AKbpG8RWeXQGALbtFULkE/edit",
+        registrationClosed: "yes"
     },
     {
         eventId: "003",
@@ -167,7 +168,8 @@ export const events = [
         // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
         eventDescription: ["A LAN based tournament among 32 Teams to be played. The last Day to Register will be 9th April 11:59 PM."],
         eventRules: ["Teams can’t register and expect to play from outside the gaming premises of JUSL. Physical presence of all the team members in mandatory.", "It is a LAN event and henceforth, the teams are requested to treat it accordingly.", "5 members from each team", "Matches will be played among the 9 maps depending on the ‘Ban and pick’ Method. (Ascent, Bind, Split, Breeze, Fracture, Lotus, Icebox, Haven, Pearl)", "Overtime will be played if a 12-12 score occurs. First Team to win two consecutive round wins.", "In case of an odd number of teams in the semi-final round, the team with the highest score difference (in the semi final round) will get qualified for the finals.", "Headphones, Keyboards, mouse will be provided. But you can bring your own accessories if you want.", "In case of any discrepancy the decision of the coordinators will be considered to be final.", "Please click upon the 'Click Here' button below to access the VALORANT RULE BOOK"],
-        eventRuleLink: "https://docs.google.com/document/d/1MuGdQyPaRWjBWwioKPDon0mvbExAc_Favx_CBAX5IxA/edit"
+        eventRuleLink: "https://docs.google.com/document/d/1MuGdQyPaRWjBWwioKPDon0mvbExAc_Favx_CBAX5IxA/edit",
+        registrationClosed: "yes"
     },
     {
         eventId: "011",

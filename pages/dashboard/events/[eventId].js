@@ -510,7 +510,12 @@ export default function EventDetailsPage({ eventData }) {
                     </button>
                   )}
 
-                  {authCtx.isAuthenticated && eventData.registrationDisabled==="yes" ? (
+                  {authCtx.isAuthenticated && eventData.registrationClosed==="yes"? <button
+                      className={"interestedButton"}
+                      disabled={true}
+                    >
+                      {"Registration Closed"}
+                    </button>: eventData.registrationDisabled==="yes" ? (
                     <Link href={"https://unstop.com/p/hack-for-humanity-empowering-communities-through-technology-srijan-2023-jadavpur-university-kolkata-664425"}
                       className={
                         "interestedRegisteredButton"
