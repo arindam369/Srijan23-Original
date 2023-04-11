@@ -49,7 +49,8 @@ export const events = [
         // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
         eventDescription: ["Do you have a knack for solving problems? Or have an itch in the brain when you stumble upon a thought provoking question? Are you open to new ideas?", "Get ready to flex your problem-solving muscles at Ace the Case! Put your critical thinking and analytical skills to the test as you work together in a team to solve real-world problems. Think outside the box,compete against other brilliant minds, learn from each other, but most importantly have fun while doing it.", "Join us for a day of learning and fun to tackle real-world challenges and see who can come up with the most innovative solutions!"],
         eventRules: ["Register in teams of 1-3 members, Prompt will be given 2 days prior", "Strictly adhere to slide limit", "In ROUND 1 : It is the Selection round which will be held in Online mode. Abstract submission within 24hrs of prompt release - 1 slide", "In ROUND 2 : This is the Finale that will be held in Offline mode. Slide limit : 4 + 1 slide(for team name) + 1 slide(concluding slide)", "Pitch time: 4-5 mins", "2 mins rebuttal from judges", "Brownie points for sticking to time limits"],
-        eventRuleLink: "https://docs.google.com/document/d/1IKbX3buznPO9Xhdk3C5mVbjrA-BEzCHTQti8zC2WZWA/edit"
+        eventRuleLink: "https://docs.google.com/document/d/1IKbX3buznPO9Xhdk3C5mVbjrA-BEzCHTQti8zC2WZWA/edit",
+        registrationClosed: "yes"
     },
     {
         eventId: "004",

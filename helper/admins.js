@@ -6,7 +6,7 @@ export const admins = {
     "005": ["halderarindam10000", "banerjeedebamita13", "harsham_jitendra", "sparshgupta2407"],
     "006": ["halderarindam10000", "ekbalh620", "dipendugupta123"],
     "007": ["halderarindam10000", "mittalkrishna1611", "urwahjawaid"],
-    "008": ["halderarindam10000", "hoquesksamiul", "showaritra"],
+    "008": ["halderarindam10000", "hoquesksamiul", "showaritra", "armitra07"],
     "009": ["halderarindam10000", "armitra07", "uttarayan_08"],
     "010": ["halderarindam10000", "swapnilsahadean", "arkasikder08"],
     "011": ["halderarindam10000","reach_arko112", "jyotishman917"],
