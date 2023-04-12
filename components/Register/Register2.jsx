@@ -121,9 +121,9 @@ export default function RegisterPage2(){
                         13th - 16th April
                     </div>
 
-                    <h4 className={styles.liveHeading}>will be live in</h4>
+                    <h4 className={styles.liveHeading}>is now LIVE</h4>
 
-                    {!visibleRegister && !visibleLogin && <Countdown/>}
+                    {/* {!visibleRegister && !visibleLogin && <Countdown/>} */}
                 </div>}
 
                 
