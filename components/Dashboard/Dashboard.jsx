@@ -9,6 +9,7 @@ import PolarChart from "../PolarChart";
 import RegisteredEventBox from "./RegisteredEventBox";
 import Workshop from "./Workshop";
 import MerchandiseBox from "./MerchandiseBox";
+import { useRouter } from "next/router";
 
 export default function Dashboard(){
     const authCtx = useContext(AuthContext);
@@ -71,6 +72,12 @@ export default function Dashboard(){
             });
         }
     }, [authCtx.userId, pendingEventsUpdated])
+
+    const router = useRouter();
+    const goToWorkshop = ()=>{
+        authCtx.startLoading();
+        router.push("/dashboard/workshop");
+    }
 
     function handleDeleteRegisteredEvent(eventId, eventName, teamName, teamLeader){
         setRegisteredEventsUpdated(!registeredEventsUpdated);
@@ -161,6 +168,8 @@ export default function Dashboard(){
                         <Workshop/>
                     </div> */}
                 </div>
+
+                <div className={styles.exploreEventButton3} onClick={goToWorkshop}>Explore Workshops</div>
 
                 <div className={styles.dashboardRegistrationContainer}>
                     <h2 className={styles.notificationHeading}>Registrations</h2>

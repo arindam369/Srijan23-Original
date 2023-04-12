@@ -21,8 +21,6 @@ import { notification } from "antd";
 import { ref as ref_storage, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { update, ref as ref_database, onValue } from "firebase/database";
 import Head from "next/head";
-import Modal from "react-modal";
-import Link from "next/link";
 import { database, storage } from "@/firebase";
 import uuid from "react-uuid";
 import { useRouter } from "next/router";
@@ -81,7 +79,7 @@ export default function MerchandisePage() {
     e.preventDefault();
 
     // handle all validations
-    if (fullname.trim().length === 0 || phone.trim().length === 0 || college.trim().length === 0 || dept.trim().length === 0 ||  (transactionId.trim().length === 0) || (file===null)) {
+    if (fullname.trim().length === 0 || phone.trim().length === 0 || college.trim().length === 0 || dept.trim().length === 0 ||  (paymentMethod === "UPI" && transactionId.trim().length === 0) || (paymentMethod === "UPI" && file===null)) {
       notification['error']({
         message: `All fields are mandatory`,
         duration: 3
@@ -205,9 +203,6 @@ export default function MerchandisePage() {
 
   return (
     <>
-      <Head>
-        <link rel="manifest" href="manifest.json" />
-      </Head>
       <div className={styles.canvasContainer}>
         <Canvas>
           <Stars />
@@ -232,13 +227,11 @@ export default function MerchandisePage() {
 
             <p className="workshopData">
                 <p>
-                Game Development Workshop organised by Gaming Society Jadavpur University<br/> 45 seats only &emsp; 2 day workshop on 14th and 15th April on game dev, design, strategy and marketing</p> <br/>
+                Game Development Workshop organised by Gaming Society Jadavpur University<br/> 45 seats only<br/>2 day workshop on 14th and 15th April on game dev, design, strategy and marketing</p> <br/>
             <p>Requirements: A decent Laptop(requirement as specified by the Unreal Documentation By Epic), Unreal Engine 5.0(built for the souce), some external texture pack for the enemy.</p>
             <br/><p>
             Refreshments and Tshirts included in th package.</p>    <br/>
             <p>For Payment: &emsp;UPI - 8902287177, &emsp;ghoshdebo2000@oksbi</p>
-
-
 
 
  </p>
@@ -314,6 +307,10 @@ export default function MerchandisePage() {
               <div className={styles.registerInputBox}>
                 <div className={styles.registerInput2}>
                   <label htmlFor="paymentMode" className={styles.registerInputLabel}>Payment Mode</label>
+                  <div className={styles.paymentOptions}>
+                    <input type="radio" value="Cash" checked={paymentMethod === "Cash"} id="paymentMode" onChange={(e) => { setPaymentMethod(e.target.value); selectCash(); }} />
+                    <div>Cash</div>
+                  </div>
                   <div className={styles.paymentOptions}>
                     <input type="radio" value="UPI" checked={paymentMethod === "UPI"} id="paymentMode" onChange={(e) => { setPaymentMethod(e.target.value); selectUpi(); }} />
                     <div>UPI</div>
