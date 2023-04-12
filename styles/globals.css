@@ -783,3 +783,17 @@ input:disabled{
     padding: 10px 12px;
   }
 }
+.workshopData{
+  color: rgb(225, 220, 220);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  font-size: .9rem;
+}
+.workshopData p{
+  margin: 0;
+  width: 80%;
+  text-align: center;
+}

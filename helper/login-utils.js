@@ -109,6 +109,36 @@ export async function bookMerchandise(fullname, email, phone, college, dept, tsh
         onlyOnce: true
     });
 }
+export async function bookWorkshop(fullname, email, phone, college, dept,  paymentMethod, transactionId, paymentSS){
+    const userId = email.split("@")[0].replace(/[.+-]/g, "_");
+    onValue(ref_database(database, 'srijan/profiles/' + userId + "/workshop/"+transactionId), (snapshot) => {
+        if(snapshot.val() !== null){
+            notification['error']({
+                message: `One order is already placed with this transaction id`,
+                duration: 8
+            })
+            return;
+        }
+        else{
+            update(ref_database(database, 'srijan/profiles/' + userId + "/workshop/" + transactionId), { fullname, email, phone, college, dept, paymentMethod, transactionId, "id":transactionId, paymentSS: paymentSS}
+            ).then((res) => {
+                notification['success']({
+                    message: `Registration done for the workshop`,
+                    duration: 10
+                })
+                update(ref_database(database, 'srijan/workshop/'+transactionId), { fullname, email, phone, college, dept, paymentMethod, transactionId, "id":transactionId, paymentSS: paymentSS});
+            })
+            .catch((err) => {
+                notification['error']({
+                    message: `Order failed for Workshop`,
+                    duration: 5
+                })
+            });
+        }
+    }, {
+        onlyOnce: true
+    });
+}
 
 
 export async function registerEvent(eventId, teamName, teamLeaderEmail, teamLeaderPhone, member2, member3, member4, member5, eventName){
