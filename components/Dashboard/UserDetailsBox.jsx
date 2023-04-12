@@ -8,7 +8,6 @@ import { database } from "@/firebase";
 import uuid from "react-uuid";
 
 export default function UserDetailsBox({name, email, phone, userId, dept, college, year, avatar}){
-    console.log(name, email, phone, userId, dept, college, dept, year, avatar);
     const [visibleNotificationForm, setVisibleNotificationForm] = useState(false);
     const [notificationText, setNotificationText] = useState("");
     const toggleVisibleNotificationForm = ()=>{
