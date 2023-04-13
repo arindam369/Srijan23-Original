@@ -529,7 +529,7 @@ export const events = [
        eventPoster: "/assets/events/chess.png" ,
        eventType: "gaming",
        eventHashtags: ["Gaming", "Brainstorm"],
-       eventCoordinators: ["Sk Mustafa Kamal [ 7439746311 ]"],
+       eventCoordinators: ["Arhana Kundu [ 8017422515 ]", "Tamal Roy Chowdhury [ 8918928140 ]"],
         // eventVenue: "SMCC - 4th Floor - Lab",
        minMembers: 1,
        maxMembers: 1,
