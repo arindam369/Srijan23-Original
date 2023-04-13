@@ -17,7 +17,7 @@ function AdminWorkshopDetailsPage() {
         <RegisterPage2/>
     )
   }
-  if(!["ghoshdebo2000", "halderarindam10000"].includes(authCtx.userId)){
+  if(!["ghoshdebo2000", "halderarindam10000", "ayushdtps"].includes(authCtx.userId)){
     return (
         <PermissionDeniedPage/>
     )
