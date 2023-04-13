@@ -31,6 +31,7 @@ function AdminEventDetailsPage({ eventData }) {
   }
 
   const [teamDetails, setTeamDetails] = useState([]);
+  const [pendingRegistered, setPendingRegistered] = useState([]);
 
   useEffect(() => {
     authCtx.stopLoading();
@@ -39,11 +40,16 @@ function AdminEventDetailsPage({ eventData }) {
       (snapshot) => {
         if (snapshot) {
           let teamDetailsArray = [];
+          let pendingTeamsArray = [];
           const teamDetailsResult = snapshot.val();
           for (let team in teamDetailsResult) {
             teamDetailsArray.push({ ...teamDetailsResult[team], teamId: team });
+            if(teamDetailsResult[team].isRegistered === false){
+              pendingTeamsArray.push({ ...teamDetailsResult[team], teamId: team });
+            }
           }
           setTeamDetails(teamDetailsArray);
+          setPendingRegistered(pendingTeamsArray);
         }
       },
       {
@@ -108,11 +114,23 @@ function AdminEventDetailsPage({ eventData }) {
         <div className={styles.dashboardSectionHeading2}>
           {eventData.eventName} Database
         </div>
-        {teamDetails && (
-          <div className={styles.dashboardSectionHeading3}>
-            {teamDetails.length} Registered
-          </div>
-        )}
+        <div className="adminHeading">
+          {teamDetails && (
+            <div className={styles.dashboardSectionHeading3}>
+              {teamDetails.length} Registered
+            </div>
+          )}
+          {pendingRegistered && (
+            <div className={styles.dashboardSectionHeading3}>
+              {pendingRegistered.length} Pending
+            </div>
+          )}
+          {teamDetails && pendingRegistered && (
+            <div className={styles.dashboardSectionHeading3}>
+              {teamDetails.length - pendingRegistered.length} Successful
+            </div>
+          )}
+        </div>
         <br />
         <div className={styles.userDetailsContainer}>
           {teamDetails &&

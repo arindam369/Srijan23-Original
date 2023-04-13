@@ -797,3 +797,8 @@ input:disabled{
   width: 80%;
   text-align: center;
 }
+.adminHeading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
