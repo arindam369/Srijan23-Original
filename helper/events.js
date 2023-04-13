@@ -534,7 +534,7 @@ export const events = [
        minMembers: 1,
        maxMembers: 1,
         // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
-       eventDescription: ["SWISS TOURNAMENT -- CLOCK TIME: 5min + 3sec", "DAY 1(15/04/2023) -- PLATFORM: LICHESS", "TOP 16 WILL QUALIFY FOR NEXT ROUND. FOR THE FINALS, PLAYERS HAVE TO BRING THEIR OWN CHESS BOARDS.", "KNOCK-OUT TOURNAMENT -- DAY 2(16/04/2023) -- CLOCK TIME: 3min + 3sec -- PLATFORM: OFFLINE"],
+       eventDescription: ["Srijan '23 Rook'n Roll brings you a war over the board! With all the drama revolving around the WCC match between Ding and Nepo, you can relive the experience of Astana, Kazakhstan....", "Even the laziest King flees wildly in the face of a double check! What are you waiting for? The blunders are all there on the board, waiting to be made."],
         eventRules: ["Properly move all of the chess pieces", "When in doubt, ask", "You have to move the piece you touch", "No outside assistance during games is allowed.", "The penalty for an illegal move is loss of one minute from the player’s clock.", "The number of illegal moves a player may make in a game: 2", "For any further queries, please contact: Arhana Kundu (IEE, UG2): 8017422515, Tamal Roy Chowdhury (ME, UG2) : 8918928140"],
         // eventRuleLink: "https://docs.google.com/document/d/19-N8ooQSbhY8oo0dELxPHKNBNlttRbKnoYKlEh5nK58/edit",
         registrationDisabled: "yes",
