@@ -24,7 +24,7 @@ export const admins = {
     "023": ["halderarindam10000", "ayushdtps", "priyamjucode", "chiragjaiswal454", "kayush479", "sayakchina031001"],
     "024": ["halderarindam10000", "ayushdtps", "kayush479", "sayakchina031001", "chiragjaiswal454"],
     "025": ["halderarindam10000", "ayushdtps",],
-    "026": ["halderarindam10000", "ayushdtps", "arkasikder07drive"],
+    "026": ["halderarindam10000", "ayushdtps", "arkasikder07drive", "swapnilsahadean", "mahtab2507"],
     "027": ["halderarindam10000", "ayushdtps",],
     "028": ["halderarindam10000", "ayushdtps",],
     "029": ["halderarindam10000", "ayushdtps",],

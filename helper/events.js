@@ -446,7 +446,8 @@ export const events = [
        eventDescription: ["Football - The most popular sport worldwide, with an approximated 3 billion fans - is more than just a sport. Some people’s dream, others’ passion. Be it Messi's wizardry or Ronaldo’s inhuman abilities. Be it international leagues or the Bengal Derby. Have you ever wanted to be a part of this beautiful sport? To be a part of a big-league football game? To have thousands of fans cheer for you as you Rabona into the opponent’s goal? Team SRIJAN’23 presents the perfect amalgamation of ‘Tech’ and ‘Sport’ with FIFA - The Ultimate Football Simulator. Compete with thousands of veteran gamers and prove your love for the sport. Put on your lucky jersey. It's time to go all in. Gamers4life! "],
        eventRules: ["Platform - PC (Origin)","Participants are advised to carry their own controller/keyboard/mouse","Match-making will be done randomly by organisers","In-game rules -","Half Length - 4 mins","Tactical defending","GK difficulty - legendary","Injuries off","Handball off","Custom formation not allowed"],
        eventRuleLink: "https://docs.google.com/document/d/1LN_0_fqKOR7MD0gfJKB_xz4yU_-JPjmfmX51I5_AENA/edit",
-       //registrationDisabled: "yes"
+       //registrationDisabled: "yes",
+       registrationClosed: "yes"
     },
        {
         eventId: "027",
