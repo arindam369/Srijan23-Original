@@ -516,7 +516,7 @@ export default function EventDetailsPage({ eventData }) {
                     >
                       {"Registration Closed"}
                     </button>: eventData.registrationDisabled==="yes" ? (
-                    <Link href={"https://unstop.com/p/hack-for-humanity-empowering-communities-through-technology-srijan-2023-jadavpur-university-kolkata-664425"}
+                    <Link href={eventData.registrationLink}
                       className={
                         "interestedRegisteredButton"
                       }

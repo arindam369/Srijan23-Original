@@ -176,7 +176,7 @@ export const events = [
     {
         eventId: "011",
         eventName: "Escape Room",
-        eventDate: {prelims: ["April 14, 2023"], finals: "April 15, 2023"},
+        eventDate: {prelims: ["April 15, 2023"], finals: "April 16, 2023"},
         // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
         eventPoster: "/assets/events/EscapeRoom.png" ,
         eventType: "brainstorming",
@@ -429,7 +429,8 @@ export const events = [
        eventRules: ["You can use any tech stack to build the solution based on the given themes.","Inter-college teams are allowed.","Only submissions made through the team lead's account will be considered if there are multiple members in the team. Submissions from any other account will not be considered.","The hackathon will be conducted in 2 rounds. The first round is the idea submission round, where you need to submit your idea based on the given themes and the second round is the onsite round, where you'll need to report to the venue (JU Salt Lake Campus) and build the solution in 10 hours.", "You've to submit your idea on Unstop (Link provided below) as a PPT (max 10 slides) before 14th April 12 PM IST.", "Further details about the onsite round will be communicated through email.","All submissions will be run through a plagiarism detector. Any case of code plagiarism will result in the disqualification of the team from the contest.","Your code will be evaluated at different timestamps, so it's important to periodically push code to the specified repository.","Any form of malpractice, such as copying someone's code or cheating, will result in immediate disqualification of the team. No excuses will be entertained.","Themes: Community Connect: An online platform that connects local nonprofit organizations with volunteers, donors, and resources to address social issues in their communities. The platform could streamline the process of matching volunteers with relevant causes, facilitating donations, and organizing community events to foster collaboration and support among different organizations.","EduTech for All: A mobile app that provides free access to educational resources, such as digital textbooks, interactive tutorials, and practice exercises, for underprivileged students in remote or underserved areas. The app could be designed to work offline and cater to different learning levels and subjects, empowering students to continue learning despite limited access to formal education.","HealthCare Access: A telemedicine platform that connects doctors and healthcare professionals with underserved communities, providing remote consultations and medical advice. The platform could also offer features such as appointment scheduling, prescription management, and health education resources, to bridge the gap in healthcare access for communities with limited medical facilities.",
        "Sustainable Solutions: A web-based platform that promotes sustainable lifestyle choices and empowers individuals and communities to take action against climate change. The platform could provide information and tools for reducing carbon footprint, promoting sustainable consumption, and advocating for environmental policies, encouraging collective action for a more sustainable future", "Inclusive Tech: An accessibility-focused project that develops technological solutions to enhance the accessibility of digital content and services for people with disabilities. This could include developing tools for screen readers, captioning, sign language interpretation, or other assistive technologies to make digital content, websites, and applications more inclusive and accessible to everyone.","Empowerment Through Coding: A coding and tech skills training program aimed at empowering marginalized and underrepresented communities with the skills needed for careers in the technology industry. The program could offer coding workshops, mentorship, and resources to individuals from diverse backgrounds, empowering them to pursue tech-related opportunities and bridge the digital divide"],
        eventRuleLink: "https://docs.google.com/document/d/17AjqneANkLE2hn_H3RwNELo1AWqrXBiIAuuDxIT3YRo/edit",
-       registrationDisabled: "yes"
+       registrationDisabled: "yes",
+       registrationLink: "https://unstop.com/hackathons/hack-for-humanity-empowering-communities-through-technology-srijan-2023-jadavpur-university-kolkata-664425"
     },
     {
         eventId: "026",
@@ -520,23 +521,25 @@ export const events = [
         eventRules: ["Participants has to give solo beatbox performance on stage.", "Participants will be given 1 minute +- 20sec.", "Single hand mike will be made available for the performance.", "Performers will be judged on the following criteria :-  Originality, Sense of Beats/music, Variation of beats, Variety of sound, Connect to audience/entertaining", "Disqualification criteria :- Use of slangs and cuss words, Mis-behaving with judges, co-ordinators and volunteers, Damaging of University Property"],
         // eventRuleLink: "https://docs.google.com/document/d/19-N8ooQSbhY8oo0dELxPHKNBNlttRbKnoYKlEh5nK58/edit"
     },
-    // {
-    //    eventId: "031",
-    //    eventName: "Rook N Roll",
-    //    eventDate: {prelims: ["April 14, 2023"], finals: "April 16,2023"},
-    // //    eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
-    //    eventPoster: "/assets/events/beatbox.png" ,
-    //    eventType: "misc",
-    //    eventHashtags: ["Singing", "Rap Battle"],
-    //    eventCoordinators: ["Sk Mustafa Kamal [ 7439746311 ]"],
-    //     // eventVenue: "SMCC - 4th Floor - Lab",
-    //    minMembers: 1,
-    //    maxMembers: 1,
-    //     // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
-    //    eventDescription: ["Some people need instruments to make music while some make it with their mouth. FETSU presents SRIJAN23 brings to you the BEATBOX competition.Come, grab your mikes to flaunt your beats in 3....2...1...beatbox!!"],
-    //     eventRules: ["Participants has to give solo beatbox performance on stage.", "Participants will be given 1 minute +- 20sec.", "Single hand mike will be made available for the performance.", "Performers will be judged on the following criteria :-  Originality, Sense of Beats/music, Variation of beats, Variety of sound, Connect to audience/entertaining", "Disqualification criteria :- Use of slangs and cuss words, Mis-behaving with judges, co-ordinators and volunteers, Damaging of University Property"],
-    //     // eventRuleLink: "https://docs.google.com/document/d/19-N8ooQSbhY8oo0dELxPHKNBNlttRbKnoYKlEh5nK58/edit"
-    // },
+    {
+       eventId: "031",
+       eventName: "Rook 'N Roll",
+       eventDate: {prelims: ["April 15, 2023"], finals: "April 16,2023"},
+    //    eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
+       eventPoster: "/assets/events/chess.png" ,
+       eventType: "gaming",
+       eventHashtags: ["Gaming", "Brainstorm"],
+       eventCoordinators: ["Sk Mustafa Kamal [ 7439746311 ]"],
+        // eventVenue: "SMCC - 4th Floor - Lab",
+       minMembers: 1,
+       maxMembers: 1,
+        // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
+       eventDescription: ["SWISS TOURNAMENT -- CLOCK TIME: 5min + 3sec", "DAY 1(15/04/2023) -- PLATFORM: LICHESS", "TOP 16 WILL QUALIFY FOR NEXT ROUND. FOR THE FINALS, PLAYERS HAVE TO BRING THEIR OWN CHESS BOARDS.", "KNOCK-OUT TOURNAMENT -- DAY 2(16/04/2023) -- CLOCK TIME: 3min + 3sec -- PLATFORM: OFFLINE"],
+        eventRules: ["Properly move all of the chess pieces", "When in doubt, ask", "You have to move the piece you touch", "No outside assistance during games is allowed.", "The penalty for an illegal move is loss of one minute from the player’s clock.", "The number of illegal moves a player may make in a game: 2", "For any further queries, please contact: Arhana Kundu (IEE, UG2): 8017422515, Tamal Roy Chowdhury (ME, UG2) : 8918928140"],
+        // eventRuleLink: "https://docs.google.com/document/d/19-N8ooQSbhY8oo0dELxPHKNBNlttRbKnoYKlEh5nK58/edit",
+        registrationDisabled: "yes",
+        registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeP1megsciEqI0jmM461EHuyKrm5j3xaBnmqFeIOWHSR28dlQ/viewform?usp=sf_link"
+    },
        // {
        // eventId: "011",
        // eventName: "FIFA",
