@@ -30,7 +30,7 @@ export default function PolarChart() {
         labels: ['Coding', 'Gaming', 'Circuits and Robotics', 'Business and Management', 'Brainstorming', 'Misc'],
         datasets: [
             {
-                data: [4, 2, 4, 5, 4, 7],
+                data: [4, 4, 4, 5, 4, 10],
                 backgroundColor: [
                     '#29b6f6',
                     '#00e676',
