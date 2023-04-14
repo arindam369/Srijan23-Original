@@ -363,7 +363,7 @@ export const events = [
     },
       {
         eventId: "022",
-        eventName: " Pass The Baton",
+        eventName: "Pass The Baton",
         eventDate: {prelims: ["April 14, 2023"], finals: "April 16, 2023"},
         // eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
         eventPoster: "/assets/events/ptb.png" ,
@@ -376,7 +376,8 @@ export const events = [
         // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
         eventDescription: ["'Life isn't a race. It's a relay.'","FETSU Presents Srijan’ 23 By Jadavpur University brings to you ‘Pass the Baton' that requires not only coding skills but also proper understanding between team members.The name being a subtle giveaway, ‘Pass the Baton’ can be deemed as the Relay Race in Coding Community, where coders take turn in solving the same problem.One match! Three Problems! Three of you!Don’t forget to Pass The Baton, let’s see if you play the odds or the man. Three of you! For it matters :)"],
         eventRules:["Inter-college teams are not allowed. Every team member must be from the same college.","The team size should be exactly 3","Only Submissions made through the team lead’s account will be considered. Submissions from any other account will not be considered."," Please refrain from discussing strategy during the contest.","All submissions are run through a plagiarism detector. Any case of code plagiarism will disqualify the team from the contest.","Any sort of malpractice such as copying someone’s code or cheating would result in immediate disqualification of that team and not a single excuse would be entertained.","You need to code in the IDE provided in the platform only. Opening any other tabs would lead to disqualification according to Rule 6.","The first round(Prelims) is a normal ICPC styled Team contest.","The Top Teams moving to the Finals from Prelims will be declared within 1-2 days","The Final Round Pass The Baton which will be a 2-hour long event. It will be divided into 4-time slots. All slots will be of 30 minutes each. There will be 3 questions primarily. The members of the team will interchange after the end of each slot and will continue with the code written by their teammate.(Like If 3 Members Start in the 1st slot as ABC, then in the 2nd slot it will be like BCA and in the 3rd time slot as CAB.). Then in the final slot of 30 minutes, everyone assembles and solves the unsolved problems together.","Winners and prizes will be declared after carefully going through all the codes.",". In case of any conflicts, the decision of Code Club JUSL officials will be final and binding."],
-        eventRuleLink: "https://docs.google.com/document/d/1Go7uXVVweqMS4KFGq1EeqyJSWgu5FbCcDaenvkNjvtg/edit"
+        eventRuleLink: "https://docs.google.com/document/d/1Go7uXVVweqMS4KFGq1EeqyJSWgu5FbCcDaenvkNjvtg/edit",
+        registrationClosed: "yes"
     },
       {
         eventId: "023",
