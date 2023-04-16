@@ -30,6 +30,6 @@ export const admins = {
     "029": ["halderarindam10000", "ayushdtps", "kabirajabhirup"],
     "030": ["halderarindam10000", "ayushdtps", "smukaaf"],
     "031": ["halderarindam10000", "ayushdtps",],
-    "032": ["halderarindam10000", "ayushdtps",],
+    "032": ["halderarindam10000", "ayushdtps", "fantomobsant"],
     "033": ["halderarindam10000", "ayushdtps",],
 }
