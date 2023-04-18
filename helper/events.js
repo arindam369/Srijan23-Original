@@ -565,6 +565,25 @@ export const events = [
         registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeP1megsciEqI0jmM461EHuyKrm5j3xaBnmqFeIOWHSR28dlQ/viewform?usp=sf_link",
         registrationClosed: "yes"
     },
+        {
+       eventId: "032",
+       eventName: "E-Football",
+       eventDate: {prelims: ["April 16, 2023"], finals: "April 16,2023"},
+    //    eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
+       eventPoster: "/assets/events/efootball.png" ,
+       eventType: "gaming",
+       eventHashtags: ["Mobile", "Gaming"],
+       eventCoordinators: ["Jotiraditya [ 6289867756 ]", "Piyush [ 7439484942 ]","Dibyendu [7908892793]"],
+        // eventVenue: "SMCC - 4th Floor - Lab",
+       minMembers: 1,
+       maxMembers: 1,
+        // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
+       eventDescription: ["We dint really need to tell you about this event. You already know! Srijan 23 is back with the apotheosis of mobile gaming events: e-Football! All the Ronaldo fans and Messi fans, where you all at? Assemble! Fire up those phones and engage your earbuds (while we have a private chat with the legend Luis. A. Roman 😉). Also comment down below who you think will win this year's champions league?!"],
+        eventRules: ["Tournament will be hosted online on 16th April. Timings will be let known. ","Candidates will need to install e-football on their mobiles and participate. ","If a player qualifies in the top 16 (finals will be round robin) only one account will move forward. ","Game mode - 1v1 normal gameplay"],
+        // eventRuleLink: "https://docs.google.com/document/d/19-N8ooQSbhY8oo0dELxPHKNBNlttRbKnoYKlEh5nK58/edit",
+        //registrationDisabled: "yes",
+        //registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeP1megsciEqI0jmM461EHuyKrm5j3xaBnmqFeIOWHSR28dlQ/viewform?usp=sf_link"
+    },
        // {
        // eventId: "011",
        // eventName: "FIFA",
