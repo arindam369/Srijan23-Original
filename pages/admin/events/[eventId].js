@@ -53,12 +53,16 @@ function AdminEventDetailsPage({ eventData }) {
                 }
               })
             }
-            teamDetailsArray.push({ ...teamDetailsResult[team], teamId: team, memberData });
+            setTimeout(()=>{
+              teamDetailsArray.push({ ...teamDetailsResult[team], teamId: team, memberData });
             if(teamDetailsResult[team].isRegistered === false){
               pendingTeamsArray.push({ ...teamDetailsResult[team], teamId: team });
             }
+            }, 3000)
           }
-          setTeamDetails(teamDetailsArray);
+          setTimeout(()=>{
+            setTeamDetails(teamDetailsArray);
+          }, 5000)
           setPendingRegistered(pendingTeamsArray);
         }
       },
@@ -146,6 +150,7 @@ function AdminEventDetailsPage({ eventData }) {
           {teamDetails &&
             teamDetails.length > 0 &&
             teamDetails.map((team, idx) => {
+              // console.log(team.memberData);
               return (
                 <div className={styles.adminEventDetailsBox} key={idx}>
                   <div className={styles.eventDetailsTop}>
