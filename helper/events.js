@@ -565,7 +565,7 @@ export const events = [
         registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeP1megsciEqI0jmM461EHuyKrm5j3xaBnmqFeIOWHSR28dlQ/viewform?usp=sf_link",
         registrationClosed: "yes"
     },
-        {
+    {
        eventId: "032",
        eventName: "E-Football",
        eventDate: {prelims: ["April 16, 2023"], finals: "April 16,2023"},
@@ -582,7 +582,8 @@ export const events = [
         eventRules: ["Tournament will be hosted online on 16th April. Timings will be let known. ","Candidates will need to install e-football on their mobiles and participate. ","If a player qualifies in the top 16 (finals will be round robin) only one account will move forward. ","Game mode - 1v1 normal gameplay"],
         // eventRuleLink: "https://docs.google.com/document/d/19-N8ooQSbhY8oo0dELxPHKNBNlttRbKnoYKlEh5nK58/edit",
         //registrationDisabled: "yes",
-        //registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeP1megsciEqI0jmM461EHuyKrm5j3xaBnmqFeIOWHSR28dlQ/viewform?usp=sf_link"
+        //registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeP1megsciEqI0jmM461EHuyKrm5j3xaBnmqFeIOWHSR28dlQ/viewform?usp=sf_link",
+        registrationClosed: "yes"
     },
        // {
        // eventId: "011",
