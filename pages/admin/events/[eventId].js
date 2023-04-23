@@ -43,7 +43,7 @@ function AdminEventDetailsPage({ eventData }) {
           let pendingTeamsArray = [];
           const teamDetailsResult = snapshot.val();
           for (let team in teamDetailsResult) {
-            const members = (teamDetailsResult[team].teamDetails.members);
+            const members = (teamDetailsResult[team] && teamDetailsResult[team].teamDetails && (teamDetailsResult[team].teamDetails.members)) || [];
             const memberData=[];
             for(let i=0; i<members.length; i++){
               onValue(ref_database(database, `srijan/profiles/${members[i].email.split("@")[0].replace(/[.+-]/g, "_")}/profiledata`), (snapshot)=>{
@@ -191,7 +191,7 @@ function AdminEventDetailsPage({ eventData }) {
                         );
                       })}
                   </div>
-                  <div className={styles.userDetailsMid}><p>Members: <span>{team.memberData.join(", ")}</span></p></div>
+                  <div className={styles.userDetailsMid}><p>Members: <span>{team && team.memberData && team.memberData.join(", ")}</span></p></div>
                   {/* <div className={styles.userDetailsBottom}>
                       <div className={styles.sendNotificationButton} onClick={toggleVisibleNotificationForm}>Send Notification</div>
                   </div> */}
