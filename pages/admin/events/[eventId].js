@@ -17,12 +17,12 @@ function AdminEventDetailsPage({ eventData }) {
 
   if(!authCtx.isAuthenticated){
     return (
-      <RegisterPage2/>
+        <RegisterPage2/>
     )
   }
   if(!admins[`${eventData.eventId}`].includes(authCtx.userId)){
     return (
-      <PermissionDeniedPage/>
+        <PermissionDeniedPage/>
     )
   }
 
@@ -43,26 +43,12 @@ function AdminEventDetailsPage({ eventData }) {
           let pendingTeamsArray = [];
           const teamDetailsResult = snapshot.val();
           for (let team in teamDetailsResult) {
-            const members = (teamDetailsResult[team] && teamDetailsResult[team].teamDetails && (teamDetailsResult[team].teamDetails.members)) || [];
-            const memberData=[];
-            for(let i=0; i<members.length; i++){
-              onValue(ref_database(database, `srijan/profiles/${members[i].email.split("@")[0].replace(/[.+-]/g, "_")}/profiledata`), (snapshot)=>{
-                if(snapshot){
-                  // console.log(snapshot.val());
-                  memberData.push(snapshot.val().name);
-                }
-              })
-            }
-            setTimeout(()=>{
-              teamDetailsArray.push({ ...teamDetailsResult[team], teamId: team, memberData });
+            teamDetailsArray.push({ ...teamDetailsResult[team], teamId: team });
             if(teamDetailsResult[team].isRegistered === false){
               pendingTeamsArray.push({ ...teamDetailsResult[team], teamId: team });
             }
-            }, 3000)
           }
-          setTimeout(()=>{
-            setTeamDetails(teamDetailsArray);
-          }, 5000)
+          setTeamDetails(teamDetailsArray);
           setPendingRegistered(pendingTeamsArray);
         }
       },
@@ -150,7 +136,6 @@ function AdminEventDetailsPage({ eventData }) {
           {teamDetails &&
             teamDetails.length > 0 &&
             teamDetails.map((team, idx) => {
-              // console.log(team.memberData);
               return (
                 <div className={styles.adminEventDetailsBox} key={idx}>
                   <div className={styles.eventDetailsTop}>
@@ -191,7 +176,6 @@ function AdminEventDetailsPage({ eventData }) {
                         );
                       })}
                   </div>
-                  <div className={styles.userDetailsMid}><p>Members: <span>{team && team.memberData && team.memberData.join(", ")}</span></p></div>
                   {/* <div className={styles.userDetailsBottom}>
                       <div className={styles.sendNotificationButton} onClick={toggleVisibleNotificationForm}>Send Notification</div>
                   </div> */}

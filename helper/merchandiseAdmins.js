@@ -12,4 +12,4 @@ export const merchandiseAdmins = [
         merchantTitle: "bitan"
     }
 ]
-export const merchandiseAdminIds = ["halderarindam10000", "ayushdtps", "bbanerjeeagp", "jyotishman917"];
+export const merchandiseAdminIds = ["halderarindam10000", "ayushdtps", "bbanerjeeagp", "jyotishman917", "adicrown54"];
