@@ -14,7 +14,8 @@ export const events = [
         // eventShortDescription: "An intuition based electronic circuit-building event",
         eventDescription: ["The name of the event derives from the German word ”elektronische” which means electronics. Are you an engineering student who loves electronics? Do you see resistors, capacitors and inductors everywhere? Do you have a passion for analog and digital circuit systems? Then you won't want to miss our upcoming event! We have got you all covered………………………!!", "Tired of Dream Walking everyday into your world of creative ideas? Rise from your grave and conquer the World of Circuits! Channelise your creative ideas and intuitions into designing circuits and show the world what you are made up of!", "Taking a pinch of inspiration from nature itself, Team Srijan, Jadavpur University unveils ELECTRONICHE, our one of its kind Circuit Designing Event. Get Ready to play with a bunch of MOSFETs,Capacitors and what not!!"],
         eventRules: ["UG1, UG2 and UG3 ( team members must be from the same year ) students can participate in this event", "In ROUND 1: We will be having two different sets of question papers. Set-1 for UG1 and Set-2 for UG2 and UG3 (common set for UG2 and UG3).", "For UG1 participants, questions will be comparable to JEE Advanced level. Questions will be mostly based on basic RC and RL circuits.", "For UG2 and UG3 participants, questions will be mostly from analog circuit design, digital circuit design, circuit theory, signals and system.", "The test will be comprising of multiple choice questions(MCQ) and numerical answer type(NAT) questions. Negative marking will be present. Further details regarding the marking  scheme will be mentioned at the time of exam.", "The top 5 teams from UG1 and the top 10 teams from UG2 & UG3 combined.(Restricted to a maximum of 5 UG3 teams) will be eligible for Round-2", "In ROUND 2: This will be an interactive session for the groups. It will be composed of questions which need your intuition and designing skills to be applied. Each group will be given one question and you need to work it out along with the host.", "No need to worry about the difficulty level. The questions will be adapted accordingly for UG1, UG2 and UG3.", "Do bring your own SCRIBBLE PADS and PEN to do the rough work."],
-        eventRuleLink: "https://docs.google.com/document/d/1EgT55EllzRdAJP2n9i-pLoD9b0GL0uxLlunEMA2gLvg/edit"
+        eventRuleLink: "https://docs.google.com/document/d/1EgT55EllzRdAJP2n9i-pLoD9b0GL0uxLlunEMA2gLvg/edit",
+        registrationClosed: "yes"
     },
     {
         eventId: "002",
@@ -542,6 +543,26 @@ export const events = [
         // eventRuleLink: "https://docs.google.com/document/d/19-N8ooQSbhY8oo0dELxPHKNBNlttRbKnoYKlEh5nK58/edit",
         registrationDisabled: "yes",
         registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeP1megsciEqI0jmM461EHuyKrm5j3xaBnmqFeIOWHSR28dlQ/viewform?usp=sf_link"
+    },
+    {
+       eventId: "032",
+       eventName: "E-Football",
+       eventDate: {prelims: ["April 16, 2023"], finals: "April 16,2023"},
+    //    eventTime: {prelims: ["10:30AM - 4PM"], finals: "2PM - 5PM"},
+       eventPoster: "/assets/events/efootball.png" ,
+       eventType: "gaming",
+       eventHashtags: ["Mobile", "Gaming"],
+       eventCoordinators: ["Jotiraditya [ 6289867756 ]", "Piyush [ 7439484942 ]","Dibyendu [7908892793]"],
+        // eventVenue: "SMCC - 4th Floor - Lab",
+       minMembers: 1,
+       maxMembers: 1,
+        // eventShortDescription: "Deciphering their way through clues and challenges set in the world of binary, the fastest team to the Treasure wins",
+       eventDescription: ["We dint really need to tell you about this event. You already know! Srijan 23 is back with the apotheosis of mobile gaming events: e-Football! All the Ronaldo fans and Messi fans, where you all at? Assemble! Fire up those phones and engage your earbuds (while we have a private chat with the legend Luis. A. Roman 😉). Also comment down below who you think will win this year's champions league?!"],
+        eventRules: ["Tournament will be hosted online on 16th April. Timings will be let known. ","Candidates will need to install e-football on their mobiles and participate. ","If a player qualifies in the top 16 (finals will be round robin) only one account will move forward. ","Game mode - 1v1 normal gameplay"],
+        // eventRuleLink: "https://docs.google.com/document/d/19-N8ooQSbhY8oo0dELxPHKNBNlttRbKnoYKlEh5nK58/edit",
+        //registrationDisabled: "yes",
+        //registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeP1megsciEqI0jmM461EHuyKrm5j3xaBnmqFeIOWHSR28dlQ/viewform?usp=sf_link",
+        registrationClosed: "yes"
     },
        // {
        // eventId: "011",
