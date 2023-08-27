@@ -26,7 +26,7 @@ export default function TeamPage(){
             </div>
             <div className={styles.merchandiseContainer}>
                 <div className={styles.merchandiseHeading}>
-                Srijan'23 Team
+                Srijan'23 Core Team
                 </div>
 
                 <div className={styles.merchandiseBody}>

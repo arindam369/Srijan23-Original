@@ -1718,7 +1718,7 @@
   margin: 4px 10px;
 }
 .memberImage{
-  height: 180px;
+  height: 170px;
   width: 160px;
   border-radius: 4px;
 }
@@ -1749,7 +1749,7 @@
     width: 550px;
   }
   .memberImage{
-    height: 155px;
+    height: 140px;
     width: 140px;
     border-radius: 4px;
   }
@@ -1777,6 +1777,9 @@
     color: yellow;
     font-size: .8rem;
     margin-top: 3px;
+  }
+  .memberCard{
+    margin: 10px 3px;
   }
 }
 @media (max-width: 510px){

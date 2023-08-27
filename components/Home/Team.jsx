@@ -27,6 +27,7 @@ export default function Teams(){
                                 <div className={styles.memberTitle}>Chirag Jaiswal</div>
                             </a>
                             <div className={styles.memberCotitle}>Co-President</div>
+                            <div className={styles.memberCotitle}>CodeClub | JUSL</div>
                         </div>
                     </div>
                     <div className={styles.memberCard}>
@@ -42,6 +43,7 @@ export default function Teams(){
                                 <div className={styles.memberTitle}>Priyam Raj</div>
                             </a>
                             <div className={styles.memberCotitle}>Co-President</div>
+                            <div className={styles.memberCotitle}>CodeClub | JUSL</div>
                         </div>
                     </div>
                     <div className={styles.memberCard}>
@@ -57,6 +59,7 @@ export default function Teams(){
                                 <div className={styles.memberTitle}>Shatadru Barua</div>
                             </a>
                             <div className={styles.memberCotitle}>Secretary</div>
+                            <div className={styles.memberCotitle}>CodeClub | JUSL</div>
                         </div>
                     </div>
                     <div className={styles.memberCard}>
@@ -72,21 +75,23 @@ export default function Teams(){
                                 <div className={styles.memberTitle}>Vineet Kothari</div>
                             </a>
                             <div className={styles.memberCotitle}>Technical Lead</div>
+                            <div className={styles.memberCotitle}>CodeClub | JUSL</div>
                         </div>
                     </div>
                     <div className={styles.memberCard}>
                         <Image
-                            src={"/assets/team/mridul_agarwal.jpeg"}
+                            src={"/assets/team/ishita_mundhra.jpeg"}
                             height={500}
                             width={500}
                             alt="member_image"
                             className={styles.memberImage}
                         />
                         <div className={styles.memberDesc}>
-                            <a href="https://www.linkedin.com/in/mridul-agarwal0507" target="_blank" rel="noopener noreferrer">
-                                <div className={styles.memberTitle}>Mridul Agarwal</div>
+                            <a href="https://www.linkedin.com/in/ishita-mundhra-b0a11b1a1" target="_blank" rel="noopener noreferrer">
+                                <div className={styles.memberTitle}>Ishita Mundhra</div>
                             </a>
                             <div className={styles.memberCotitle}>Vice President</div>
+                            <div className={styles.memberCotitle}>CodeClub | JUSL</div>
                         </div>
                     </div>
                 </div>
