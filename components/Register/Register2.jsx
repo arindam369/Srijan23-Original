@@ -74,6 +74,9 @@ export default function RegisterPage2(){
     function signInUsingGoogle(){
         authCtx.googleSignIn();
     }
+    function handleTeam(){
+        router.push("/team");
+    }
 
     return (
         <>
@@ -121,7 +124,7 @@ export default function RegisterPage2(){
                         13th - 16th April
                     </div>
 
-                    <h4 className={styles.liveHeading}>is now LIVE</h4>
+                    <h4 className={styles.liveHeading}>is ENDED</h4>
 
                     {/* {!visibleRegister && !visibleLogin && <Countdown/>} */}
                 </div>}
@@ -150,6 +153,7 @@ export default function RegisterPage2(){
                         <span>Sign in with Google</span>
                     </button>
                 </div>}
+                <div className={styles.dashboardButton} onClick={handleTeam}>Our Team</div>
             </div>
         </>
     );
