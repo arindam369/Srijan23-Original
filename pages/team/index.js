@@ -24,11 +24,6 @@ export default function TeamPage(){
                     <spotLight position={[10, 15, 10]} angle={0.3} />
                 </Canvas>
             </div>
-            {/* <div className={styles.teamContainer}>
-                <div className={styles.teamBox}>
-                    
-                </div>
-            </div> */}
             <div className={styles.merchandiseContainer}>
                 <div className={styles.merchandiseHeading}>
                 Srijan'23 Team
