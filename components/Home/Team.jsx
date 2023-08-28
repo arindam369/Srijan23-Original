@@ -16,6 +16,22 @@ export default function Teams(){
                 <div className={styles.teamSection}>
                     <div className={styles.memberCard}>
                         <Image
+                            src={"/assets/team/vineet_kothari.jpeg"}
+                            height={500}
+                            width={500}
+                            alt="member_image"
+                            className={styles.memberImage}
+                        />
+                        <div className={styles.memberDesc}>
+                            <a href="https://www.linkedin.com/in/vineet-kothari-070a5b195" target="_blank" rel="noopener noreferrer">
+                                <div className={styles.memberTitle}>Vineet Kothari</div>
+                            </a>
+                            <div className={styles.memberCotitle}>Technical Lead</div>
+                            <div className={styles.memberCotitle}>CodeClub | JUSL</div>
+                        </div>
+                    </div>
+                    <div className={styles.memberCard}>
+                        <Image
                             src={"/assets/team/chirag_jaiswal.jpeg"}
                             height={500}
                             width={500}
@@ -59,22 +75,6 @@ export default function Teams(){
                                 <div className={styles.memberTitle}>Shatadru Barua</div>
                             </a>
                             <div className={styles.memberCotitle}>Secretary</div>
-                            <div className={styles.memberCotitle}>CodeClub | JUSL</div>
-                        </div>
-                    </div>
-                    <div className={styles.memberCard}>
-                        <Image
-                            src={"/assets/team/vineet_kothari.jpeg"}
-                            height={500}
-                            width={500}
-                            alt="member_image"
-                            className={styles.memberImage}
-                        />
-                        <div className={styles.memberDesc}>
-                            <a href="https://www.linkedin.com/in/vineet-kothari-070a5b195" target="_blank" rel="noopener noreferrer">
-                                <div className={styles.memberTitle}>Vineet Kothari</div>
-                            </a>
-                            <div className={styles.memberCotitle}>Technical Lead</div>
                             <div className={styles.memberCotitle}>CodeClub | JUSL</div>
                         </div>
                     </div>
