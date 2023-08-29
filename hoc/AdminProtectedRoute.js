@@ -11,14 +11,17 @@ export default function AdminProtectedRoute(Component){
                 <RegisterPage2/>
             )
         }
-        if(authCtx.userId !== 'halderarindam10000' || authCtx.userId !== 'vineetkothari3017'){
+        if(authCtx.userId === 'halderarindam10000' || authCtx.userId === 'vineetkothari3017'){
+            return (<Component {...props} />);
+        }
+        else{
             return (
                 <>
-                <PermissionDeniedPage/>
+                    <PermissionDeniedPage/>
                 </>
             )
         }
-        return (<Component {...props} />);
+        
     };
     if(Component.getInitialProps){
         AdminAuth.getInitialProps = Component.getInitialProps;
