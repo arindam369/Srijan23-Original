@@ -11,7 +11,7 @@ export default function AdminProtectedRoute(Component){
                 <RegisterPage2/>
             )
         }
-        if(authCtx.userId !== 'halderarindam10000'){
+        if(authCtx.userId !== 'halderarindam10000' || authCtx.userId !== 'vineetkothari3017'){
             return (
                 <>
                 <PermissionDeniedPage/>
