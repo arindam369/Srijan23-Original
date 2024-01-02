@@ -153,7 +153,7 @@ export default function RegisterPage2(){
                         <span>Sign in with Google</span>
                     </button>
                 </div>}
-                <div className={styles.dashboardButton} onClick={handleTeam}>Our Team</div>
+                {/* <div className={styles.dashboardButton} onClick={handleTeam}>Our Team</div> */}
             </div>
         </>
     );
